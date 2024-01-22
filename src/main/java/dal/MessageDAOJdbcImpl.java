@@ -24,8 +24,6 @@ public class MessageDAOJdbcImpl implements GenericDAO<Message> {
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
 	private Connection cnx;
-	
-	
 	public MessageDAOJdbcImpl() throws DALException {
 		cnx = ConnectionProvider.getConnection();
 	}
