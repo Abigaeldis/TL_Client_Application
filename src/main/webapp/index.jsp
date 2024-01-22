@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 <h1>HELLO</h1>
 </body>
 </html>

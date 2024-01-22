@@ -9,7 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
- <servlet>
+  <servlet>
     <description></description>
     <display-name>ServletTesterConnexion</display-name>
     <servlet-name>ServletTesterConnexion</servlet-name>
@@ -18,5 +18,15 @@
   <servlet-mapping>
     <servlet-name>ServletTesterConnexion</servlet-name>
     <url-pattern>/ServletTesterConnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAfficherCarte</display-name>
+    <servlet-name>ServletAfficherCarte</servlet-name>
+    <servlet-class>controler.ServletAfficherCarte</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAfficherCarte</servlet-name>
+    <url-pattern>/carte</url-pattern>
   </servlet-mapping>
 </web-app>
