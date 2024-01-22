@@ -9,15 +9,11 @@
 	<link rel="stylesheet" href="style/styleListeContacts.css" />
 </head>
 <body>
-	<ul>
 	<c:forEach var="current" items="${restaurants }">
-		<li>
-			<div class="restaurant-container">
-	                ${current.nom} ${current.adresse} - ${current.description}
-	                <a href="restaurant?id=${current.id}"><button>Détails</button></a>
-		     </div>
-		</li>
+		<div class="restaurant-container">
+	          <p>${current.nom} ${current.adresse} - ${current.description}</p>
+	          <a href="restaurant?id=${current.id}"><button>Détails</button></a>
+	     </div>
 	</c:forEach>
-	</ul>
 </body>
 </html>
