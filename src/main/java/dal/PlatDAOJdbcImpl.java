@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import bll.BLLException;
 import bll.CarteBLL;
 import bll.RestaurantBLL;
@@ -27,7 +32,16 @@ public class PlatDAOJdbcImpl implements GenericDAO<Plat> {
 	private Connection cnx;
 	
 	public PlatDAOJdbcImpl() throws DALException {
-		cnx = ConnectionProvider.getConnection();
+		try {
+			Context context = new InitialContext();
+			String id_env = System.getenv("USER_SQLSERVER");
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/"+ id_env);
+			cnx = dataSource.getConnection();
+		} catch (SQLException e) {
+			throw new DALException("Erreur de connexion à la base de données", e);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public List<Plat> selectAll() throws DALException {
