@@ -59,4 +59,14 @@
     <servlet-name>ServletAfficherUtilisateur</servlet-name>
     <url-pattern>/MonCompte</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletReservation</display-name>
+    <servlet-name>ServletReservation</servlet-name>
+    <servlet-class>controler.ServletReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletReservation</servlet-name>
+    <url-pattern>/reserver</url-pattern>
+  </servlet-mapping>
 </web-app>
