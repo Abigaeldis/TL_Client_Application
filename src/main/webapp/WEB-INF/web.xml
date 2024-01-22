@@ -21,6 +21,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ServletListerRestaurants</display-name>
+    <servlet-name>ServletListerRestaurants</servlet-name>
+    <servlet-class>controler.ServletListerRestaurants</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerRestaurants</servlet-name>
+    <url-pattern>/restaurants</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <description></description>
     <display-name>ServletAfficherCarte</display-name>
     <servlet-name>ServletAfficherCarte</servlet-name>
     <servlet-class>controler.ServletAfficherCarte</servlet-class>
