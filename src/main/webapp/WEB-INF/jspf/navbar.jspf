@@ -1,5 +1,4 @@
 
-<header>
 <a href="index.jsp">
 		<button type="button" class="btn">Acceuil</button>
 </a>
@@ -20,5 +19,5 @@
 <a href="apropos">
 		<button type="button" class="btn">A propos</button>
 </a>
-</header>
+
 
