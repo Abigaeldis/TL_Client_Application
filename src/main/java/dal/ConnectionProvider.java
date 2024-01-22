@@ -1,20 +1,31 @@
 package dal;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 /*
  * Classe utilitaire pour mutualiser la connexion à la base de données
  * De cette manière, il n'est pas nécessaire de copier coller le code de connexion dans chaque DAO
  */
+
 public abstract class ConnectionProvider {
+	private static Connection cnx;
 	public static Connection getConnection() throws DALException {
-		String url = "jdbc:sqlserver://localhost;databasename=TL_GESTION_RESTAURANTS;trustservercertificate=true";
 		try {
-			return DriverManager.getConnection(url, System.getenv("USER_SQLSERVER"), System.getenv("PASSWORD_SQLSERVER"));
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/toto");
+			cnx = dataSource.getConnection();
+			return cnx;
 		} catch (SQLException e) {
-			throw new DALException("Erreur de connexion a la base de donnees", e);
+			throw new DALException("Erreur de connexion � la base de donn�es", e);
+		} catch (NamingException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
 }

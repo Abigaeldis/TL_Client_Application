@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 	<Resource
-		name="connectedIn"
+		name="admin"
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		type="javax.sql.DataSource"
 		
-		url="jdbc:sqlserver://localhost;databasename=ConnectedIn;trustservercertificate=true"
+		url="jdbc:sqlserver://localhost;databasename=TL_GESTION_RESTAURANTS;trustservercertificate=true"
 		username="admin"
 		password="admin"
+		
+		maxTotal="100"
+		maxIdle="30"
+		maxWaitMillis="10000"
+	/>
+	<Resource
+		name="cestpapa"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		type="javax.sql.DataSource"
+		
+		url="jdbc:sqlserver://localhost;databasename=TL_GESTION_RESTAURANTS;trustservercertificate=true"
+		username="cestpapa"
+		password="cesttata"
+		
+		maxTotal="100"
+		maxIdle="30"
+		maxWaitMillis="10000"
+	/>
+	<Resource
+		name="lauriane"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		type="javax.sql.DataSource"
+		
+		url="jdbc:sqlserver://localhost;databasename=TL_GESTION_RESTAURANTS;trustservercertificate=true"
+		username="lauriane"
+		password="lauriane"
 		
 		maxTotal="100"
 		maxIdle="30"
