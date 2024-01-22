@@ -36,9 +36,8 @@ public class UtilisateurBLL {
 		}
 	}
 	
-	public Utilisateur insert(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse,
-			String role, Restaurant restaurant) throws BLLException {
-		Utilisateur utilisateur = new Utilisateur(nom, prenom, mail, motdepasse, telephone, adresse,role,restaurant);
+	public Utilisateur insert(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse) throws BLLException {
+		Utilisateur utilisateur = new Utilisateur(nom, prenom, mail, motdepasse, telephone, adresse);
 		try {
 			dao.insert(utilisateur);
 		} catch (DALException e) {

@@ -13,7 +13,7 @@
 <a href="MonCompte?id=1">
 		<button type="button" class="btn">Mon compte</button>
 </a>
-<a href="login">
+<a href="Connexion">
 		<button type="button" class="btn">Connexion/Inscription</button>
 </a>
 <a href="apropos">
