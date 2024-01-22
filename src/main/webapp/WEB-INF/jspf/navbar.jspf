@@ -11,6 +11,9 @@
 <a href="restaurant?id=1">
 		<button type="button" class="btn">Un restaurant</button>
 </a>
+<a href="MonCompte?id=1">
+		<button type="button" class="btn">Mon compte</button>
+</a>
 <a href="login">
 		<button type="button" class="btn">Connexion/Inscription</button>
 </a>
