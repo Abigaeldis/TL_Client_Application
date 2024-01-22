@@ -48,7 +48,7 @@ public class ServletAfficherCarte extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Carte n°"+carte.getId() + " : " + carte.getNom());
+
 		List<Plat> items;
 		List<Plat> entrees = new ArrayList<>();
 		List<Plat> plats = new ArrayList<>();
@@ -61,19 +61,19 @@ public class ServletAfficherCarte extends HttpServlet {
 					switch (current.getType()) {
 					case "entrée" :
 						entrees.add(current);
-						System.out.println(current);
+					
 						break;
 					case "plat" :
 						plats.add(current);
-						System.out.println(current);
+				
 						break;
 					case "dessert" :
 						desserts.add(current);
-						System.out.println(current);
+					
 						break;
 					case "boisson" :
 						boissons.add(current);
-						System.out.println(current);
+					
 						break;
 					default :
 						System.out.println(current);
