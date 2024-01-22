@@ -1,16 +1,16 @@
 
 <header>
-<a href="/restaurants">
+<a href="restaurants">
 		<button type="button" class="btn">Nos Restaurants</button>
 </a>
 
-<a href="/restaurant?id=1">
+<a href="restaurant?id=1">
 		<button type="button" class="btn">Un restaurant</button>
 </a>
-<a href="/login">
+<a href="login">
 		<button type="button" class="btn">Connexion/Inscription</button>
 </a>
-<a href="/apropos">
+<a href="apropos">
 		<button type="button" class="btn">A propos</button>
 </a>
 </header>
