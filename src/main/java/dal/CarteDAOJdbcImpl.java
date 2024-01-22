@@ -40,6 +40,10 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 		}
 	}
 	
+	
+	////////////////////////////////////////////////////////////////////////
+	
+	
 	public List<Carte> selectAll() throws DALException {
 		List<Carte> cartes = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout

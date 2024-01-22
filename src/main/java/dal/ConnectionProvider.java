@@ -18,7 +18,8 @@ public abstract class ConnectionProvider {
 	public static Connection getConnection() throws DALException {
 		try {
 			Context context = new InitialContext();
-			DataSource dataSource = (DataSource) context.lookup("java:comp/env/toto");
+			String id_env = System.getenv("USER_SQLSERVER");
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/"+ id_env);
 			cnx = dataSource.getConnection();
 			return cnx;
 		} catch (SQLException e) {
@@ -29,3 +30,4 @@ public abstract class ConnectionProvider {
 		return null;
 	}
 }
+	
