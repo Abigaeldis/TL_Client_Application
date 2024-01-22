@@ -9,6 +9,7 @@ import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
+import bll.UtilisateurBLL;
 import bo.Message;
 import bo.Restaurant;
 import bo.Utilisateur;

@@ -20,7 +20,7 @@
 	
 	<a href="reserver?id=${restaurant.id}"><button>Réserver</button></a>
 	
-	<a href="contacter?id=${restaurant.id}">Contacter</a>
+	<a href="contacter?id=${restaurant.id}"><button>Contacter</button></a>
 
 
 

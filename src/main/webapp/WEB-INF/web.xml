@@ -59,4 +59,14 @@
     <servlet-name>ServletAfficherUtilisateur</servlet-name>
     <url-pattern>/MonCompte</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletContacter</display-name>
+    <servlet-name>ServletContacter</servlet-name>
+    <servlet-class>controler.ServletContacter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContacter</servlet-name>
+    <url-pattern>/contacter</url-pattern>
+  </servlet-mapping>
 </web-app>
