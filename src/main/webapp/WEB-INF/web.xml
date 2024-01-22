@@ -9,7 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
- <servlet>
+  <servlet>
     <description></description>
     <display-name>ServletTesterConnexion</display-name>
     <servlet-name>ServletTesterConnexion</servlet-name>
@@ -18,5 +18,15 @@
   <servlet-mapping>
     <servlet-name>ServletTesterConnexion</servlet-name>
     <url-pattern>/ServletTesterConnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletListerRestaurants</display-name>
+    <servlet-name>ServletListerRestaurants</servlet-name>
+    <servlet-class>controler.ServletListerRestaurants</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerRestaurants</servlet-name>
+    <url-pattern>/restaurants</url-pattern>
   </servlet-mapping>
 </web-app>
