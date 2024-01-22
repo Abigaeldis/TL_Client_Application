@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            position: relative;
+            height: 400px; /* Adjust the height based on your needs */
+            background: url("../img/header.png") center/cover no-repeat; /* Set the background image */
+            color: #fff; /* Set text color to white or a suitable color for your design */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .overlay h1 {
+            font-size: 36px; /* Adjust the font size */
+            margin-bottom: 10px;
+        }
+
+        .overlay p {
+            font-size: 18px; /* Adjust the font size */
+            margin-bottom: 20px;
+        }
+
+        .overlay button {
+            padding: 10px 20px;
+            font-size: 16px; /* Adjust the font size */
+            background-color: #007BFF; /* Set the button background color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
