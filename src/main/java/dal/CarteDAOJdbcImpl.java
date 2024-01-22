@@ -25,6 +25,10 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 		cnx = ConnectionProvider.getConnection();
 	}
 	
+	
+	////////////////////////////////////////////////////////////////////////
+	
+	
 	public List<Carte> selectAll() throws DALException {
 		List<Carte> cartes = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout

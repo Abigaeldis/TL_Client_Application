@@ -28,6 +28,9 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 		cnx = ConnectionProvider.getConnection();
 	}
 	
+	////////////////////////////////////////////////////////////////////////
+	
+	
 	public List<Restaurant> selectAll() throws DALException {
 		List<Restaurant> restaurants = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
