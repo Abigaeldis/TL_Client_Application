@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="style/styleListeContacts.css" />
 </head>
 <body>
+<%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 	<c:forEach var="current" items="${restaurants }">
 		<div class="restaurant-container">
 	          <p>${current.nom} ${current.adresse} - ${current.description}</p>

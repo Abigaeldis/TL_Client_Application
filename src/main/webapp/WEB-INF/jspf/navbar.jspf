@@ -1,5 +1,9 @@
 
 <header>
+<a href="index.jsp">
+		<button type="button" class="btn">Acceuil</button>
+</a>
+
 <a href="restaurants">
 		<button type="button" class="btn">Nos Restaurants</button>
 </a>
