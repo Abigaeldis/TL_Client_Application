@@ -16,16 +16,11 @@
 
 
 
-	<a href="restaurant?id=${restaurant.id}"><button>Afficher la carte</button></a>
+	<a href="carte?id=${restaurant.id}"><button>Afficher la carte</button></a>
 	
-	<a href="restaurant?id=${restaurant.id}"><button>Réserver</button></a>
+	<a href="reserver?id=${restaurant.id}"><button>Réserver</button></a>
 	
-	<a href="">Contacter</a>
-
-
-
-
-	<%-- 	<a href="modifier?id=${restaurant.id }">Modifier le contact</a> --%>
+	<a href="contacter?id=${restaurant.id}">Contacter</a>
 
 
 
