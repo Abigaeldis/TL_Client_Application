@@ -59,4 +59,24 @@
     <servlet-name>ServletAfficherUtilisateur</servlet-name>
     <url-pattern>/MonCompte</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletConnexionUtilisateur</display-name>
+    <servlet-name>ServletConnexionUtilisateur</servlet-name>
+    <servlet-class>controler.ServletConnexionUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConnexionUtilisateur</servlet-name>
+    <url-pattern>/Connexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletInscriptionUtilisateur</display-name>
+    <servlet-name>ServletInscriptionUtilisateur</servlet-name>
+    <servlet-class>controler.ServletInscriptionUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletInscriptionUtilisateur</servlet-name>
+    <url-pattern>/ServletInscriptionUtilisateur</url-pattern>
+  </servlet-mapping>
 </web-app>
