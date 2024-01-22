@@ -7,7 +7,7 @@
 <title>Detail du restaurant</title>
 </head>
 <body>
-
+<%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 	<h1>Detail du restaurant ${restaurant.id }</h1>
 
 	<p>Nom : ${restaurant.nom }</p>
