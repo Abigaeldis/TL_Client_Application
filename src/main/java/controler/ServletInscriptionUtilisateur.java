@@ -27,17 +27,17 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String utilisateur = request.getParameter("utilisateur");
-        String nomdefamille = request.getParameter("nomdefamille");
+        String prenom = request.getParameter("prenom");
+        String nom = request.getParameter("nom");
         String motdepasse = request.getParameter("motdepasse");
         String mail = request.getParameter("mail");
         String telephone = request.getParameter("telephone");
         String adresse = request.getParameter("adresse");
 
         try {
-            Utilisateur newUtilisateur = utilisateurBLL.insert(utilisateur, nomdefamille, motdepasse, mail, telephone,
+            Utilisateur newUtilisateur = utilisateurBLL.insert(prenom, nom, motdepasse, mail, telephone,
                     adresse);
-            System.out.println("Inserted Utilisateur: " + utilisateur + " " + mail);
+            System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
 
             // request.getSession().setAttribute("name", newUtilisateur);
             HttpSession session = request.getSession();

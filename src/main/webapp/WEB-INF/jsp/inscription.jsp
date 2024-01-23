@@ -12,13 +12,13 @@
       <h1>Name of user</h1>
       <form action="ServletInscriptionUtilisateur" method="post">
         <div class="form-control">
-          <input type="text" name="utilisateur" value="${utilisateur }"required />
-          <label for="utilisateur">Identifiant : </label>
+          <input type="text" name=prenom required />
+          <label for="prenom">Prenom : </label>
         </div>
         
         <div class="form-control">
-          <input type="text" name="nomdefamille" required />
-          <label for="nomdefamille">Nom de famille : </label>
+          <input type="text" name="nom" required />
+          <label for="nom">Nom : </label>
         </div>
         
         <div class="form-control">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-control">        
-          <input type="text" name="mail" required />
+          <input type="text" name="mail" value="${mail }" required />
           <label for="mail">Mail : </label>
         </div>
 

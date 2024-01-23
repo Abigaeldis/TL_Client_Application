@@ -61,9 +61,9 @@ public class UtilisateurBLL {
 		}
 	}
 	
-	public Utilisateur authenticateUser(String nom, String motdepasse, HttpServletRequest request) throws BLLException {
+	public Utilisateur authenticateUser(String mail, String motdepasse, HttpServletRequest request) throws BLLException {
 	    try {
-	        return dao.validateCredentials(nom, motdepasse);
+	        return dao.validateCredentials(mail, motdepasse);
 	    } catch (DALException e) {
 	        throw new BLLException("Error authenticating user", e);
 	    }
