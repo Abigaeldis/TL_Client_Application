@@ -68,6 +68,9 @@
   <servlet-mapping>
     <servlet-name>ServletContacter</servlet-name>
     <url-pattern>/contacter</url-pattern>
+      </servlet-mapping>
+      
+  <servlet>
     <display-name>ServletReservation</display-name>
     <servlet-name>ServletReservation</servlet-name>
     <servlet-class>controler.ServletReservation</servlet-class>
@@ -76,6 +79,7 @@
     <servlet-name>ServletReservation</servlet-name>
     <url-pattern>/reserver</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletConnexionUtilisateur</display-name>
@@ -86,6 +90,7 @@
     <servlet-name>ServletConnexionUtilisateur</servlet-name>
     <url-pattern>/Connexion</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletInscriptionUtilisateur</display-name>
