@@ -1,5 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<<<<<<< Updated upstream
+=======
+<header>
+<a href="restaurants">
+		<button type="button" class="btn">Nos Restaurants</button>
+</a>
+
+<a href="restaurant?id=1">
+		<button type="button" class="btn">Un restaurant</button>
+</a>
+<a href="login">
+		<button type="button" class="btn">Connexion/Inscription</button>
+</a>
+<a href="apropos">
+		<button type="button" class="btn">A propos</button>
+</a>
+</header>
+>>>>>>> Stashed changes
 
 <nav>
     <ul>
