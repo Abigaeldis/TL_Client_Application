@@ -21,7 +21,6 @@
 	<a href="reserver?id=${restaurant.id}"><button>Réserver</button></a>
 	
 	<a href="contacter?id=${restaurant.id}"><button>Contacter</button></a>
-
 	<p>
 	<a href="index.jsp">Retour à l'accueil</a>
 	</p>
