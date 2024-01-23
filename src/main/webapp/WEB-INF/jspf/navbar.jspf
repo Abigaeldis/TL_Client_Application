@@ -2,7 +2,7 @@
 
 <nav>
     <ul>
-        <li><a href="index.jsp"><button type="button" class="btn">Acceuil</button></a></li>
+        <li><a href="index.jsp"><button type="button" class="btn">Accueil</button></a></li>
         <li><a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a></li>
         <c:choose>
             <c:when test="${empty sessionScope.utilisateur}">
