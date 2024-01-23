@@ -7,11 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
-
 import bo.Carte;
 
 // CRUD
@@ -28,16 +23,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	
 	
 	public CarteDAOJdbcImpl() throws DALException {
-		try {
-			Context context = new InitialContext();
-			String id_env = System.getenv("USER_SQLSERVER");
-			DataSource dataSource = (DataSource) context.lookup("java:comp/env/"+ id_env);
-			cnx = dataSource.getConnection();
-		} catch (SQLException e) {
-			throw new DALException("Erreur de connexion à la base de données", e);
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
+		cnx = ConnectionProvider.getConnection();
 	}
 	
 	
