@@ -12,33 +12,33 @@
       <h1>Name of user</h1>
       <form action="ServletInscriptionUtilisateur" method="post">
         <div class="form-control">
-          <input type="text" name=prenom required />
           <label for="prenom">Prenom : </label>
+          <input type="text" name=prenom required />
         </div>
         
         <div class="form-control">
-          <input type="text" name="nom" required />
           <label for="nom">Nom : </label>
+          <input type="text" name="nom" required />
         </div>
         
         <div class="form-control">
-          <input type="password" name="motdepasse" value="${motdepasse }" required />
           <label for="motdepasse">Mot de passe : </label>
+          <input type="password" name="motdepasse" value="${motdepasse }" required />
         </div>
 
         <div class="form-control">        
-          <input type="text" name="mail" value="${mail }" required />
           <label for="mail">Mail : </label>
+          <input type="text" name="mail" value="${mail }" required />
         </div>
 
         <div class="form-control">
-          <input type="text" name="telephone" required />
           <label for="telephone">telephone : </label>
+          <input type="text" name="telephone" required />
         </div>
 
         <div class="form-control">
-        <input type="text" name="adresse" required />
           <label for="adresse">Adresse : </label>
+        	<input type="text" name="adresse" required />
         </div>
 
 

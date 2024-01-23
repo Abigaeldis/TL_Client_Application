@@ -22,19 +22,16 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	private static final String INSERT = "INSERT INTO "+ TABLE_NAME +" (jour, heurededebut, heuredefin,creneau,id_restaurant) VALUES (?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
-	
-	private Connection cnx;
 
 	
 	public HoraireDAOJdbcImpl() throws DALException {
-		cnx = ConnectionProvider.getConnection();
 	}
 	
 	public List<Horaire> selectAll() throws DALException {
 		List<Horaire> horaires = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
 		
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -58,7 +55,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	
 	public Horaire selectById(int id) throws DALException {
 		Horaire horaire = null;
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
 			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
 			ResultSet rs = ps.executeQuery();
@@ -81,7 +78,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	}
 	
 	public void insert(Horaire horaire) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setString(1, horaire.getJour());
@@ -103,7 +100,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	}
 	
 	public void update(Horaire horaire) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, horaire.getJour());
 			ps.setTime(2, Time.valueOf(horaire.getHeureDeDebut()));
@@ -118,7 +115,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	}
 	
 	public void delete(int id) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
 			ps.setInt(1, id);
 			int nbLignesSupprimees = ps.executeUpdate();

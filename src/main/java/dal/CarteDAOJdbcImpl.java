@@ -19,11 +19,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
-	private Connection cnx;
-	
-	
 	public CarteDAOJdbcImpl() throws DALException {
-		cnx = ConnectionProvider.getConnection();
 	}
 	
 	
@@ -34,7 +30,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 		List<Carte> cartes = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
 		
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -51,7 +47,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	
 	public Carte selectById(int id) throws DALException {
 		Carte carte = null;
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
 			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
 			ResultSet rs = ps.executeQuery();
@@ -68,7 +64,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	}
 	
 	public void insert(Carte carte) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setString(1, carte.getNom());
@@ -86,7 +82,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	}
 	
 	public void update(Carte carte) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, carte.getNom());
 			ps.setInt(2, carte.getId());
@@ -97,7 +93,7 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	}
 	
 	public void delete(int id) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
 			ps.setInt(1, id);
 			int nbLignesSupprimees = ps.executeUpdate();

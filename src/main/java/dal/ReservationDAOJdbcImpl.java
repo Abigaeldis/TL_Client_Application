@@ -28,18 +28,14 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
-	private Connection cnx;
-
-	
 	public ReservationDAOJdbcImpl() throws DALException {
-		cnx = ConnectionProvider.getConnection();
 	}
 	
 	public List<Reservation> selectAll() throws DALException {
 		List<Reservation> reservations = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
 		
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -74,7 +70,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	
 	public Reservation selectById(int id) throws DALException {
 		Reservation reservation = null;
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
 			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
 			ResultSet rs = ps.executeQuery();
@@ -107,7 +103,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	}
 	
 	public void insert(Reservation reservation) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setTimestamp(1, Timestamp.valueOf(reservation.getDate()));
@@ -129,7 +125,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	}
 	
 	public void update(Reservation reservation) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setTimestamp(1, Timestamp.valueOf(reservation.getDate()));
 			ps.setString(2, reservation.getStatut());
@@ -145,7 +141,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	}
 	
 	public void delete(int id) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
 			ps.setInt(1, id);
 			int nbLignesSupprimees = ps.executeUpdate();

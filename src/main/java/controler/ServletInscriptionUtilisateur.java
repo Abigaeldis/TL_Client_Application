@@ -35,7 +35,7 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
         String adresse = request.getParameter("adresse");
 
         try {
-            Utilisateur newUtilisateur = utilisateurBLL.insert(prenom, nom, motdepasse, mail, telephone,
+            Utilisateur newUtilisateur = utilisateurBLL.insert(nom, prenom, mail, motdepasse, telephone,
                     adresse);
             System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
 

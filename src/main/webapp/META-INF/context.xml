@@ -10,8 +10,8 @@
 		password="admin"
 		
 		maxTotal="100"
-		maxIdle="30"
-		maxWaitMillis="10000"
+		maxIdle="3000"
+		maxWaitMillis="1000000"
 	/>
 	<Resource
 		name="cestpapa"
