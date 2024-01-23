@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpSession;
  */
 public class ServletAfficherUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-private UtilisateurBLL utilisateurBll;
-	
+	private UtilisateurBLL utilisateurBll;
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -27,15 +27,15 @@ private UtilisateurBLL utilisateurBll;
 			e.printStackTrace();
 		}
 	}
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. Récupération des paramètres
 		String idStr = request.getParameter("id");
-System.out.println(idStr);
-		
+		System.out.println(idStr);
+
 		// 2. Passage des paramètres dans le type voulu
 		int id = Integer.parseInt(idStr);
-		
+
 		// 3. Exploitation des paramètres par le bll
 		Utilisateur utilisateur = null;
 		try {
@@ -43,10 +43,10 @@ System.out.println(idStr);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-		
+
 		// 4. Ajout des attributs éventuels à ma request
 		request.setAttribute("utilisateur", utilisateur);
-		
+
 		// 5. Redirection vers la JSP choisie
 		request.getRequestDispatcher("/WEB-INF/jsp/utilisateur.jsp").forward(request, response);
 	}

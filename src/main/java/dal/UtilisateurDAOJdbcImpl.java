@@ -16,7 +16,7 @@ import bo.Utilisateur;
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String TABLE_NAME = "utilisateurs";
 	private static final String DELETE = "DELETE FROM "+ TABLE_NAME +" WHERE id = ?";
-	private static final String UPDATE = "UPDATE "+ TABLE_NAME +" SET nom = ?, prenom = ?, mail = ?, motdepasse = ?, telephone = ?, adresse = ?, role = ? WHERE id = ?";
+	private static final String UPDATE = "UPDATE "+ TABLE_NAME +" SET nom = ?, prenom = ?, mail = ?, motdepasse = ?, telephone = ?, adresse = ? WHERE id = ?";
 	private static final String INSERT = "INSERT INTO "+ TABLE_NAME +" (nom, prenom, mail, motdepasse, telephone, adresse) VALUES (?,?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
@@ -118,9 +118,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			ps.setString(4, utilisateur.getMotdepasse());
 			ps.setString(5, utilisateur.getTelephone());
 			ps.setString(6, utilisateur.getAdresse());
-			ps.setString(7, utilisateur.getRole());			
-			ps.setInt(8, utilisateur.getRestaurant().getId());
-			ps.setInt(9, utilisateur.getId());
+			ps.setInt(7, utilisateur.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DALException("Impossible de mettre a jour les informations pour l'id "+ utilisateur.getId(), e);
