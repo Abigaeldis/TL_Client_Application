@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ServletAfficherUtilisateur
@@ -29,8 +30,8 @@ private UtilisateurBLL utilisateurBll;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. Récupération des paramètres
-//		String idStr = request.getParameter("id");
-		String idStr = "12";
+		String idStr = request.getParameter("id");
+System.out.println(idStr);
 		
 		// 2. Passage des paramètres dans le type voulu
 		int id = Integer.parseInt(idStr);
