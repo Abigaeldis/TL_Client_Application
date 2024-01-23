@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 	<div>
 	<input type="text" name="corpsDuMessage" placeholder="Votre message">
 	</div>
-	<input type="hidden" name="idUtilisateur" value="1">
+	<input type="hidden" name="idUtilisateur" value="${utilisateur.id }">
 	<input type="hidden" name="idRestaurant" value="${restaurant.id }">
 	<br>
 	<button type="submit">Envoyer</button>
