@@ -95,8 +95,24 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//Ajout des horaires du restaurant
+		List<Horaire> horaires = new ArrayList<>();
+		List<Horaire> horairesRestaurant = new ArrayList<>();
+		
 		try {
-			reservationBll.insert(dateReservation, nbPersonne, utilisateur, restaurant);
+			horaires = horaireBll.selectAll();
+			for (Horaire current : horaires) {
+				
+				if (current.getRestaurant().getNom().equals(restaurant.getNom())) {
+					horairesRestaurant.add(current);
+				}
+			}
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			reservationBll.insert(dateReservation, nbPersonne, utilisateur, restaurant,horaires);
 			request.setAttribute("dateReservation", dateReservation);
 			request.setAttribute("nbPersonne", nbPersonne);
 			request.setAttribute("restaurant", restaurant);
@@ -105,6 +121,7 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 			request.setAttribute("erreurs", e.getErreurs());
 			request.setAttribute("restaurant", restaurant);
+			request.setAttribute("horairesRestaurant", horairesRestaurant);
 			request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 		}
 	}

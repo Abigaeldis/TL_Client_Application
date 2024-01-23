@@ -9,7 +9,7 @@
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 <h1>Réservation</h1>
-<p>Votre demande de réservation au restaurant ${restaurant.nom }, pour ${nbPersonne } personnes le ${dateReservation } a été envoyée.</p>
+<p>Votre demande de réservation au restaurant ${restaurant.nom }, pour ${nbPersonne } personnes le ${dateReservation.toLocalDate() } à ${dateReservation.toLocalTime() } a été envoyée.</p>
 <p>Le restaurant ${restaurant.nom } reviendra rapidement vers vous pour valider votre venue.</p>
 
 <p>

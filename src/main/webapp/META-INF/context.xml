@@ -36,7 +36,7 @@
 		password="lauriane"
 		
 		maxTotal="100"
-		maxIdle="30"
-		maxWaitMillis="10000"
+		maxIdle="3000"
+		maxWaitMillis="100000"
 	/>
 </Context>

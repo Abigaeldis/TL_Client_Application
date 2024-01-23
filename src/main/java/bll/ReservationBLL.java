@@ -1,12 +1,13 @@
 package bll;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
+import bo.Horaire;
 import bo.Reservation;
 import bo.Restaurant;
-import bo.Table;
 import bo.Utilisateur;
 import dal.DALException;
 import dal.GenericDAO;
@@ -40,7 +41,7 @@ public class ReservationBLL {
 	}
 
 	public Reservation insert(LocalDateTime date, int nbPersonne, Utilisateur utilisateur,
-			Restaurant restaurant) throws BLLException {
+			Restaurant restaurant, List<Horaire> horaires) throws BLLException {
 
 		BLLException blleException = new BLLException();
 		if (nbPersonne < 1) {
@@ -49,6 +50,10 @@ public class ReservationBLL {
 		
 		if (date.isBefore(LocalDateTime.now())) {
 			blleException.ajouterErreur("Veuillez choisir une date à venir et non passée.");
+		}
+		
+		if (!validateHoraire(date,restaurant,horaires)) {
+			blleException.ajouterErreur("Veuillez choisir une date et un horaire de réservation parmi les horaires d'ouverture du magasin repris ci-dessous.");
 		}
 		
 		if (blleException.getErreurs().size() > 0) {
@@ -63,6 +68,36 @@ public class ReservationBLL {
 			throw new BLLException("Echec de l'insertion", e);
 		}
 		return reservation;
+	}
+
+	public boolean validateHoraire(LocalDateTime date, Restaurant restaurant, List<Horaire> horaires) {
+		List<Horaire> horairesRestaurant = new ArrayList<>();
+		
+		for (Horaire current : horaires) {
+			if (current.getRestaurant().getNom().equals(restaurant.getNom())) {
+				horairesRestaurant.add(current);
+			}
+		}
+		
+		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
+		int jourInt = date.getDayOfWeek().getValue();
+		String jourReservation = jours[jourInt];
+		System.out.println(jourReservation);
+		LocalTime horaireReservation = date.toLocalTime();
+		System.out.println(horaireReservation);
+		for (Horaire current : horairesRestaurant) {
+			String jour = current.getJour();
+			if (jourReservation.equals(jour)) {
+				System.out.println("Jour ok : " + jour);
+				LocalTime heureDebut = current.getHeureDeDebut();
+				LocalTime heureFin = current.getHeureDeFin();
+				if (horaireReservation.isAfter(heureDebut) && horaireReservation.isBefore(heureFin)) {
+					System.out.println("Horaire ok  : " + heureDebut + " - " + heureFin);
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public void update(Reservation reservation) throws BLLException {
