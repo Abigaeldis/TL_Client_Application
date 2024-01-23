@@ -7,6 +7,7 @@
 <title>Envoyer un message</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
 	<h1>Contacter ${restaurant.nom }</h1>
 	
 	<form action="contacter" method="POST">
