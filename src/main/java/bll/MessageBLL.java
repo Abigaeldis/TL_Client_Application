@@ -35,7 +35,6 @@ public class MessageBLL {
 	}
 	
 	public Message insert(Message message) throws BLLException {
-		message = new Message();
 		BLLException blleException = new BLLException();
 
 		if (message.getTitre().length() < 2) {

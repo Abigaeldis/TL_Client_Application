@@ -3,8 +3,12 @@ package controler;
 import java.io.IOException;
 
 import bll.BLLException;
+import bll.MessageBLL;
 import bll.RestaurantBLL;
+import bll.UtilisateurBLL;
+import bo.Message;
 import bo.Restaurant;
+import bo.Utilisateur;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,11 +17,15 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletContacter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
+	private MessageBLL messageBll;
+	private UtilisateurBLL utilisateurBll;
 	
 	public void init() throws ServletException {
 		super.init();
 		try {
 			restaurantBll = new RestaurantBLL();
+			utilisateurBll = new UtilisateurBLL();
+			messageBll = new MessageBLL();
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
@@ -29,8 +37,6 @@ public class ServletContacter extends HttpServlet {
 		// 1 ---- Je dois pouvoir récupérer l'id de l'utilisateur ou session ->
 		
 		// 2 ---- Je dois pouvoir récupérer l'id du restaurant depuis lequel je souhaite accéder au formulaire de contact
-		
-		
 		
 		// 1. Récupération des paramètres
 		String idStr = request.getParameter("id");
@@ -57,11 +63,69 @@ public class ServletContacter extends HttpServlet {
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	// Post de l'envoi du message dans "messagerie.jsp"
+		System.out.println("passage dans le POST du ServletContacter");
 		
 		
+		// Etape 1 : Recuperer toutes les infos necessaires
+		String idRestaurantStr = request.getParameter("idRestaurant");
+		String titre = request.getParameter("titre");
+		String corpsDuMessage = request.getParameter("corpsDuMessage");
+		String idUtilisateurStr = request.getParameter("idUtilisateur");
+		
 	
-	
+		// Etape 1 bis : vous pouvez vous assurer que vous recuperez bien les infos
+		
+		System.out.println(idRestaurantStr);
+		System.out.println(titre);
+		System.out.println(corpsDuMessage);
+		System.out.println(idUtilisateurStr);
+		
+		// Etape 2 : Passer les infos dans les types appropries
+		
+		int idRestaurant  = Integer.parseInt(idRestaurantStr);
+		int idUtilisateur  = Integer.parseInt(idUtilisateurStr);
+		
+		//Recuperer le restaurant puis l'utilisateur pour le constructeur message
+		
+		Restaurant restaurant = null;
+		try {
+			restaurant = restaurantBll.selectById(idRestaurant);
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		
+		Utilisateur utilisateur = null;
+		try {
+			utilisateur = utilisateurBll.selectById(idUtilisateur);
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		// Etape 3 : Realiser le traitement associes a ces infos
+		Message messageCree = new Message(titre, corpsDuMessage, restaurant, utilisateur);
+		
+		try {
+			messageCree = messageBll.insert(messageCree);
+			
+			// Etape 4 : Ajout des attributs eventuels a la requete
+			request.setAttribute("restaurant", restaurant);
+			request.setAttribute("message", messageCree);
+			System.out.println(restaurant);
+			System.out.println(messageCree);
+
+			request.getRequestDispatcher("/WEB-INF/jsp/confirmationMessage.jsp").forward(request, response);
+			
+		} catch (BLLException e) {
+			request.setAttribute("erreur", e);
+		}
+		
+		
+		
+		
+		// Etape 5 : Redirection
+		// Redirige vers la servlet d'affichage des details d'un contact
+		// Puisque le traitement pour afficher le detail d'un contact est deja rsealise dans cette Servlet
 	}
 
 }

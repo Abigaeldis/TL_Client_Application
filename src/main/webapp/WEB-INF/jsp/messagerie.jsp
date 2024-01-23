@@ -7,22 +7,23 @@
 <title>Envoyer un message</title>
 </head>
 <body>
-	<h1>Nous contacter</h1>
+	<h1>Contacter ${restaurant.nom }</h1>
 	
 	<form action="contacter" method="POST">
 	<div>
-	<input type="text" name="titre">
+	<input type="text" name="titre" placeholder="Objet">
 	</div>
 	<br>
 	<div>
-	<input type="text" name="corpsDuMessage">
+	<input type="text" name="corpsDuMessage" placeholder="Votre message">
 	</div>
-	<input type="hidden" name="id_utilisateur" value="${utilisateur.id }">
+	<input type="hidden" name="idUtilisateur" value="1">
+	<input type="hidden" name="idRestaurant" value="${restaurant.id }">
 	<br>
 	<button type="submit">Envoyer</button>
 	</form>
 	
-	
+	<!-- A TERMINER si besoin de l'id session/utilisateur-->
 
 </body>
 </html>
