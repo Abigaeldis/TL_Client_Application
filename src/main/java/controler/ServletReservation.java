@@ -50,7 +50,6 @@ public class ServletReservation extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Récup des données
 		String dateReservationStr = request.getParameter("date");
-		System.out.println(dateReservationStr);
 		String nbPersonneStr = request.getParameter("nbPersonne");
 		String idRestaurantStr = request.getParameter("id");
 		
@@ -58,7 +57,6 @@ public class ServletReservation extends HttpServlet {
 		int idRestaurant = Integer.parseInt(idRestaurantStr);
 		int nbPersonne = Integer.parseInt(nbPersonneStr);
 		LocalDateTime dateReservation = LocalDateTime.parse(dateReservationStr);
-		System.out.println(dateReservation);
 		
 		Restaurant restaurant = null;
 		try {
@@ -76,10 +74,13 @@ public class ServletReservation extends HttpServlet {
 		
 		try {
 			reservationBll.insert(dateReservation, nbPersonne, utilisateur, restaurant);
-			System.out.println("Insertion réussie");
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
+		request.setAttribute("dateReservation", dateReservation);
+		request.setAttribute("nbPersonne", nbPersonne);
+		request.setAttribute("restaurant", restaurant);
+		request.getRequestDispatcher("/WEB-INF/jsp/connected/demandeResOk.jsp").forward(request, response);
 	}
 
 }
