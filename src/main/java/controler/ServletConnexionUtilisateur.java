@@ -27,10 +27,10 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 	    String action = request.getParameter("action");
-	    String utilisateur = request.getParameter("utilisateur");
+	    String mail = request.getParameter("mail");
 	    String motdepasse = request.getParameter("motdepasse");
 	    if ("Inscription".equals(action)) {
-	        request.setAttribute("utilisateur", utilisateur);
+	        request.setAttribute("mail", mail);
 	        request.setAttribute("motdepasse", motdepasse);
 	        request.getRequestDispatcher("/WEB-INF/jsp/inscription.jsp").forward(request, response);
 	    } else if ("Connexion".equals(action)) {
@@ -38,7 +38,7 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 	        try {
 	            UtilisateurBLL utilisateurBLL = new UtilisateurBLL();
 	            // Validate user credentials and retrieve the user object
-	            Utilisateur utilisateurObj = utilisateurBLL.authenticateUser(utilisateur, motdepasse, request);
+	            Utilisateur utilisateurObj = utilisateurBLL.authenticateUser(mail, motdepasse, request);
 	            if (utilisateurObj != null) {
 	                // If the user is valid, store the user object in the session
 	                request.getSession().setAttribute("utilisateur", utilisateurObj);
@@ -46,7 +46,7 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 	                response.sendRedirect("index.jsp");
 	            } else {
 	                // If the user is not valid, handle it accordingly
-	                request.setAttribute("errorMessage", "Invalid credentials. Please try again.");
+	                request.setAttribute("errorMessage", "Échec d'authentification");
 	                request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 	            }
 	        } catch (BLLException e) {
