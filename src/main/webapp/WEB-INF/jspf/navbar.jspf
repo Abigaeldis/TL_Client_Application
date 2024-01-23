@@ -1,23 +1,21 @@
-
-<a href="index.jsp">
-		<button type="button" class="btn">Acceuil</button>
-</a>
-
-<a href="restaurants">
-		<button type="button" class="btn">Nos Restaurants</button>
-</a>
-
-<a href="restaurant?id=1">
-		<button type="button" class="btn">Un restaurant</button>
-</a>
-<a href="MonCompte?id=1">
-		<button type="button" class="btn">Mon compte</button>
-</a>
-<a href="Connexion">
-		<button type="button" class="btn">Connexion/Inscription</button>
-</a>
-<a href="apropos">
-		<button type="button" class="btn">A propos</button>
-</a>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
+<nav>
+    <ul>
+        <li><a href="index.jsp"><button type="button" class="btn">Accueil</button></a></li>
+        <li><a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a></li>
+        <li><a href="restaurant?id=1"><button type="button" class="btn">Un restaurant</button></a></li>
+        <c:choose>
+            <c:when test="${empty sessionScope.utilisateur}">
+                <!-- Display Connexion/Inscription if utilisateur is not in the session -->
+                <li><a href="Connexion"><button type="button" class="btn">Connexion/Inscription</button></a></li>
+            </c:when>
+            <c:otherwise>
+                <!-- Display My Account if utilisateur is in the session -->
+                <li><a href="MonCompte?id=${sessionScope.utilisateur.id}"><button type="button" class="btn">Mon compte</button></a></li>
+            </c:otherwise>
+        </c:choose>
+        <li><a href="apropos"><button type="button" class="btn">À propos</button></a></li>
+    </ul>
+</nav>

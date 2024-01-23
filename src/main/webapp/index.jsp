@@ -16,7 +16,7 @@
             <button>Click Me</button>
 
             <c:if test="${not empty sessionScope.utilisateur}">
-                <h2>Hello ${sessionScope.utilisateur}</h2>
+                <h2>Hello ${sessionScope.utilisateur.nom}</h2>
             </c:if>
         </div>
     </header>

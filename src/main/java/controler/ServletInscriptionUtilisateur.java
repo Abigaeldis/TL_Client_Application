@@ -41,7 +41,7 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
 
             // request.getSession().setAttribute("name", newUtilisateur);
             HttpSession session = request.getSession();
-            session.setAttribute("utilisateur", utilisateur);
+            session.setAttribute("utilisateur", newUtilisateur);
             int sessionTimeoutInSeconds = 30 * 60;
             session.setMaxInactiveInterval(sessionTimeoutInSeconds);
 
