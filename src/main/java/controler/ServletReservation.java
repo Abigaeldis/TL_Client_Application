@@ -2,11 +2,15 @@ package controler;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import bll.BLLException;
+import bll.HoraireBLL;
 import bll.ReservationBLL;
 import bll.RestaurantBLL;
 import bll.UtilisateurBLL;
+import bo.Horaire;
 import bo.Restaurant;
 import bo.Utilisateur;
 import jakarta.servlet.ServletException;
@@ -20,6 +24,7 @@ public class ServletReservation extends HttpServlet {
 	private RestaurantBLL restaurantBll;
 	private UtilisateurBLL utilisateurBll;
 	private ReservationBLL reservationBll;
+	private HoraireBLL horaireBll;
 	
 	public void init() throws ServletException {
 		super.init();
@@ -27,6 +32,8 @@ public class ServletReservation extends HttpServlet {
 			restaurantBll = new RestaurantBLL();
 			utilisateurBll = new UtilisateurBLL();
 			reservationBll = new ReservationBLL();
+			horaireBll = new HoraireBLL();
+			
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
@@ -43,7 +50,24 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		List<Horaire> horaires = new ArrayList<>();
+		List<Horaire> horairesRestaurant = new ArrayList<>();
+		
+		try {
+			horaires = horaireBll.selectAll();
+			for (Horaire current : horaires) {
+				
+				if (current.getRestaurant().getNom().equals(restaurant.getNom())) {
+					horairesRestaurant.add(current);
+				}
+			}
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		
+		// 4. Ajout des attributs éventuels à ma request
 		request.setAttribute("restaurant", restaurant);
+		request.setAttribute("horairesRestaurant", horairesRestaurant);
 		request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 	}
 

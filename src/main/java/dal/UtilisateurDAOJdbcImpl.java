@@ -13,13 +13,14 @@ import bo.Restaurant;
 import bo.Utilisateur;
 
 // CRUD
-public class UtilisateurDAOJdbcImpl implements GenericDAO<Utilisateur> {
+public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String TABLE_NAME = "utilisateurs";
 	private static final String DELETE = "DELETE FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String UPDATE = "UPDATE "+ TABLE_NAME +" SET nom = ?, prenom = ?, mail = ?, motdepasse = ?, telephone = ?, adresse = ? WHERE id = ?";
 	private static final String INSERT = "INSERT INTO "+ TABLE_NAME +" (nom, prenom, mail, motdepasse, telephone, adresse) VALUES (?,?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
+	private static final String SELECT_BY_NOM_AND_MOTDEPASSE = "SELECT * FROM "+ TABLE_NAME +" WHERE mail = ? AND motdepasse = ?";
 	
 	private Connection cnx;
 	
@@ -67,7 +68,7 @@ public class UtilisateurDAOJdbcImpl implements GenericDAO<Utilisateur> {
 				utilisateur = new Utilisateur();
 				utilisateur.setId(rs.getInt("id"));
 				utilisateur.setNom(rs.getString("nom"));
-				utilisateur.setNom(rs.getString("prenom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
 				utilisateur.setMail(rs.getString("mail"));
 				utilisateur.setMotdepasse(rs.getString("motdepasse"));
 				utilisateur.setTelephone(rs.getString("telephone"));
@@ -135,5 +136,30 @@ public class UtilisateurDAOJdbcImpl implements GenericDAO<Utilisateur> {
 		} catch (SQLException e) {
 			throw new DALException("Impossible de supprimer le composant d'id "+ id, e);
 		}
+	}
+	
+	public Utilisateur validateCredentials(String mail, String motdepasse) throws DALException {
+	    Utilisateur utilisateur = null;
+	    try {
+	        try (PreparedStatement ps = cnx.prepareStatement(SELECT_BY_NOM_AND_MOTDEPASSE)) {
+	            ps.setString(1, mail);
+	            ps.setString(2, motdepasse);
+	            ResultSet rs = ps.executeQuery();
+	            if (rs.next()) {
+	                utilisateur = new Utilisateur();
+	                utilisateur.setId(rs.getInt("id"));
+					utilisateur.setNom(rs.getString("nom"));
+					utilisateur.setNom(rs.getString("prenom"));
+					utilisateur.setMail(rs.getString("mail"));
+					utilisateur.setMotdepasse(rs.getString("motdepasse"));
+					utilisateur.setTelephone(rs.getString("telephone"));
+					utilisateur.setAdresse(rs.getString("adresse"));
+					utilisateur.setRole(rs.getString("role"));	
+	            }
+	        }
+	    } catch (SQLException e) {
+	        throw new DALException("Error validating credentials", e);
+	    }
+	    return utilisateur;
 	}
 }

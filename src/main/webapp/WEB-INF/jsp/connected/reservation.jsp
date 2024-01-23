@@ -25,5 +25,12 @@
 	<input type = "submit" value = "Demande de réservation">
 	<input type = "hidden" name = "id" value = "${restaurant.id}">
 </form>
+
+<h2>Horaires</h2>
+	<c:forEach var="current" items="${horairesRestaurant }">
+		<div class="horaires-container">
+	        <p>${current.jour} ${current.heureDeDebut} - ${current.heureDeFin}</p>
+	     </div>
+	</c:forEach>
 </body>
 </html>

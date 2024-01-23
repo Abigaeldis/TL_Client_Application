@@ -2,6 +2,9 @@ package controler;
 
 import java.io.IOException;
 
+import bll.BLLException;
+import bll.UtilisateurBLL;
+import bo.Utilisateur;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -21,18 +24,37 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 	}
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	        throws ServletException, IOException {
 	    String action = request.getParameter("action");
-	    String utilisateur = request.getParameter("utilisateur");
+	    String mail = request.getParameter("mail");
 	    String motdepasse = request.getParameter("motdepasse");
 	    if ("Inscription".equals(action)) {
-	        request.setAttribute("utilisateur", utilisateur);
+	        request.setAttribute("mail", mail);
 	        request.setAttribute("motdepasse", motdepasse);
 	        request.getRequestDispatcher("/WEB-INF/jsp/inscription.jsp").forward(request, response);
 	    } else if ("Connexion".equals(action)) {
-	        // faire la connexion
+	 
+	        try {
+	            UtilisateurBLL utilisateurBLL = new UtilisateurBLL();
+	            // Validate user credentials and retrieve the user object
+	            Utilisateur utilisateurObj = utilisateurBLL.authenticateUser(mail, motdepasse, request);
+	            if (utilisateurObj != null) {
+	                // If the user is valid, store the user object in the session
+	                request.getSession().setAttribute("utilisateur", utilisateurObj);
+	                // Redirect to the index.jsp
+	                response.sendRedirect("index.jsp");
+	            } else {
+	                // If the user is not valid, handle it accordingly
+	                request.setAttribute("errorMessage", "Échec d'authentification");
+	                request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
+	            }
+	        } catch (BLLException e) {
+	            // Handle BLLException, log or redirect as needed
+	            e.printStackTrace();
+	            response.sendRedirect("error.jsp"); // Redirect to an error page
+	        }
 	    }
-	   
 	}
 
 

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<p>${sessionScope.utilisateur }</p>
 <nav>
     <ul>
-        <li><a href="index.jsp"><button type="button" class="btn">Acceuil</button></a></li>
+        <li><a href="index.jsp"><button type="button" class="btn">Accueil</button></a></li>
         <li><a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a></li>
         <c:choose>
             <c:when test="${empty sessionScope.utilisateur}">
@@ -12,6 +12,7 @@
             <c:otherwise>
                 <!-- Display My Account if utilisateur is in the session -->
                 <li><a href="MonCompte?id=${sessionScope.utilisateur.id}"><button type="button" class="btn">Mon compte</button></a></li>
+                <li><a href="deconnexion"><button type="button" class="btn">Se déconnecter</button></a></li>
             </c:otherwise>
         </c:choose>
         <li><a href="apropos"><button type="button" class="btn">À propos</button></a></li>

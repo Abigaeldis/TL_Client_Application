@@ -98,6 +98,7 @@
     <servlet-name>ServletInscriptionUtilisateur</servlet-name>
     <url-pattern>/ServletInscriptionUtilisateur</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletModifierUtilisateur</display-name>
@@ -107,5 +108,16 @@
   <servlet-mapping>
     <servlet-name>ServletModifierUtilisateur</servlet-name>
     <url-pattern>/modifier</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+    <description></description>
+    <display-name>ServletDeconnexionUtilisateur</display-name>
+    <servlet-name>ServletDeconnexionUtilisateur</servlet-name>
+    <servlet-class>controler.ServletDeconnexionUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDeconnexionUtilisateur</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
 </web-app>

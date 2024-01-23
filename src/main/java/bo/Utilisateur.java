@@ -108,6 +108,12 @@ public class Utilisateur {
 	
 	
 
+	@Override
+	public String toString() {
+		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mail=" + mail + ", motdepasse="
+				+ motdepasse + ", telephone=" + telephone + ", adresse=" + adresse + ", role=" + role + ", restaurant="
+				+ restaurant + "]";
+	}
 
 }
 
