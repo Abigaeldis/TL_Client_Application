@@ -2,19 +2,19 @@
 <p>${sessionScope.utilisateur }</p>
 <nav>
     <ul>
-        <li><a href="index.jsp"><button type="button" class="btn">Accueil</button></a></li>
-        <li><a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a></li>
+       <a href="index.jsp"><button type="button" class="btn">Accueil</button></a>
+   <a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a>
         <c:choose>
             <c:when test="${empty sessionScope.utilisateur}">
                 <!-- Display Connexion/Inscription if utilisateur is not in the session -->
-                <li><a href="Connexion"><button type="button" class="btn">Connexion/Inscription</button></a></li>
+<a href="Connexion"><button type="button" class="btn">Connexion/Inscription</button></a>
             </c:when>
             <c:otherwise>
                 <!-- Display My Account if utilisateur is in the session -->
-                <li><a href="MonCompte?id=${sessionScope.utilisateur.id}"><button type="button" class="btn">Mon compte</button></a></li>
-                <li><a href="deconnexion"><button type="button" class="btn">Se déconnecter</button></a></li>
+           <a href="MonCompte?id=${sessionScope.utilisateur.id}"><button type="button" class="btn">Mon compte</button></a>
+     <a href="deconnexion"><button type="button" class="btn">Se déconnecter</button></a>
             </c:otherwise>
         </c:choose>
-        <li><a href="apropos"><button type="button" class="btn">À propos</button></a></li>
+        <a href="apropos"><button type="button" class="btn">À propos</button></a>
     </ul>
 </nav>

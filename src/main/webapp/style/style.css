@@ -8,21 +8,42 @@ body {
 
         header {
             position: relative;
-            height: 400px; /* Adjust the height based on your needs */
-            background: url("../img/header.png") center/cover no-repeat; /* Set the background image */
+            height: 810px; 
+            background: url("../img/header.png") center/cover no-repeat;
             color: #fff; /* Set text color to white or a suitable color for your design */
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        
+        .btnOrange{
+			border: none;
+			background-color: #F96540;
+			color: white;
+			border-radius: 25px;
+			height: 52px;
+			max-width: 244px;
+			padding: 0 35px;
+			cursor: pointer;
+		}
 
         .overlay {
             position: absolute;
+            background-color: white;
+            color: black;
             top: 50%;
-            left: 50%;
+            left: 20%;
             transform: translate(-50%, -50%);
             text-align: center;
+            height: 440px;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    		justify-content: center;
+    		padding: 0 45px;
+    		
         }
 
         .overlay h1 {
@@ -35,11 +56,80 @@ body {
             margin-bottom: 20px;
         }
 
-        .overlay button {
-            padding: 10px 20px;
-            font-size: 16px; /* Adjust the font size */
-            background-color: #007BFF; /* Set the button background color */
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+
+        
+        .presentation{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			padding: 5% 30%;
+			background-color:  #FAFAFB;
+		}
+		
+		.client{
+			display: flex;
+			max-height: 520px;
+			padding: 0 20%;
+		
+		}
+		.col1{
+			width: 50%;
+				display: flex;
+			flex-direction: column;
+		}
+		.client .col1 {
+			width: 50%;
+				display: flex;
+			flex-direction: column;
+			padding: 0 245px 0 0;
+		}
+		.client .col1 img{
+			border-radius: 50%;		
+			max-height: 64px;
+			width: 64px;	   
+		}
+		.col2 {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+		}
+		.client .col2 img{
+			max-width: 520px;
+			max-height: 520px;
+			object-fit: none;
+		}
+		
+		.restaurants{
+			position: relative;
+			height: 314px;
+			background-color: #171A1F;
+			margin: 125px 25%;
+			border-radius: 5px;
+			display: flex;
+		}
+		
+		.restaurants h2, .restaurants p {
+    		color: white;
+		}
+		
+		.restaurants .col1{
+			justify-content: center;
+			padding: 0 50px;
+		}
+		
+
+		
+		.petitbowl{
+			max-height: 165px;
+			width: 174px;
+		}
+		
+		.cutbowl{
+			position: absolute;
+            height: 200px;
+            bottom: 0%;
+ 			right: 5%;
+           /* transform: translate(-50%, -50%);*/
+
+		}
