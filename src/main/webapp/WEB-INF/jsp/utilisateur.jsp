@@ -11,8 +11,18 @@
 	<p>Nom : ${utilisateur.nom }</p>
 	<p>Prenom : ${utilisateur.prenom }</p>
 	<p>Mail : ${utilisateur.mail }</p>
+	<p>Mot de passe : ${utilisateur.motdepasse }</p>
 	<p>Telephone : ${utilisateur.telephone }</p>
 	<p>Adresse : ${utilisateur.adresse }</p>
-	<p>Role : ${utilisateur.role }</p>
+	
+	
+
+	
+	<form action="modifier" method="GET">
+	<input type="hidden" name="id" value="${utilisateur.id }" />
+	<input type="submit" value="Modifier mes informations" />
+	</form>
+	
+	
 </body>
 </html>

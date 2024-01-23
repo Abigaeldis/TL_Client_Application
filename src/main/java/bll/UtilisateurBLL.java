@@ -2,7 +2,6 @@ package bll;
 
 import java.util.List;
 
-import bo.Restaurant;
 import bo.Utilisateur;
 import dal.DALException;
 import dal.GenericDAO;
