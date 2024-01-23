@@ -1,5 +1,6 @@
 package bll;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -42,7 +43,18 @@ public class ReservationBLL {
 			Restaurant restaurant) throws BLLException {
 
 		BLLException blleException = new BLLException();
-
+		if (nbPersonne < 1) {
+			blleException.ajouterErreur("Veuillez choisir un nombre de personnes supérieur ou égal à 1.");
+		}
+		
+		if (date.isBefore(LocalDateTime.now())) {
+			blleException.ajouterErreur("Veuillez choisir une date à venir et non passée.");
+		}
+		
+		if (blleException.getErreurs().size() > 0) {
+			throw blleException;
+		}
+		
 		Reservation reservation = new Reservation(date, nbPersonne, utilisateur, restaurant);
 		try {
 			validateDate(date);

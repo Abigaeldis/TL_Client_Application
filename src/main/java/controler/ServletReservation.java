@@ -52,7 +52,6 @@ public class ServletReservation extends HttpServlet {
 		String dateReservationStr = request.getParameter("date");
 		String nbPersonneStr = request.getParameter("nbPersonne");
 		String idRestaurantStr = request.getParameter("id");
-		
 		//passage des String en int et date en localDateTime
 		int idRestaurant = Integer.parseInt(idRestaurantStr);
 		int nbPersonne = Integer.parseInt(nbPersonneStr);
@@ -74,13 +73,16 @@ public class ServletReservation extends HttpServlet {
 		
 		try {
 			reservationBll.insert(dateReservation, nbPersonne, utilisateur, restaurant);
+			request.setAttribute("dateReservation", dateReservation);
+			request.setAttribute("nbPersonne", nbPersonne);
+			request.setAttribute("restaurant", restaurant);
+			request.getRequestDispatcher("/WEB-INF/jsp/connected/demandeResOk.jsp").forward(request, response);
 		} catch (BLLException e) {
 			e.printStackTrace();
+			request.setAttribute("erreurs", e.getErreurs());
+			request.setAttribute("restaurant", restaurant);
+			request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 		}
-		request.setAttribute("dateReservation", dateReservation);
-		request.setAttribute("nbPersonne", nbPersonne);
-		request.setAttribute("restaurant", restaurant);
-		request.getRequestDispatcher("/WEB-INF/jsp/connected/demandeResOk.jsp").forward(request, response);
 	}
 
 }

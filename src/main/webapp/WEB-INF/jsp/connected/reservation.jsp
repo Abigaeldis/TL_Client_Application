@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,9 @@
 	<div>
 		<input type="number"  placeholder="nombre de personnes" name="nbPersonne" />
 	</div>
+	<c:forEach var="current" items="${erreurs }">
+		<p class="erreur">${current}</p>
+	</c:forEach>
 	<input type = "submit" value = "Demande de réservation">
 	<input type = "hidden" name = "id" value = "${restaurant.id}">
 </form>
