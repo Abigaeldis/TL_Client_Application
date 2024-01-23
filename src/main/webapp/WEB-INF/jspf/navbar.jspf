@@ -3,9 +3,8 @@
 
 <nav>
     <ul>
-        <li><a href="index.jsp"><button type="button" class="btn">Accueil</button></a></li>
+        <li><a href="index.jsp"><button type="button" class="btn">Acceuil</button></a></li>
         <li><a href="restaurants"><button type="button" class="btn">Nos Restaurants</button></a></li>
-        <li><a href="restaurant?id=1"><button type="button" class="btn">Un restaurant</button></a></li>
         <c:choose>
             <c:when test="${empty sessionScope.utilisateur}">
                 <!-- Display Connexion/Inscription if utilisateur is not in the session -->
