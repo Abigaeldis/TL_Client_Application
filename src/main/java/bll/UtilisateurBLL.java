@@ -1,16 +1,15 @@
 package bll;
 
-import java.util.Arrays;
 import java.util.List;
 
-import bo.Restaurant;
 import bo.Utilisateur;
 import dal.DALException;
-import dal.GenericDAO;
+import dal.UtilisateurDAO;
 import dal.UtilisateurDAOJdbcImpl;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class UtilisateurBLL {
-	private GenericDAO<Utilisateur> dao;
+	private UtilisateurDAO dao;
 	
 	public UtilisateurBLL() throws BLLException {
 		try {
@@ -61,4 +60,14 @@ public class UtilisateurBLL {
 			throw new BLLException("Echec de la suppression", e);
 		}
 	}
+	
+	public Utilisateur authenticateUser(String nom, String motdepasse, HttpServletRequest request) throws BLLException {
+	    try {
+	        return dao.validateCredentials(nom, motdepasse);
+	    } catch (DALException e) {
+	        throw new BLLException("Error authenticating user", e);
+	    }
+	}
+
+
 }
