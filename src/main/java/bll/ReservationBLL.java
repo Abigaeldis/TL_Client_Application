@@ -1,5 +1,6 @@
 package bll;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,20 +39,30 @@ public class ReservationBLL {
 		}
 	}
 
-	public Reservation insertReservation(int id, LocalDateTime date, String statut, int nbPersonne, Utilisateur utilisateur, Table table,
+	public Reservation insert(LocalDateTime date, int nbPersonne, Utilisateur utilisateur,
 			Restaurant restaurant) throws BLLException {
 
 		BLLException blleException = new BLLException();
-
-		Reservation horaire = new Reservation(id, date, statut, nbPersonne, utilisateur, table,
-				restaurant);
+		if (nbPersonne < 1) {
+			blleException.ajouterErreur("Veuillez choisir un nombre de personnes supérieur ou égal à 1.");
+		}
+		
+		if (date.isBefore(LocalDateTime.now())) {
+			blleException.ajouterErreur("Veuillez choisir une date à venir et non passée.");
+		}
+		
+		if (blleException.getErreurs().size() > 0) {
+			throw blleException;
+		}
+		
+		Reservation reservation = new Reservation(date, nbPersonne, utilisateur, restaurant);
 		try {
 			validateDate(date);
-			dao.insert(horaire);
+			dao.insert(reservation);
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
-		return horaire;
+		return reservation;
 	}
 
 	public void update(Reservation reservation) throws BLLException {

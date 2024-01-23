@@ -14,14 +14,10 @@ public class Reservation {
 	public Reservation() {
 	}
 
-	public Reservation(int id, LocalDateTime date, String statut, int nbPersonne, Utilisateur utilisateur, Table table,
-			Restaurant restaurant) {
-		this.id = id;
+	public Reservation(LocalDateTime date, int nbPersonne, Utilisateur utilisateur, Restaurant restaurant) {
 		this.date = date;
-		this.statut = statut;
 		this.nbPersonne = nbPersonne;
 		this.utilisateur = utilisateur;
-		this.table = table;
 		this.restaurant = restaurant;
 	}
 

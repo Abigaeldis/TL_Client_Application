@@ -15,6 +15,16 @@ public class Utilisateur {
 		super();
 	}
 	
+	public Utilisateur(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.motdepasse = motdepasse;
+		this.telephone = telephone;
+		this.adresse = adresse;
+	}
+
 	public Utilisateur(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse,
 			String role, Restaurant restaurant) {
 		super();

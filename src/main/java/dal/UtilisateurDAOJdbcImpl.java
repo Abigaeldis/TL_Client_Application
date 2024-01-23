@@ -17,7 +17,7 @@ public class UtilisateurDAOJdbcImpl implements GenericDAO<Utilisateur> {
 	private static final String TABLE_NAME = "utilisateurs";
 	private static final String DELETE = "DELETE FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String UPDATE = "UPDATE "+ TABLE_NAME +" SET nom = ?, prenom = ?, mail = ?, motdepasse = ?, telephone = ?, adresse = ?, role = ? WHERE id = ?";
-	private static final String INSERT = "INSERT INTO "+ TABLE_NAME +" (nom, prenom, mail, motdepasse, telephone, adresse, role) VALUES (?,?,?,?,?,?,?)";
+	private static final String INSERT = "INSERT INTO "+ TABLE_NAME +" (nom, prenom, mail, motdepasse, telephone, adresse) VALUES (?,?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
@@ -95,8 +95,6 @@ public class UtilisateurDAOJdbcImpl implements GenericDAO<Utilisateur> {
 			ps.setString(4, utilisateur.getMotdepasse());
 			ps.setString(5, utilisateur.getTelephone());
 			ps.setString(6, utilisateur.getAdresse());
-			ps.setString(7, utilisateur.getRole());			
-			ps.setInt(8, utilisateur.getRestaurant().getId());
 			ps.executeUpdate();
 			
 			// Le bloc suivant permet de faire la récupération de l'id
