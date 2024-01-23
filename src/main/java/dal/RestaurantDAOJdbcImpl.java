@@ -27,23 +27,20 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
-	private Connection cnx;
-		
+	////////////////////////////////////////////////////////////////////////
 	public RestaurantDAOJdbcImpl() throws DALException {
-		cnx = ConnectionProvider.getConnection();
 	}
 	
-	////////////////////////////////////////////////////////////////////////
-	
-	
 	public List<Restaurant> selectAll() throws DALException {
+		System.out.println("Entrée dans le SelectAll de restaurant");
 		List<Restaurant> restaurants = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
 		
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+				System.out.println("Resto suivant");
 				Restaurant restaurant = new Restaurant();
 				restaurant.setId(rs.getInt("id"));
 				restaurant.setNom(rs.getString("nom"));
@@ -63,8 +60,9 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public Restaurant selectById(int id) throws DALException {
+		System.out.println("Entrée dans SelectById");
 		Restaurant restaurant = null;
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
 			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
 			ResultSet rs = ps.executeQuery();
@@ -86,7 +84,7 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public void insert(Restaurant restaurant) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setString(1, restaurant.getNom());
@@ -107,7 +105,7 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public void update(Restaurant restaurant) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, restaurant.getNom());
 			ps.setString(2, restaurant.getAdresse());
@@ -121,7 +119,7 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public void delete(int id) throws DALException {
-		try {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
 			ps.setString(1, "FERME");
 			ps.setInt(2, id);

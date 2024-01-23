@@ -39,7 +39,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 				Utilisateur utilisateur = new Utilisateur();
 				utilisateur.setId(rs.getInt("id"));
 				utilisateur.setNom(rs.getString("nom"));
-				utilisateur.setNom(rs.getString("prenom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
 				utilisateur.setMail(rs.getString("mail"));
 				utilisateur.setMotdepasse(rs.getString("motdepasse"));
 				utilisateur.setTelephone(rs.getString("telephone"));
