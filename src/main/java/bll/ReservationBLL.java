@@ -38,20 +38,19 @@ public class ReservationBLL {
 		}
 	}
 
-	public Reservation insertReservation(int id, LocalDateTime date, String statut, int nbPersonne, Utilisateur utilisateur, Table table,
+	public Reservation insert(LocalDateTime date, int nbPersonne, Utilisateur utilisateur,
 			Restaurant restaurant) throws BLLException {
 
 		BLLException blleException = new BLLException();
 
-		Reservation horaire = new Reservation(id, date, statut, nbPersonne, utilisateur, table,
-				restaurant);
+		Reservation reservation = new Reservation(date, nbPersonne, utilisateur, restaurant);
 		try {
 			validateDate(date);
-			dao.insert(horaire);
+			dao.insert(reservation);
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
-		return horaire;
+		return reservation;
 	}
 
 	public void update(Reservation reservation) throws BLLException {
