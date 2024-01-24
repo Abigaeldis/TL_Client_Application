@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<footer>
+<div class="container_footer">
+	<div class="col1_footer">
+		<div class="logo_footer">
+			<img alt="" src="img/logo_dark.png">
+			<h2>POKE NOW.</h2>
+		</div>
+		<div class="quick_access">
+			<ul>
+				<li><a href="index.jsp">Accueil</a></li>
+				<li><a href="restaurants">Nos
+					Restaurants</a></li>
+				<c:choose>
+					<c:when test="${empty sessionScope.utilisateur}">
+					<!-- Display Connexion/Inscription if utilisateur is not in the session -->
+						<li><a href="Connexion">Connexion/Inscription</a></li>
+					</c:when>
+					<c:otherwise>
+					<!-- Display My Account if utilisateur is in the session -->
+						<li><a href="MonCompte?id=${sessionScope.utilisateur.id}">Mon compte</a></li>
+						<li><a href="deconnexion">Se
+							déconnecter</a></li>
+					</c:otherwise>
+				</c:choose>
+			<li><a href="apropos">À
+					propos</a></li>
+			</ul>
+		</div>
+		<div class="copyright"><p>© 2022 Brand, Inc. • Privacy • Terms • Sitemap</p></div>
+	</div>
+	<div class="col2_footer">
+		<div>
+			<button class="btnDark">Nos restaurants</button>
+			<button class="btnOrange">Connectez vous</button>
+		</div>
+		<p>37 rue des petits codeurs, 44240, La Chapelle-sur-Erdre</p>
+		<p>info@pokebar.com</p>
+		<div class="social_media">
+    		<i class="fab fa-linkedin"></i>
+    		<i class="fab fa-twitter"></i>
+    		<i class="fab fa-youtube"></i>
+    		<i class="fab fa-instagram"></i>
+		</div>
+		
+	</div>
+</div>
+</footer>

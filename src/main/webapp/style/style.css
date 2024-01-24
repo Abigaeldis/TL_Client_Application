@@ -5,8 +5,7 @@ body {
             padding: 0;
             font-family: Arial, sans-serif;
         }
-
-        header {
+header {
             position: relative;
             height: 810px; 
             background: url("../img/header.png") center/cover no-repeat;
@@ -15,7 +14,9 @@ body {
             align-items: center;
             justify-content: center;
         }
-        .nav {
+        
+        
+.nav {
   position: fixed;
   background-color: #fff;
   top: 0;
@@ -74,6 +75,18 @@ body {
 			border: none;
 			background-color: #F96540;
 			color: white;
+			border-radius: 25px;
+			height: 52px;
+			max-width: 244px;
+			padding: 0 35px;
+			cursor: pointer;
+		}
+		
+		.btnDark{
+			background-color: #171A1F;
+			color: #F96540;
+			border: solid 1px;
+			border-color: #F96540;
 			border-radius: 25px;
 			height: 52px;
 			max-width: 244px;
@@ -190,3 +203,59 @@ body {
            /* transform: translate(-50%, -50%);*/
 
 		}
+		
+		
+		/* FOOTER */
+		.container_footer{
+			display: flex;
+    		justify-content: space-between;
+    		padding: 0 10%;
+    		background-color: #171A1F;
+    		height: 323px;
+		}
+		
+		.col1_footer{
+			color: white;
+			width: 40%;
+		}
+		.logo_footer{
+			display: flex;
+			margin: 25px 0;
+		}
+		
+		.col1_footer a{
+			text-decoration: none;
+		}
+		.col1_footer a, a:visited, a:hover, a:active{
+			color: inherit;
+			text-decoration: none;
+		}
+		
+		.col1_footer ul{
+			list-style-type: none;
+			display: flex;
+		}
+		
+		.col1_footer ul li{
+			margin : 0 15px;
+		}
+		
+		
+		.logo_footer img{
+			margin-right: 25px;
+		}
+		
+		.quick_access{
+			display: flex;
+		}
+		
+		.col2_footer{
+			margin-top: 25px;
+			color: white;
+		}
+		
+		.col2_footer button{
+			max-width: 125px;
+			height: 44px;
+		}
+		
