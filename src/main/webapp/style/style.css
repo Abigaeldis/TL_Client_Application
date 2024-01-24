@@ -321,3 +321,81 @@ h1{
   max-width: 125px;
   height: 44px;
 }
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------         CSS MESSAGERIE          ---------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.img_banniere_messagerie {
+	width: 100%;	
+	max-width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+
+.titre_messagerie {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.container_messagerie {
+  display: flex;
+  justify-content: center;
+  width: 100%;	
+	max-width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
+}
+
+.form_messagerie {
+	width: 70%;
+}
+
+.div_titre_message{
+	padding-top: 40px;
+}
+.titre_message {
+	width:100%;
+	height: 50px;
+	padding-left: 30px;
+	border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #F96540;
+}
+
+.div_corps_message {
+	padding-top: 40px;	
+}
+
+.corps_message {
+	width:100%;
+	min-width: 100%;
+	height: 300px;
+	margin:auto;
+	padding-top: -50px;
+	padding-left: 30px;
+	border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #F96540;
+}
+
+.btnOrange_messagerie {
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+

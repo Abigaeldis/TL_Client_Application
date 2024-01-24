@@ -11,7 +11,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
-	<img class="img_baniere" alt="baniere_detail_restaurant" src="img/baniere_detail_restaurant.png">
+	<img class="img_banniere" alt="banniere_detail_restaurant" src="img/banniere_detail_restaurant.png">
 	<div class="title">
 	<h1>${restaurant.nom }</h1>
 	</div>
@@ -35,11 +35,13 @@
 					carte</button></a> <a href="reserver?id=${restaurant.id}"><button>Réserver</button></a>
 
 			<a href="contacter?id=${restaurant.id}"><button>Contacter</button></a>
-			<p>
+		
 		</div>
 	</div>
 	<a href="restaurants"><button class="retour">Retourner à la liste</button></a>
-	</p>
+	
+	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+	<script src="script/navbarScript.js"></script>
 
 </body>
 </html>

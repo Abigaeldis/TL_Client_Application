@@ -27,6 +27,9 @@
     	<% if (errorMessage != null && !errorMessage.isEmpty()) { %>
        		<p style="color: red;"><%= errorMessage %></p>
    		 <% } %>
+   		 
+   		 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+	<script src="script/navbarScript.js"></script>
     </form>
 </body>
 </html>
