@@ -254,10 +254,6 @@ header {
     position: relative;
     height: 379px; 
     background: url("../img/sauce.png") center/cover no-repeat;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 h1{
@@ -267,7 +263,126 @@ h1{
 .liste_container{
 	flex-direction: row;
 }
-		
+
+/*Mon Compte*/
+.compte-container, 
+.messages-container {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infos-container {
+    width: 40%;
+	display: flex;
+	flex-direction: column;
+    border: 1px solid #ddd; /* Bordure de la case */
+    margin: 10px; /* Marge externe */
+    border-radius: 8px; /* Coins arrondis */
+    transition: box-shadow 0.3s ease; 
+    box-shadow: 0px 0px 1px 0px #171A1F12;
+}
+
+.message-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.infos-container:hover {
+    /* Style de l'ombre au survol */
+    box-shadow: 0px 0px 2px 0px #171A1F1F;
+}
+
+/* Style pour le bouton "Détails" */
+.compte-container a button{
+	background-color: white;
+	border: 1px solid #F96540;
+    color:  #F96540; /* Couleur du texte */
+    margin-top: 10px;
+    padding: 8px 16px; /* Espacement interne */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur au survol */
+}
+
+.compte-container a button:hover {
+    background-color: rgb(240, 240, 240);; /* Couleur de fond au survol */
+}
+.infos-container h2 {
+    padding-left: 16px; /* Espacement interne */
+	line-height: 26px;
+	text-align: left;
+}
+
+.infos-container p {
+    padding-left: 16px; /* Espacement interne */
+    font-style: italic;
+    color: #6E7787;
+}
+
+.compte-container a {
+    padding-left: 16px; /* Espacement interne */
+    padding-bottom: 20px;
+}
+	
+.message-container {
+    padding: 10px; /* Ajouter un espacement autour du message */
+}
+
+.message-container h3,
+.message-container p {
+    padding: 10px; /* Ajouter un espacement autour du message */
+    margin-left: 5%;
+}
+
+.message-container:nth-child(even) {
+    background-color: #FAFAFB;
+}
+
+.message-container h3 {
+    margin-bottom: 5px; /* Ajouter un espace en dessous du titre */
+}
+
+.input_style{
+	border: none;
+	border-bottom: 2px solid #F96540;
+	outline: none;
+}
+
+.input_style, .input_style:focus {
+	border-bottom-color: #F96540;
+}
+
+.compte-container form {
+    width: 300px; 
+}
+
+.compte-container label {
+    color: #F96540;
+}
+
+.compte-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.compte-container .button_style {
+    background-color: white;
+	border: 1px solid #F96540;
+    color:  #F96540;
+    margin-top: 10px;
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.compte-container .button_style:hover {
+    background-color:#FAFAFB;
+}
+
 /* FOOTER */
 .container_footer{
   display: flex;

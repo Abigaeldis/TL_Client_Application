@@ -5,30 +5,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Mon compte</title>
+<link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
-	<p>Nom : ${utilisateur.nom }</p>
-	<p>Prenom : ${utilisateur.prenom }</p>
-	<p>Mail : ${utilisateur.mail }</p>
-	<p>Mot de passe : ${utilisateur.motdepasse }</p>
-	<p>Telephone : ${utilisateur.telephone }</p>
-	<p>Adresse : ${utilisateur.adresse }</p>
+	<div class = "header-restaurant">
+	</div>
+	<div class= "compte-container">
+		<h1>Mes informations</h1>
+		<div class = "infos-container">
+			<p>Nom : ${utilisateur.nom }</p>
+			<p>Prenom : ${utilisateur.prenom }</p>
+			<p>Mail : ${utilisateur.mail }</p>
+			<p>Mot de passe : ${utilisateur.motdepasse }</p>
+			<p>Telephone : ${utilisateur.telephone }</p>
+			<p>Adresse : ${utilisateur.adresse }</p>
+		</div>
 	
-	<h2>Messages envoyés</h2>
+		<a href="modifier?id=${utilisateur.id }"><button>Modifier mes informations</button></a>
+	</div>
+
+	<div class = "messages-container">
+	<h1>Messages envoyés</h1>
 	<c:forEach var="current" items="${messages }">
 		<div class="message-container">
 	          <h3>${current.titre} - ${current.restaurant.nom}</h3>
 	          <p>${current.corpsMessage}</p>
 	     </div>
 	</c:forEach>
+	</div>
 	
-	<form action="modifier" method="GET">
-	<input type="hidden" name="id" value="${utilisateur.id }" />
-	<input type="submit" value="Modifier mes informations" />
-	</form>
-	
-	
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+<script src="script/navbarScript.js"></script>
 </body>
 </html>
