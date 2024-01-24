@@ -385,6 +385,18 @@ h1{
 
 /*RESERVATION*/
 
+.container-global-reservation{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.container-global-reservation .compte-container,
+.horaires{
+	width : 30%;
+}
+
 .horaires{
 	display: flex;
 	flex-direction: column;
@@ -394,8 +406,12 @@ h1{
 	background-color: #171A1F;
 	padding: 10px;
 	border-radius: 5px;
+	margin-left: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	margin-bottom: 15px;
+}
+
+.horaires h2{
+	color : #F96540;
 }
 
 .reservation_envoye{

@@ -12,8 +12,11 @@
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 <div class = "header-restaurant">
 	</div>
+
+
 <h1>Réservation</h1>
 
+<div class = "container-global-reservation">
 <div class= "compte-container">
 	<form action="reserver" method="POST">
 	<p>Vous cherchez à réserver une table dans le restaurant ${restaurant.nom }</p>
@@ -41,6 +44,7 @@
 	        <p>${current.jour} ${current.heureDeDebut} - ${current.heureDeFin}</p>
 	     </div>
 	</c:forEach>
+</div>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
 <script src="script/navbarScript.js"></script>
