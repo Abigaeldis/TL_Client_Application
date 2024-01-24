@@ -14,7 +14,8 @@
 		<div class="overlay">
 			<h1>Retrouvez la fraicheur de nos bowls</h1>
 			<p>N'attendez plus et rejoignez nous.</p>
-			<a href="Connexion"><button class="btnOrange">Connectez vous</button></a>
+			<a href="Connexion"><button class="btnOrange">Connectez
+					vous</button></a>
 
 			<c:if test="${not empty sessionScope.utilisateur}">
 				<h2>Hello ${sessionScope.utilisateur.nom}</h2>
@@ -53,12 +54,15 @@
 		<div class="col1">
 			<h2>Trouvez nous</h2>
 			<p>Nous servons de délicieux et frais plats dans toute la France</p>
-			<a href="restaurants"><button type="button" class="btnOrange">Découvrez nos Restaurants</button></a>
+			<a href="restaurants"><button type="button" class="btnOrange">Découvrez
+					nos Restaurants</button></a>
 		</div>
 		<div class="col2">
 			<img alt="delicieux petit bowl" class="petitbowl" src="img/bowl3.png">
 			<img alt="delicieux bowl" class="cutbowl" src="img/bowl2.png">
 		</div>
 	</div>
+	<script src="script/navbarScript.js"></script>
 </body>
+
 </html>
