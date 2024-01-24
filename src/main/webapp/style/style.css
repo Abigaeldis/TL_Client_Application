@@ -504,3 +504,71 @@ h1{
   height: 44px;
 }
 
+
+/* INSCRIPTION */
+
+.inscription_form{
+	display: flex;
+	margin-bottom: 30px;
+	}
+.inscription_form form{
+	display: flex;
+	flex-direction: column;
+	}
+.form-control{
+	display: flex;
+	flex-direction: column;
+}
+
+.form-control input{
+	margin:0;
+	margin-bottom: 10px;
+}
+.form-control label{
+	color: #F96540;
+}
+
+.container_inscription{
+
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			background-color: #FAFAFB;
+			padding-bottom: 30px;
+			padding-top: 30px;
+		}
+		
+		.col_1_inscription{
+			padding-top: 15px;
+			background-color:  #FAFAFB;
+			display: flex;
+    align-items: center;
+    width: 11%;
+		}
+		.col_1_inscription form{
+			width: 100%;
+			padding: 0 10%;
+		}
+		
+		.label_inscription{
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.label_inscription label{
+			margin-top: 30px;
+		}
+		
+		.col_2_inscription img{
+			height: 300px;
+   			 object-fit: cover;
+		}
+		
+		.inscription_btn{
+			transform: translate(100px,20px);
+		}
+		
+		.extra_margin{
+			margin-bottom:13px !important;
+		}
+
