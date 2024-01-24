@@ -1,39 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Modifier mes informations</title>
+<link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
-	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
-	<h2>Bonjour ${utilisateur.prenom }, quelle information souhaitez-vous modifier?</h2>
-	<br>
+<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
+<div class = "header-restaurant"></div>
+<h1>Modification des informations</h1>
+<div class= "compte-container">
 	<form action="modifier" method="POST">
-		<input type="hidden" name="id" value="${utilisateur.id }" />
+		<input class= "input_style" type="hidden" name="id" value="${utilisateur.id }" />
 		<div>
-			<input type="text" name="nom" value="${utilisateur.nom }" />
+			<label>Prénom</label>
+			<input class= "input_style" type="text" name="nom" value="${utilisateur.nom }" />
 		</div>
 		<div>
-			<input type="text" name="prenom" value="${utilisateur.prenom }" />
+			<label>Nom</label>
+			<input class= "input_style" type="text" name="prenom" value="${utilisateur.prenom }" />
 		</div>
 		<div>
-			<input type="text" name="mail" value="${utilisateur.mail }" />
+			<label>Mail</label>
+			<input class= "input_style" type="text" name="mail" value="${utilisateur.mail }" />
 		</div>
 		<div>
-			<input type="password" name="motdepasse" value="${utilisateur.motdepasse }" />
+			<label>Mot de passe</label>
+			<input class= "input_style" type="password" name="motdepasse" value="${utilisateur.motdepasse }" />
 		</div>
 		<div>
-			<input type="text" name="telephone" value="${utilisateur.telephone }" />
+			<label>Téléphone</label>
+			<input class= "input_style" type="text" name="telephone" value="${utilisateur.telephone }" />
 		</div>
 		<div>
-			<input type="text" name="adresse" value="${utilisateur.adresse }" />
+			<label>Adresse</label>
+			<input class= "input_style" type="text" name="adresse" value="${utilisateur.adresse }" />
 		</div>
 		<div>
-			<input type="submit" value="Enregistrer" />
+			<input class= "button_style" type="submit" value="Enregistrer" />
 		</div>
 	</form>
-
+</div>
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+<script src="script/navbarScript.js"></script>
 </body>
 </html>
