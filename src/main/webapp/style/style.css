@@ -383,72 +383,105 @@ h1{
     background-color:#FAFAFB;
 }
 
-		/* CONNEXION */ 
-		
-		.banner_connexion{
-			height: 450px;
-    		width: 100%;
-    		object-fit: cover;
-		}
-		
-		.title_connexion{
-			text-align: center;
-		}
-		.container_connexion{
+/*RESERVATION*/
 
-			display: flex;
-			justify-content: center;
-			width: 100%;
-			background-color: #FAFAFB;
-			padding-bottom: 30px;
-			padding-top: 30px;
-		}
-		
-		.col_1_connexion{
-			padding-top: 15px;
-			background-color:  #FAFAFB;
-			display: flex;
+.horaires{
+	display: flex;
+	flex-direction: column;
     align-items: center;
-    width: 30%;
-		}
-		.col_1_connexion form{
-			width: 100%;
-			padding: 0 10%;
-		}
-		
-		.label_connexion{
-			display: flex;
-			flex-direction: column;
-		}
-		
-		.label_connexion label{
-			margin-top: 30px;
-		}
-		
-		.col_2_connexion img{
-			height: 300px;
-   			 object-fit: cover;
-		}
-		
+    justify-content: center;
+	color: white;
+	background-color: #171A1F;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 15px;
+}
 
-		
-		.input_style{
-			margin: 15px 0;
-			margin-left: 15px;
-			border: none; 
-   			border-bottom: 2px solid #F96540; 
-   			background-color: #FAFAFB ;
-    		outline: none; 
-		}
-		
-		.input_style, .input_style:focus {
-    		border-bottom-color: #F96540; 
-		}
-		
-		.container_btn {
-			display: flex;
-			justify-content: space-around;
-		}
+.reservation_envoye{
+	width : 60%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.reservation_envoyee{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.erreur{
+	color : #F96540;
+	font-style:italic; 
+}
+
+/* CONNEXION */ 
+
+.banner_connexion{
+	height: 450px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.title_connexion{
+	text-align: center;
+}
+.container_connexion{
+
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #FAFAFB;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+.col_1_connexion{
+	padding-top: 15px;
+	background-color:  #FAFAFB;
+	display: flex;
+	align-items: center;
+	width: 30%;
+	}
+.col_1_connexion form{
+	width: 100%;
+	padding: 0 10%;
+}
+
+.label_connexion{
+	display: flex;
+	flex-direction: column;
+}
+
+.label_connexion label{
+	margin-top: 30px;
+}
+
+.col_2_connexion img{
+	height: 300px;
+	 object-fit: cover;
+}
+
+
+
+.input_style{
+	margin: 15px 0;
+	margin-left: 15px;
+	border: none; 
+	border-bottom: 2px solid #F96540; 
+	background-color: #FAFAFB ;
+	outline: none; 
+}
+
+.input_style, .input_style:focus {
+	border-bottom-color: #F96540; 
+}
+
+.container_btn {
+	display: flex;
+	justify-content: space-around;
+}
 
 /* FOOTER */
 .container_footer{
