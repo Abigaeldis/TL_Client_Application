@@ -1,50 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
-    <div class="container">
-      <h1>Name of user</h1>
-      <form action="ServletInscriptionUtilisateur" method="post">
-        <div class="form-control">
-          <label for="prenom">Prenom : </label>
-          <input type="text" name=prenom required />
-        </div>
-        
-        <div class="form-control">
-          <label for="nom">Nom : </label>
-          <input type="text" name="nom" required />
-        </div>
-        
-        <div class="form-control">
-          <label for="motdepasse">Mot de passe : </label>
-          <input type="password" name="motdepasse" value="${motdepasse }" required />
-        </div>
+	<img alt="" class="banner_connexion" src="img/banner_connexion.jpg">
 
-        <div class="form-control">        
-          <label for="mail">Mail : </label>
-          <input type="text" name="mail" value="${mail }" required />
-        </div>
+	<h1>Création de votre compte</h1>
+	<div class="container_inscription">
+		<div class="col_1_inscription">
+			<div class="inscription_form">
+				<form action="ServletInscriptionUtilisateur" method="post">
+					<div class="form-control">
+						<label for="prenom">Prenom : </label> <input class="input_style extra_margin"
+							type="text" name=prenom required />
+					</div>
 
-        <div class="form-control">
-          <label for="telephone">telephone : </label>
-          <input type="text" name="telephone" required />
-        </div>
+					<div class="form-control">
+						<label for="nom">Nom : </label> <input class="input_style extra_margin"
+							type="text" name="nom" required />
+					</div>
 
-        <div class="form-control">
-          <label for="adresse">Adresse : </label>
-        	<input type="text" name="adresse" required />
-        </div>
+					<div class="form-control">
+						<label for="motdepasse">Mot de passe : </label> <input
+							class="input_style" type="password" name="motdepasse"
+							value="${motdepasse }" required />
+					</div>
 
+					<div class="form-control">
+						<label for="mail">Mail : </label> <input class="input_style extra_margin"
+							type="text" name="mail" value="${mail }" required />
+					</div>
 
-        <input type="submit" value="Insérer" class="btn" />
-      </form>
-    </div>
+					<div class="form-control">
+						<label for="telephone">telephone : </label> <input
+							class="input_style extra_margin" type="text" name="telephone" required />
+					</div>
 
+					<div class="form-control">
+						<label for="adresse">Adresse : </label> <input class="input_style extra_margin"
+							type="text" name="adresse" required />
+					</div>
+
+				<input type="submit" value="Inscription" class="btnOrange inscription_btn" />
+					
+				</form>
+
+			</div>
+		</div>
+		<div class="col_2_inscription">
+			<img alt="" src="img/bowl1.png">
+		</div>
+	</div>
+	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+	<script src="script/navbarScript.js"></script>
 </body>
 </html>
