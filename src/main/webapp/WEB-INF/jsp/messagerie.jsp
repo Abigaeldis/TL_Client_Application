@@ -17,7 +17,7 @@
 	</div>
 	<br>
 	<div>
-	<input type="text" name="corpsDuMessage" placeholder="Votre message">
+	<textarea name="corpsDuMessage" placeholder="Votre message"></textarea>
 	</div>
 	<input type="hidden" name="idUtilisateur" value="${utilisateur.id }">
 	<input type="hidden" name="idRestaurant" value="${restaurant.id }">

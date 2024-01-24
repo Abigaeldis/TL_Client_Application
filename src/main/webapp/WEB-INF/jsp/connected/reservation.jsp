@@ -24,6 +24,7 @@
 	</c:forEach>
 	<input type = "submit" value = "Demande de réservation">
 	<input type = "hidden" name = "id" value = "${restaurant.id}">
+	<input type="hidden" name="idUtilisateur" value="${utilisateur.id }">
 </form>
 
 <h2>Horaires</h2>

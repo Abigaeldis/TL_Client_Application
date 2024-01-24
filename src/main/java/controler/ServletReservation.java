@@ -76,8 +76,10 @@ public class ServletReservation extends HttpServlet {
 		String dateReservationStr = request.getParameter("date");
 		String nbPersonneStr = request.getParameter("nbPersonne");
 		String idRestaurantStr = request.getParameter("id");
+		String idUtilisateurStr = request.getParameter("idUtilisateur");
 		//passage des String en int et date en localDateTime
 		int idRestaurant = Integer.parseInt(idRestaurantStr);
+		int idUtilisateur  = Integer.parseInt(idUtilisateurStr);
 		int nbPersonne = Integer.parseInt(nbPersonneStr);
 		LocalDateTime dateReservation = LocalDateTime.parse(dateReservationStr);
 		
@@ -90,7 +92,7 @@ public class ServletReservation extends HttpServlet {
 		
 		Utilisateur utilisateur = null;
 		try {
-			utilisateur = utilisateurBll.selectById(1);
+			utilisateur = utilisateurBll.selectById(idUtilisateur);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}

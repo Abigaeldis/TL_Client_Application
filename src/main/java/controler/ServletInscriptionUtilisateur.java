@@ -1,6 +1,7 @@
 package controler;
 
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
 import bll.UtilisateurBLL;
@@ -27,7 +28,7 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String prenom = request.getParameter("prenom");
+    	String prenom = request.getParameter("prenom");
         String nom = request.getParameter("nom");
         String motdepasse = request.getParameter("motdepasse");
         String mail = request.getParameter("mail");
@@ -35,7 +36,8 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
         String adresse = request.getParameter("adresse");
 
         try {
-            Utilisateur newUtilisateur = utilisateurBLL.insert(nom, prenom, mail, motdepasse, telephone,
+            
+        	Utilisateur newUtilisateur = utilisateurBLL.insert(nom, prenom, mail, motdepasse, telephone,
                     adresse);
             System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
 
