@@ -98,7 +98,6 @@
     <servlet-name>ServletInscriptionUtilisateur</servlet-name>
     <url-pattern>/ServletInscriptionUtilisateur</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletModifierUtilisateur</display-name>
@@ -108,9 +107,8 @@
   <servlet-mapping>
     <servlet-name>ServletModifierUtilisateur</servlet-name>
     <url-pattern>/modifier</url-pattern>
-   </servlet-mapping>
-
-   <servlet>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>ServletDeconnexionUtilisateur</display-name>
     <servlet-name>ServletDeconnexionUtilisateur</servlet-name>
@@ -120,4 +118,19 @@
     <servlet-name>ServletDeconnexionUtilisateur</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>SessionFilter</display-name>
+    <filter-name>SessionFilter</filter-name>
+    <filter-class>filters.SessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionFilter</filter-name>
+    <url-pattern>/contacter/*</url-pattern>
+    <url-pattern>/deconnexion/*</url-pattern>
+    <url-pattern>/reserver/*</url-pattern>
+    <url-pattern>/modifier/*</url-pattern>
+    <url-pattern>/MonCompte/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
 </web-app>
