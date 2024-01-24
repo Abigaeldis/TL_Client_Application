@@ -32,15 +32,13 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public List<Restaurant> selectAll() throws DALException {
-		System.out.println("Entrée dans le SelectAll de restaurant");
 		List<Restaurant> restaurants = new ArrayList<>(); 
 		// alt + shift + r pour renommer partout
 		
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				System.out.println("Resto suivant");
+			while (rs.next()) { 
 				Restaurant restaurant = new Restaurant();
 				restaurant.setId(rs.getInt("id"));
 				restaurant.setNom(rs.getString("nom"));

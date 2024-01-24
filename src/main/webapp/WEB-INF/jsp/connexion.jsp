@@ -22,7 +22,6 @@
         
         <!-- Button to perform "Se connecter" action -->
         <button type="submit" name="action" value="Connexion">Se connecter</button>
-        
         <%-- Check for error message and display if present --%>
    		 <% String errorMessage = (String)request.getAttribute("errorMessage"); %>
     	<% if (errorMessage != null && !errorMessage.isEmpty()) { %>
