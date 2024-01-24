@@ -113,8 +113,6 @@ header {
     margin-bottom: 20px;
 }
 
-
-
 .presentation{
 	display: flex;
 	flex-direction: column;
@@ -269,7 +267,57 @@ h1{
 .liste_container{
 	flex-direction: row;
 }
+		
+/* FOOTER */
+.container_footer{
+  display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    background-color: #171A1F;
+    height: 323px;
+}
+
+.col1_footer{
+  color: white;
+  width: 40%;
+}
+.logo_footer{
+  display: flex;
+  margin: 25px 0;
+}
+
+.col1_footer a{
+  text-decoration: none;
+}
+.col1_footer a, a:visited, a:hover, a:active{
+  color: inherit;
+  text-decoration: none;
+}
+
+.col1_footer ul{
+  list-style-type: none;
+  display: flex;
+}
+
+.col1_footer ul li{
+  margin : 0 15px;
+}
 
 
+.logo_footer img{
+  margin-right: 25px;
+}
 
+.quick_access{
+  display: flex;
+}
 
+.col2_footer{
+  margin-top: 25px;
+  color: white;
+}
+
+.col2_footer button{
+  max-width: 125px;
+  height: 44px;
+}
