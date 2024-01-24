@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="style/style.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
@@ -62,6 +63,7 @@
 			<img alt="delicieux bowl" class="cutbowl" src="img/bowl2.png">
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 	<script src="script/navbarScript.js"></script>
 </body>
 
