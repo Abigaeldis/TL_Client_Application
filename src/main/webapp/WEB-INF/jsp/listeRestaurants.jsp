@@ -6,15 +6,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" href="style/styleListeContacts.css" />
+	<link rel="stylesheet" href="style/styleListeRestaurant.css" />
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
-	<c:forEach var="current" items="${restaurants }">
-		<div class="restaurant-container">
-	          <p>${current.nom} ${current.adresse} - ${current.description}</p>
-	          <a href="restaurant?id=${current.id}"><button>Détails</button></a>
-	     </div>
-	</c:forEach>
+<h1>Nos restaurants</h1>
+
+<c:forEach var="current" items="${restaurants }">
+	<div class="restaurant-container">
+          <h2>${current.nom}</h2>
+          <p>${current.adresse}</p>
+          <p>${current.description}</p>
+          <a href="restaurant?id=${current.id}"><button>Détails</button></a>
+     </div>
+</c:forEach>
+
+<script src="script/navbarScript.js"></script>
 </body>
 </html>
