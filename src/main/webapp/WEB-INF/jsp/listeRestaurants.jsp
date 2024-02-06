@@ -24,6 +24,8 @@
      </div>
 </c:forEach>
 </div>
+	
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 <script src="script/navbarScript.js"></script>
 </body>
 </html>

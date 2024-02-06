@@ -1,19 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Demande envoyée</title>
+<link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
+<div class = "header-restaurant">
+	</div>
+<div class="reservation_envoyee">
 <h1>Réservation</h1>
+<div class="reservation_envoye">
 <p>Votre demande de réservation au restaurant ${restaurant.nom }, pour ${nbPersonne } personnes le ${dateReservation.toLocalDate() } à ${dateReservation.toLocalTime() } a été envoyée.</p>
 <p>Le restaurant ${restaurant.nom } reviendra rapidement vers vous pour valider votre venue.</p>
 
 <p>
 <a href="index.jsp">Retour à l'accueil</a>
 </p>
+</div>
+</div>
+
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+<script src="script/navbarScript.js"></script>
 </body>
 </html>

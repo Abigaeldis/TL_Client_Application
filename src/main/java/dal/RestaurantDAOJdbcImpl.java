@@ -58,7 +58,6 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	}
 	
 	public Restaurant selectById(int id) throws DALException {
-		System.out.println("Entrée dans SelectById");
 		Restaurant restaurant = null;
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
