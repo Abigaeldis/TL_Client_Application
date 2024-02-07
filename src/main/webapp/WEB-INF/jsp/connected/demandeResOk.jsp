@@ -19,7 +19,7 @@
 <p>Le restaurant ${restaurant.nom } reviendra rapidement vers vous pour valider votre venue.</p>
 
 <p>
-<a href="index.jsp">Retour à l'accueil</a>
+<a href="index.jsp"><button>Retour à l'accueil</button></a>
 </p>
 </div>
 </div>
