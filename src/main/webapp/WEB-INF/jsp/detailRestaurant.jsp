@@ -28,8 +28,8 @@
 
 			<div class="div_btn_detail_restaurant">
 				<a href="carte?id=${restaurant.id}"><button
-						class="bouton_afficher_carte">Afficher la carte</button></a> <a
-					href="contacter?id=${restaurant.id}"><button>Contacter</button></a>
+						class="bouton_afficher_carte btnOrange">Afficher la carte</button></a> <a
+					href="contacter?id=${restaurant.id}"><button class="btnOrange">Contacter</button></a>
 			</div>
 		</div>
 		<div class="col_2">
@@ -50,7 +50,7 @@
 		    </c:forEach>
 
 			<a href="reserver?id=${restaurant.id}"><button
-					class="button_reserver">Réserver</button></a>
+					class="button_reserver btnDark">Réserver</button></a>
 
 
 		</div>
