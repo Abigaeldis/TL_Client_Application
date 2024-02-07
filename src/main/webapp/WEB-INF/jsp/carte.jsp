@@ -1,57 +1,103 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>User Details</title>
+<meta charset="UTF-8">
+<title>User Details</title>
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<%@ include file="/WEB-INF/jspf/navbar.jspf" %>
-<h1>Voici la carte du restaurant</h1>
-    
-<div>
-    <p>${carte.nom}</p>
-</div>
-
-<div>
-    <h2>Entrées</h2>
-    <ul>
-        <c:forEach var="plat" items="${entrees}">
-            <li>${plat.nom} - ${plat.description} - ${plat.prix}</li>
-        </c:forEach>
-    </ul>
-</div>
-
-<div>
-    <h2>Plats</h2>
-    <ul>
-        <c:forEach var="plat" items="${plats}">
-            <li>${plat.nom} - ${plat.description} - ${plat.prix}</li>
-        </c:forEach>
-    </ul>
-</div>
-
-<div>
-    <h2>Desserts</h2>
-    <ul>
-        <c:forEach var="plat" items="${desserts}">
-            <li>${plat.nom} - ${plat.description} - ${plat.prix}</li>
-        </c:forEach>
-    </ul>
-</div>
-
-<div>
-    <h2>Boissons</h2>
-    <ul>
-        <c:forEach var="plat" items="${boissons}">
-            <li>${plat.nom} - ${plat.description} - ${plat.prix}</li>
-        </c:forEach>
-    </ul>
-</div>
-
-<form action="ServletRedirectionIndex" method="GET">
-    <button class="btn" type="submit">Back to menu</button>
+	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
+	<img alt="" class="banner_connexion" src="img/banniere_carte.jpg">
+	<!-- 	<h1>Voici la carte du restaurant</h1> -->
+	<form class="backmenu" id="backmenuForm">
+    <button class="backmenu-button" type="button">Retour</button>
 </form>
+	<div>
+		<h1>${carte.nom}</h1>
+	</div>
+	<div class="container-carte">
+
+		<div class="carte-plats">
+			<div>
+				<h2>Entrées</h2>
+
+				<c:forEach var="plat" items="${entrees}">
+					<div class="div-plats">
+						<div class="plat">
+							<ul>
+								<h3>${plat.nom}</h3>
+								<li>${plat.description}</li>
+							</ul>
+						</div>
+						<p>${plat.prix}</p>
+					</div>
+				</c:forEach>
+
+			</div>
+
+			<div>
+				<h2>Plats</h2>
+
+				<c:forEach var="plat" items="${plats}">
+					<div class="div-plats">
+						<div class="plat">
+							<ul>
+								<li><h3>${plat.nom}</h3></li>
+								<li>${plat.description}</li>
+							</ul>
+						</div>
+						<p>${plat.prix}</p>
+					</div>
+
+				</c:forEach>
+
+			</div>
+
+			<div >
+				<h2>Desserts</h2>
+
+				<c:forEach var="plat" items="${desserts}">
+					<div class="div-plats">
+						<div class="plat">
+							<ul>
+								<li><h3>${plat.nom}</h3></li>								<li>
+								<li>${plat.description}</li>
+							</ul>
+						</div>
+						<p>${plat.prix}</p>
+					</div>
+				</c:forEach>
+
+			</div>
+		</div>
+
+
+		<div class="carte-boissons">
+			<h2>Boissons</h2>
+			<ul>
+				<c:forEach var="plat" items="${boissons}">
+					<div class="div-plats">
+						<div class="plat">
+							<ul>
+								<li><h3>${plat.nom}</h3></li>
+								<li>${plat.description}</li>
+							</ul>
+						</div>
+						<p>${plat.prix}</p>
+					</div>
+				</c:forEach>
+			</ul>
+		</div>
+	</div>
+	
+
+	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+	<script src="script/navbarScript.js"></script>
+	<script src="script/retourPage.js"></script>
 </body>
 </html>

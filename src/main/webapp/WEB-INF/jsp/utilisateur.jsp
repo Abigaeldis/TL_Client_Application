@@ -24,6 +24,9 @@
 		</div>
 	
 		<a href="modifier?id=${utilisateur.id }"><button>Modifier mes informations</button></a>
+		<form action="supprimer?id=${utilisateur.id }" method="POST">
+		<button type="submit">Supprimer mon compte</button>
+		</form>
 	</div>
 
 	<div class = "messages-container">

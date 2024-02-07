@@ -132,5 +132,16 @@
     <url-pattern>/MonCompte/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>ServletSupprimerUtilisateur</display-name>
+    <servlet-name>ServletSupprimerUtilisateur</servlet-name>
+    <servlet-class>controler.ServletSupprimerUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSupprimerUtilisateur</servlet-name>
+    <url-pattern>/supprimer</url-pattern>
+
+  </servlet-mapping>
+
 </web-app>

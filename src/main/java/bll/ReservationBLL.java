@@ -81,7 +81,7 @@ public class ReservationBLL {
 		
 		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
 		int jourInt = date.getDayOfWeek().getValue();
-		String jourReservation = jours[jourInt];
+		String jourReservation = jours[jourInt-1];
 		System.out.println(jourReservation);
 		LocalTime horaireReservation = date.toLocalTime();
 		System.out.println(horaireReservation);

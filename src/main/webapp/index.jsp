@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="style/style.css" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
@@ -38,17 +39,41 @@
 
 	<div class="client">
 		<div class="col1">
-			<h2>Nos clients sont ravis</h2>
-			<p>Je suis un grand amateur de bols de poke, et cet endroit est
-				vraiment à la hauteur. La qualité des ingrédients est excellente, et
-				la variété des garnitures vous permet de personnaliser votre bol
-				selon vos préférences.</p>
-			<strong>Laurent Martinez</strong> <img alt="happy customer"
-				src="img/EC.png">
+			<div class="testimonial-carousel">
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait1.jpeg">
+					<h2>Jeanne Doe</h2>
+					<p>"Je suis un grand amateur de bols de poke, et cet endroit
+						est vraiment à la hauteur. La qualité des ingrédients est
+						excellente, et la variété des garnitures vous permet de
+						personnaliser votre bol selon vos préférences."</p>
+				</div>
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait2.png">
+					<h2>Etienne Cassin</h2>
+					<p>"Le poke est devenu l'une de mes options de repas préférées,
+						et cet endroit est l'un des meilleurs que j'ai essayés jusqu'à
+						présent. Les portions sont généreuses, les saveurs sont fraîches
+						et les prix sont raisonnables. Hautement recommandé!"</p>
+				</div>
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait3.jpeg">
+					<h2>Homer PeuDargent</h2>
+					<p>"En tant que voyageuse passionnée, je suis toujours à la
+						recherche de plats délicieux et sains lors de mes voyages. Le poke
+						de cet endroit m'a agréablement surpris par sa fraîcheur et sa
+						saveur authentique. Chaque bouchée était un voyage culinaire
+						exquis, mêlant des ingrédients savamment sélectionnés dans un bol
+						parfaitement équilibré."</p>
+				</div>
+			</div>
 		</div>
 		<div class="col2">
 			<img alt="homme tenant un poke bowl" src="img/bowl1.png">
 		</div>
+
+
+
 	</div>
 
 	<div class="restaurants">
@@ -65,6 +90,7 @@
 	</div>
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 	<script src="script/navbarScript.js"></script>
+	<script src="script/scriptCaroussel.js"></script>
 </body>
 
 </html>
