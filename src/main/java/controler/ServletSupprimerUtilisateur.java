@@ -1,15 +1,13 @@
 package controler;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import bll.BLLException;
 import bll.UtilisateurBLL;
-import bo.Utilisateur;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ServletSupprimerUtilisateur
@@ -38,10 +36,11 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 		System.out.println(id);
 
 		try {
-			System.out.println("passage dans le try supp");
+			
 			utilisateurBll.delete(id);
+			System.out.println("utilisateur d'id " + id + "supprimé");
+			response.sendRedirect("deconnexion");
 
-			// REFAIRE CREATION TABLE AVEC ON DELETE CASCADE
 		} catch (BLLException e) {
 			System.out.println(e.getMessage());
 			request.setAttribute("erreur", e);
