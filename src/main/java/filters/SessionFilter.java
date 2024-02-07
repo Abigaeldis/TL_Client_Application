@@ -33,13 +33,14 @@ public class SessionFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
         // Check if a session exists
-        HttpSession session = httpRequest.getSession(false);
+        HttpSession session = httpRequest.getSession();
 
         if (session != null && session.getAttribute("utilisateur") != null) {
 
             chain.doFilter(request, response);
         } else {
-
+        	session.setAttribute("previousPage", httpRequest.getRequestURI() + "?id=" + httpRequest.getParameter("id"));
+    		System.out.println();
             httpResponse.sendRedirect("Connexion ");
         }
     }
