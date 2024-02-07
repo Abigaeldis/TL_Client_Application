@@ -39,31 +39,39 @@
 
 	<div class="client">
 		<div class="col1">
-			<h2>Nos clients sont ravis</h2>
-			<p>Je suis un grand amateur de bols de poke, et cet endroit est
-				vraiment à la hauteur. La qualité des ingrédients est excellente, et
-				la variété des garnitures vous permet de personnaliser votre bol
-				selon vos préférences.</p>
-			<strong>Laurent Martinez</strong> <img alt="happy customer"
-				src="img/EC.png">
+			<div class="testimonial-carousel">
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait1.jpeg">
+					<h2>Jeanne Doe</h2>
+					<p>"Je suis un grand amateur de bols de poke, et cet endroit
+						est vraiment à la hauteur. La qualité des ingrédients est
+						excellente, et la variété des garnitures vous permet de
+						personnaliser votre bol selon vos préférences."</p>
+				</div>
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait2.png">
+					<h2>Etienne Cassin</h2>
+					<p>"Le poke est devenu l'une de mes options de repas préférées,
+						et cet endroit est l'un des meilleurs que j'ai essayés jusqu'à
+						présent. Les portions sont généreuses, les saveurs sont fraîches
+						et les prix sont raisonnables. Hautement recommandé!"</p>
+				</div>
+				<div class="testimonial">
+					<img alt="happy customer" src="img/client_satisfait3.jpeg">
+					<h2>Homer PeuDargent</h2>
+					<p>"En tant que voyageuse passionnée, je suis toujours à la
+						recherche de plats délicieux et sains lors de mes voyages. Le poke
+						de cet endroit m'a agréablement surpris par sa fraîcheur et sa
+						saveur authentique. Chaque bouchée était un voyage culinaire
+						exquis, mêlant des ingrédients savamment sélectionnés dans un bol
+						parfaitement équilibré."</p>
+				</div>
+			</div>
 		</div>
 		<div class="col2">
 			<img alt="homme tenant un poke bowl" src="img/bowl1.png">
 		</div>
-		<div class="testimonial-carousel">
-			<div class="testimonial">
-				<h2>John Doe</h2>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nulla vehicula porttitor risus, eu congue elit consequat ut."</p>
-			</div>
-			<div class="testimonial">
-				<h2>Jane Smith</h2>
-				<p>"Vestibulum ante ipsum primis in faucibus orci luctus et
-					ultrices posuere cubilia curae; Fusce sollicitudin risus non ligula
-					cursus, ac faucibus nisi eleifend."</p>
-			</div>
-			<!-- Add more testimonials as needed -->
-		</div>
+
 
 
 	</div>

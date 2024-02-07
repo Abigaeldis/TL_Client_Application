@@ -132,14 +132,5 @@
     <url-pattern>/MonCompte/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ServletPagePrecedente</display-name>
-    <servlet-name>ServletPagePrecedente</servlet-name>
-    <servlet-class>controler.ServletPagePrecedente</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletPagePrecedente</servlet-name>
-    <url-pattern>/retour</url-pattern>
-  </servlet-mapping>
+
 </web-app>
