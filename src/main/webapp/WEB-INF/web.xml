@@ -134,12 +134,14 @@
   </filter-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletPagePrecedente</display-name>
-    <servlet-name>ServletPagePrecedente</servlet-name>
-    <servlet-class>controler.ServletPagePrecedente</servlet-class>
+
+    <display-name>ServletSupprimerUtilisateur</display-name>
+    <servlet-name>ServletSupprimerUtilisateur</servlet-name>
+    <servlet-class>controler.ServletSupprimerUtilisateur</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletPagePrecedente</servlet-name>
-    <url-pattern>/retour</url-pattern>
+    <servlet-name>ServletSupprimerUtilisateur</servlet-name>
+    <url-pattern>/supprimer</url-pattern>
+
   </servlet-mapping>
 </web-app>
