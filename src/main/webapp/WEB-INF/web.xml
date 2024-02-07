@@ -134,7 +134,6 @@
   </filter-mapping>
   <servlet>
     <description></description>
-
     <display-name>ServletSupprimerUtilisateur</display-name>
     <servlet-name>ServletSupprimerUtilisateur</servlet-name>
     <servlet-class>controler.ServletSupprimerUtilisateur</servlet-class>
@@ -144,4 +143,5 @@
     <url-pattern>/supprimer</url-pattern>
 
   </servlet-mapping>
+
 </web-app>
