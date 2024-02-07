@@ -103,6 +103,10 @@ header {
 	
 }
 
+.userName{
+	color: #F96540;
+}
+
 .overlay h1 {
     font-size: 36px; /* Adjust the font size */
     margin-bottom: 10px;
