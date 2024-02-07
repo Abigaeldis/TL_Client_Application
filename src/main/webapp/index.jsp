@@ -14,14 +14,22 @@
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
 	<header>
 		<div class="overlay">
-			<h1>Retrouvez la fraicheur de nos bowls</h1>
-			<p>N'attendez plus et rejoignez nous.</p>
-			<a href="Connexion"><button class="btnOrange">Connectez
-					vous</button></a>
-
-			<c:if test="${not empty sessionScope.utilisateur}">
-				<h2>Hello ${sessionScope.utilisateur.nom}</h2>
-			</c:if>
+			<c:choose>
+				<c:when test="${empty sessionScope.utilisateur}">
+					<h1>Retrouvez la fraicheur de nos bowls</h1>
+					<p>N'attendez plus et rejoignez nous.</p>
+					<a href="Connexion"><button class="btnOrange">Connectez
+							vous</button></a>
+				</c:when>
+				<c:otherwise>
+					<c:if test="${not empty sessionScope.utilisateur}">
+						<h2>Bonjour <span class="userName">${sessionScope.utilisateur.nom}</span></h2>
+						<h3>Une petite envie de fraicheur ?</h3>
+						<p>N'attendez plus pour réserver</p>
+						<a href="restaurants"><button class="btnOrange">Retrouvez nos restaurants</button></a>
+					</c:if>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</header>
 
