@@ -129,10 +129,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		try {
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
 			ps.setInt(1, id);
-			int nbLignesSupprimees = ps.executeUpdate();
-			if (nbLignesSupprimees == 0) {
-				throw new DALException("Echec de suppression du composant d'id " + id, null);
-			}
+			 ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DALException("Impossible de supprimer le composant d'id "+ id, e);
 		}
