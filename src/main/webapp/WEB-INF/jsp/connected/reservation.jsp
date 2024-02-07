@@ -37,13 +37,19 @@
 	</form>
 </div>
 
-<div class ="horaires">
-	<h2>Horaires</h2>
-	<c:forEach var="current" items="${horairesRestaurant }">
-		<div class="horaires-container">
-	        <p>${current.jour} ${current.heureDeDebut} - ${current.heureDeFin}</p>
-	     </div>
-	</c:forEach>
+<div class="horaires">
+    <h2>Horaires</h2>
+    <c:forEach var="current" items="${jours}">
+        <div class="horaires-container">
+            <p>${current}</p>
+            <c:out value="${horairesGroupes[current]}" />
+            <c:if test="${not empty horairesGroupes[current]}">
+                <c:forEach var="horaire" items="${horairesGroupes[current]}">
+                    <p>${horaire}</p>
+                </c:forEach>
+            </c:if>
+        </div>
+    </c:forEach>
 </div>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
