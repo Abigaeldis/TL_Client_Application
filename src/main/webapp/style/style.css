@@ -688,3 +688,83 @@ h1{
 			margin-bottom:13px !important;
 		}
 
+/*///////////////PAGE Carte////////////////////// */
+.backmenu{
+	
+	width: 75%;
+	margin:auto;
+	margin-top: 15px;
+}
+
+.backmenu-button{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	text-decoration: underline;
+	font-style: italic;
+}
+.backmenu-button:hover{
+	text-decoration: none;
+}
+.container-carte{
+	display: flex;
+    width: 75%;
+    margin: 0;
+    margin:auto;
+   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.10);
+   
+}
+
+.carte-plats{
+	width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FAFAFB;
+    padding: 60px 20px;
+}
+
+.carte-plats div{
+	width: 65%;
+}
+
+.carte-plats ul{
+	 list-style-type: none;
+	 display: flex;
+}
+
+.carte-plats li{
+	 margin-bottom: 15px;
+}
+
+.div-plats{
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+}
+
+.plat ul{
+	display: flex;
+	flex-direction: column;
+}
+
+.carte-boissons{
+	padding: 60px 20px;
+	justify-content: center;
+	display: flex;
+    flex-direction: column;
+}
+
+.carte-boissons ul{
+	 list-style-type: none;
+	 display: flex;
+	 flex-direction: column;
+}
+
+.carte-boissons li{
+	 margin-bottom: 15px;
+}
