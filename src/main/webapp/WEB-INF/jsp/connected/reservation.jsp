@@ -41,13 +41,16 @@
     <h2>Horaires</h2>
     <c:forEach var="current" items="${jours}">
         <div class="horaires-container">
-            <p>${current}</p>
-            <c:out value="${horairesGroupes[current]}" />
+            <p>${current} :
             <c:if test="${not empty horairesGroupes[current]}">
                 <c:forEach var="horaire" items="${horairesGroupes[current]}">
-                    <p>${horaire}</p>
+                    <span>${horaire} </span>
                 </c:forEach>
             </c:if>
+            <c:if test="${empty horairesGroupes[current]}">
+                <span>Fermé </span>
+            </c:if>
+            </p>
         </div>
     </c:forEach>
 </div>

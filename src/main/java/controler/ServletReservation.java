@@ -87,22 +87,11 @@ public class ServletReservation extends HttpServlet {
                 horairesGroupes.put(jour, nouvellesHoraires);
             }
         }
-
-        
-        for (String current : jours) {
-        	List<String> horaires2 = horairesGroupes.get(current);
-    		System.out.println(current);
-        	if (horaires2 != null) {
-	        	for (String horaire : horaires2) {
-	        		System.out.println(horaire);
-	        	}
-        	}
-        }
 		
 		// 4. Ajout des attributs éventuels à ma request
         request.setAttribute("jours", jours);
 		request.setAttribute("restaurant", restaurant);
-		request.setAttribute("horairesGroupees", horairesGroupes);
+		request.setAttribute("horairesGroupes", horairesGroupes);
 		request.setAttribute("horairesRestaurant", horairesRestaurant);
 		request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 	}
