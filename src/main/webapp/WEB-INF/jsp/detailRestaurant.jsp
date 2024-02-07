@@ -34,12 +34,20 @@
 		</div>
 		<div class="col_2">
 			<h2>Horaires</h2>
-			<c:forEach var="current" items="${horairesRestaurant }">
-				<div class="horaires-container">
-					<p>${current.jour}${current.heureDeDebut}-
-						${current.heureDeFin}</p>
-				</div>
-			</c:forEach>
+			<c:forEach var="current" items="${jours}">
+		        <div class="horaires-container">
+		            <p>${current} :
+		            <c:if test="${not empty horairesGroupes[current]}">
+		                <c:forEach var="horaire" items="${horairesGroupes[current]}">
+		                    <span>${horaire} </span>
+		                </c:forEach>
+		            </c:if>
+		            <c:if test="${empty horairesGroupes[current]}">
+		                <span>Fermé </span>
+		            </c:if>
+		            </p>
+		        </div>
+		    </c:forEach>
 
 			<a href="reserver?id=${restaurant.id}"><button
 					class="button_reserver">Réserver</button></a>

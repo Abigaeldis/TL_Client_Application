@@ -3,7 +3,9 @@ package controler;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bll.BLLException;
 import bll.HoraireBLL;
@@ -52,7 +54,7 @@ public class ServletReservation extends HttpServlet {
 		
 		List<Horaire> horaires = new ArrayList<>();
 		List<Horaire> horairesRestaurant = new ArrayList<>();
-		
+		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
 		try {
 			horaires = horaireBll.selectAll();
 			for (Horaire current : horaires) {
@@ -65,8 +67,31 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		Map<String, List<String>> horairesGroupes = new HashMap<>();
+
+        // Parcourir la liste des horaires
+        for (Horaire current : horairesRestaurant) {
+            String jour = current.getJour(); // Jour de la semaine
+
+            // Construire la plage horaire
+            String plageHoraire = current.getHeureDeDebut().toString() + "-" + current.getHeureDeFin().toString();
+            
+            // Vérifier si le jour existe déjà dans la map
+            if (horairesGroupes.containsKey(jour)) {
+                // Ajouter la plage horaire à la liste existante
+                horairesGroupes.get(jour).add(plageHoraire);
+            } else {
+                // Créer une nouvelle liste et ajouter la plage horaire
+                List<String> nouvellesHoraires = new ArrayList<>();
+                nouvellesHoraires.add(plageHoraire);
+                horairesGroupes.put(jour, nouvellesHoraires);
+            }
+        }
+		
 		// 4. Ajout des attributs éventuels à ma request
+        request.setAttribute("jours", jours);
 		request.setAttribute("restaurant", restaurant);
+		request.setAttribute("horairesGroupes", horairesGroupes);
 		request.setAttribute("horairesRestaurant", horairesRestaurant);
 		request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 	}
@@ -112,6 +137,8 @@ public class ServletReservation extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
+		
+
 		
 		try {
 			reservationBll.insert(dateReservation, nbPersonne, utilisateur, restaurant,horaires);
