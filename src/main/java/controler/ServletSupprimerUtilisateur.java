@@ -9,9 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletSupprimerUtilisateur
- */
+
 public class ServletSupprimerUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilisateurBLL utilisateurBll;
@@ -38,7 +36,7 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 		try {
 			
 			utilisateurBll.delete(id);
-			System.out.println("utilisateur d'id " + id + "supprimé");
+			System.out.println("utilisateur d'id " + id + " supprimé");
 			response.sendRedirect("deconnexion");
 
 		} catch (BLLException e) {
