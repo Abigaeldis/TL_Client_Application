@@ -18,12 +18,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletConnexionUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		dispatcher.forward(request, response);
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -51,29 +51,33 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 			request.setAttribute("mail", mail);
 			request.setAttribute("motdepasse", motdepasse);
 			request.getRequestDispatcher("/WEB-INF/jsp/inscription.jsp").forward(request, response);
-		} else if ("Connexion".equals(action)) {
+		}
+		try {
+			UtilisateurBLL utilisateurBLL = new UtilisateurBLL();
+			Utilisateur utilisateurObj = utilisateurBLL.authenticateUser(mail, motdepasse, request);
+			if (utilisateurObj != null) {
 
-			try {
-				UtilisateurBLL utilisateurBLL = new UtilisateurBLL();
-				// Validate user credentials and retrieve the user object
-				Utilisateur utilisateurObj = utilisateurBLL.authenticateUser(mail, motdepasse, request);
-				if (utilisateurObj != null) {
-					// If the user is valid, store the user object in the session
-					request.getSession().setAttribute("utilisateur", utilisateurObj);
-					// Redirect to the index.jsp
-					response.sendRedirect("index.jsp");
+				request.getSession().setAttribute("utilisateur", utilisateurObj);
+
+
+				String previousPage = (String) request.getSession().getAttribute("previousPage");
+
+			
+				request.getSession().removeAttribute("previousPage");
+
+				// Redirect to the previous page
+				if (previousPage != null && !previousPage.isEmpty()) {
+					response.sendRedirect(previousPage);
 				} else {
-					// If the user is not valid, handle it accordingly
-					request.setAttribute("errorMessage", "Échec d'authentification");
-					request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
+					response.sendRedirect("index.jsp");
 				}
-			} catch (BLLException e) {
-				// Handle BLLException, log or redirect as needed
-				e.printStackTrace();
-				response.sendRedirect("error.jsp"); // Redirect to an error page
+			} else {
+				request.setAttribute("errorMessage", "Échec d'authentification");
+				request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 			}
+		} catch (BLLException e) {
+			e.printStackTrace();
+			response.sendRedirect("error.jsp"); // Redirect to an error page
 		}
 	}
-
-
 }
