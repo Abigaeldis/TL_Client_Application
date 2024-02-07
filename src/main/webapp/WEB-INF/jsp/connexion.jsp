@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login or Register</title>
+<title>Connexion</title>
 <link rel="stylesheet" href="style/style.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,17 +40,9 @@
 						value="Connexion">Se connecter</button>
 				</div>
 
-				<%-- Check for error message and display if present --%>
-				<%
-				String errorMessage = (String) request.getAttribute("errorMessage");
-				%>
-				<%
-				if (errorMessage != null && !errorMessage.isEmpty()) {
-				%>
-				<p style="color: red;"><%=errorMessage%></p>
-				<%
-				}
-				%>
+				<c:forEach var="current" items="${erreurs }">
+					<p class="erreur">${current}</p>
+				</c:forEach>
 			</form>
 		</div>
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Detail du restaurant</title>
+<title>Détail du restaurant</title>
 <link rel="stylesheet" href="style/styleDetailRestaurant.css" />
 <link rel="stylesheet" href="style/style.css" />
 </head>
