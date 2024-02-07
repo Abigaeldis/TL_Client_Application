@@ -144,7 +144,13 @@ h2 {
 
 
 
+.bouton_afficher_carte {
+	background-color: #F96540 ;
+}
+
 .col_2{
+	position: relative;
+	    width: 15%;
 	color: white;
 	background-color: #171A1F;
 	padding: 10px;
@@ -154,10 +160,18 @@ h2 {
 
 
 .horaires-container {
-
-    margin-bottom: 15px;
+	 margin-bottom: 15px;
 }
 
+.margin_retour_liste {
+	padding-left: 15%;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.margin_retour_liste a  {
+	text-decoration: underline;
+}
 
 
 button {
@@ -170,14 +184,16 @@ button {
     transition: background-color 0.3s ease;
 }
 
+.button_reserver {
+	position: absolute;
+    bottom: 12px;
+}
+
 button:hover {
     background-color: #D45026;  
 }
 
-.retour{
-	margin-left: 74%;
-	margin-top: 50px;
-}
+
 
 a {
     color: #F96540;

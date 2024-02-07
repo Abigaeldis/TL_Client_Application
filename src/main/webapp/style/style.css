@@ -581,8 +581,7 @@ h1{
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 80px;
+margin-bottom: 80px;
 }
 
 .form_messagerie {
@@ -620,6 +619,34 @@ h1{
 .btnOrange_messagerie {
 	margin-top: 30px;
 }
+
+.btnOrange_confirmation_messagerie {
+	margin-bottom: 40px;
+	margin-left: 71%;
+}
+
+.container_confirmation_messagerie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;	
+	max-width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-bottom: 80px;
+}
+
+
+.titre_confirmation_messagerie {
+    margin-left: 15%;
+}
+
+.contenu_confirmation_messagerie {
+    margin-left: 15%;
+}
+
+
 
 /* INSCRIPTION */
 
