@@ -1,17 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="style/style.css" />
 <title>Message envoyé</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jspf"%>
+<img class="img_banniere_messagerie" alt="banniere_messagerie"
+		src="img/banniere_messagerie.jpg">
+<h1 class="titre_messagerie"><i>Message envoyé avec succès</i></h1>
 
-<p>Le message suivant été envoyé avec succès au restaurant : <i>${restaurant.nom }</i></p>
+
+
+<div class="container_confirmation_messagerie">
+<div class="titre_confirmation_messagerie">
 <p><i>${message.titre }</i></p>
+</div>
+<div class="contenu_confirmation_messagerie">
 <p><i>${message.corpsMessage }</i></p>
-<a href="index.jsp"><button>Retourner à l'accueil</button></a>
+</div>
+</div>
+
+<a href="index.jsp" ><button class="btnOrange btnOrange_confirmation_messagerie">Retourner à l'accueil</button></a>
+
+
+
+
+
+
+
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>
+	<script src="script/navbarScript.js"></script>
 </body>
 </html>
