@@ -816,3 +816,30 @@ margin-bottom: 80px;
 .carte-boissons li{
 	 margin-bottom: 15px;
 }
+
+/* ///////// CAROUSSEL ////////// */
+
+.testimonial-carousel {
+    overflow: hidden;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.testimonial.active {
+    display: block;
+}
+

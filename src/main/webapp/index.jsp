@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="style/style.css" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
@@ -49,6 +50,22 @@
 		<div class="col2">
 			<img alt="homme tenant un poke bowl" src="img/bowl1.png">
 		</div>
+		<div class="testimonial-carousel">
+			<div class="testimonial">
+				<h2>John Doe</h2>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Nulla vehicula porttitor risus, eu congue elit consequat ut."</p>
+			</div>
+			<div class="testimonial">
+				<h2>Jane Smith</h2>
+				<p>"Vestibulum ante ipsum primis in faucibus orci luctus et
+					ultrices posuere cubilia curae; Fusce sollicitudin risus non ligula
+					cursus, ac faucibus nisi eleifend."</p>
+			</div>
+			<!-- Add more testimonials as needed -->
+		</div>
+
+
 	</div>
 
 	<div class="restaurants">
@@ -65,6 +82,7 @@
 	</div>
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 	<script src="script/navbarScript.js"></script>
+	<script src="script/scriptCaroussel.js"></script>
 </body>
 
 </html>
