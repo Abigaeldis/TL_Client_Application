@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Inscription</title>
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
@@ -49,7 +49,10 @@
 						<label for="adresse">Adresse : </label> <input class="input_style extra_margin"
 							type="text" name="adresse" required />
 					</div>
-
+				<c:forEach var="current" items="${erreurs }">
+					<p class="erreur">${current}</p>
+				</c:forEach>
+				
 				<input type="submit" value="Inscription" class="btnOrange inscription_btn" />
 					
 				</form>

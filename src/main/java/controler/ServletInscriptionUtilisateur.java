@@ -50,10 +50,9 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
 
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (BLLException e) {
-
             e.printStackTrace();
-            request.setAttribute("errorMessage", "Error inserting utilisateur");
-            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
+            request.setAttribute("erreurs", e.getErreurs());
+            request.getRequestDispatcher("/WEB-INF/jsp/inscription.jsp").forward(request, response);
         }
     }
 }

@@ -138,6 +138,28 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
+		
+		Map<String, List<String>> horairesGroupes = new HashMap<>();
+
+        // Parcourir la liste des horaires
+        for (Horaire current : horairesRestaurant) {
+            String jour = current.getJour(); // Jour de la semaine
+
+            // Construire la plage horaire
+            String plageHoraire = current.getHeureDeDebut().toString() + "-" + current.getHeureDeFin().toString();
+            
+            // Vérifier si le jour existe déjà dans la map
+            if (horairesGroupes.containsKey(jour)) {
+                // Ajouter la plage horaire à la liste existante
+                horairesGroupes.get(jour).add(plageHoraire);
+            } else {
+                // Créer une nouvelle liste et ajouter la plage horaire
+                List<String> nouvellesHoraires = new ArrayList<>();
+                nouvellesHoraires.add(plageHoraire);
+                horairesGroupes.put(jour, nouvellesHoraires);
+            }
+        }
 
 		
 		try {
@@ -149,8 +171,9 @@ public class ServletReservation extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 			request.setAttribute("erreurs", e.getErreurs());
+	        request.setAttribute("jours", jours);
 			request.setAttribute("restaurant", restaurant);
-			request.setAttribute("horairesRestaurant", horairesRestaurant);
+			request.setAttribute("horairesGroupes", horairesGroupes);
 			request.getRequestDispatcher("/WEB-INF/jsp/connected/reservation.jsp").forward(request, response);
 		}
 	}

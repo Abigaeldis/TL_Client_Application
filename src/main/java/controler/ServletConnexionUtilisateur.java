@@ -40,7 +40,7 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 					System.out.println(current.getMail());
 					if (current.getMail().equals(mail)) {
 						System.out.println("Mail déjà existant");
-						request.setAttribute("errorMessage", "Un compte existe déjà avec cette adresse mail.");
+						request.setAttribute("erreurs", "Un compte existe déjà avec cette adresse mail.");
 						request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 					}
 				}
@@ -69,10 +69,15 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 				if (previousPage != null && !previousPage.isEmpty()) {
 					response.sendRedirect(previousPage);
 				} else {
-					response.sendRedirect("index.jsp");
+					// If the user is not valid, handle it accordingly
+					request.setAttribute("erreurs", "Échec d'authentification");
+					request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 				}
-			} else {
-				request.setAttribute("errorMessage", "Échec d'authentification");
+			} catch (BLLException e) {
+				// Handle BLLException, log or redirect as needed
+				e.printStackTrace();
+				request.setAttribute("erreurs", "Échec d'authentification");
+
 				request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 			}
 		} catch (BLLException e) {
