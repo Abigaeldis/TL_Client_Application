@@ -1081,6 +1081,7 @@ a:active {
 
 /*///////// QUERY //////////*/
 
+@media screen and (max-width: 360px) {
 .banner_connexion {
 	height: 200px;
 	width: 100%;
@@ -1134,4 +1135,5 @@ a:active {
 	max-width: 244px;
 	padding: 0 15px;
 	cursor: pointer;
+}
 }
