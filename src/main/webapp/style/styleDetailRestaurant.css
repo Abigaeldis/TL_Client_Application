@@ -126,8 +126,7 @@ a:hover {
 
 	.img_banniere {
 		width: 100%;
-		min-width: 330px;
-		max-width: 100%;
+		min-width:360px;
 		height: 200px;
 		object-fit: cover;
 	}
@@ -135,7 +134,7 @@ a:hover {
 	.title {
 		background-color: #FAFAFB;
 		height: 130PX;
-		min-width: 330px;
+		min-width:360px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -149,13 +148,14 @@ a:hover {
 		background-color: #FFF;
 		border-radius: 5px;
 		margin-top: 0px;
+		box-shadow: none;
 	}
 
 	.col_1 {
 		display: flex;
 		text-align: justify;
 		width: 95%;
-		min-width: 330px;
+		min-width:360px;
 		padding: 10px;
 		border-radius: 5px;
 		flex-direction: column;
@@ -165,14 +165,15 @@ a:hover {
 
 	.div_btn_detail_restaurant {
 		display: flex;
+		justify-content: space-evenly;
 		width: 95%;
-		gap: 7%;
+		
 	}
 
 	.col_2 {
 		position: relative;
 		width: 95%;
-		min-width: 330px;
+		min-width: 350px;
 		color: white;
 		background-color: #171A1F;
 		padding: 10px;
