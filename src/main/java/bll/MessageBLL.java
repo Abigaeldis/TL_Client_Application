@@ -36,7 +36,13 @@ public class MessageBLL {
 	
 	public Message insert(Message message) throws BLLException {
 		BLLException blleException = new BLLException();
-
+		
+//		if (message.getTitre() == null
+//				|| message.getTitre().isBlank()) {
+//			blleException.ajouterErreur("Le titre doit être renseigné.");
+//		}
+		
+		
 		if (message.getTitre().length() < 2) {
 			blleException.ajouterErreur("Le titre du message doit faire au moins 2 caractères");
 		}
@@ -44,6 +50,11 @@ public class MessageBLL {
 		if (message.getTitre().length() > 50) {
 			blleException.ajouterErreur("Le titre du message doit faire au maximum 50 caractères");
 		}
+		
+//		if (message.getCorpsMessage() == null
+//				|| message.getCorpsMessage().isBlank()) {
+//			blleException.ajouterErreur("Le corps du message doit être renseigné.");
+//		}
 		
 		if (message.getCorpsMessage().length() < 2) {
 			blleException.ajouterErreur("Le corps de votre message doit faire au moins 2 caractères");

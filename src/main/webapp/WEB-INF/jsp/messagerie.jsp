@@ -18,16 +18,23 @@
 	<div class="container_messagerie">
 		<form class="form_messagerie" action="contacter" method="POST">
 			<div class="div_titre_message">
-				<input class="titre_message" type="text" name="titre" placeholder="Titre">
+				<input class="titre_message" type="text" name="titre"
+					placeholder="Titre">
 			</div>
 
 			<div class="div_corps_message">
-				<input  class="corps_message" name="corpsDuMessage"></input>
+				<input class="corps_message" name="corpsDuMessage"></input>
 			</div>
 			<input type="hidden" name="idUtilisateur" value="${utilisateur.id }">
 			<input type="hidden" name="idRestaurant" value="${restaurant.id }">
 
-			<button class="btnOrange btnOrange_messagerie"type="submit">Envoyer</button>
+
+			<c:forEach var="current" items="${erreurs }">
+				<p class="erreur">${current}</p>
+			</c:forEach>
+
+
+			<button class="btnOrange btnOrange_messagerie" type="submit">Envoyer</button>
 		</form>
 	</div>
 
