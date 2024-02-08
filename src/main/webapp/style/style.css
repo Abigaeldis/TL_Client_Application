@@ -96,6 +96,30 @@ header {
 	cursor: pointer;
 }
 
+@media screen and (max-width: 360px) {
+ .btnOrange {
+	border: none;
+	background-color: #F96540;
+	color: white;
+	border-radius: 25px;
+	height: 20px;
+	max-width: 244px;
+	padding: 0 15px;
+	cursor: pointer;
+}
+
+.btnDark{
+	border: solid #F96540 1px;
+	background-color: #171A1F;
+	color: #F96540;
+	border-radius: 25px;
+	height: 20px;
+	max-width: 244px;
+	padding: 0 15px;
+	cursor: pointer;
+}
+}
+
 .overlay {
 	position: absolute;
 	background-color: white;
@@ -610,6 +634,7 @@ h1 {
 /* FOOTER */
 .container_footer {
 	display: flex;
+	flex-direction: column-reverse;
 	justify-content: space-between;
 	padding: 0 10%;
 	background-color: #171A1F;
@@ -667,6 +692,33 @@ a:active {
 .col2_footer button {
 	height: 44px;
 }
+
+@media screen and (max-width: 360px) {
+ .container_footer{
+	 padding: 0 3%;
+	 height: auto;
+ }
+ .logo_footer h2 {
+	 font-size: 0.75em;
+ }
+  .logo_footer img {
+	 height: 30px;
+ }
+ 
+ .col1_footer {
+    width: 100%;
+}
+
+.col1_footer ul {
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.logo_footer {
+    margin: 0 0;
+}
+}
+
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
