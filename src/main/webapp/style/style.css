@@ -675,11 +675,11 @@ h1 {
 /* FOOTER */
 .container_footer {
 	display: flex;
-	flex-direction: column-reverse;
+
 	justify-content: space-between;
 	padding: 0 10%;
 	background-color: #171A1F;
-	height: 323px;
+	/*height: 323px;*/
 }
 
 .col1_footer {
@@ -734,10 +734,17 @@ a:active {
 	height: 44px;
 }
 
+.social_media{
+	font-size: 35px;
+  display: flex;
+  gap: 20px;
+}
+
 @media screen and (max-width: 360px) {
  .container_footer{
 	 padding: 0 3%;
 	 height: auto;
+	 	flex-direction: column-reverse;
  }
  .logo_footer h2 {
 	 font-size: 0.75em;
@@ -748,16 +755,23 @@ a:active {
  
  .col1_footer {
     width: 100%;
+    margin-top: 10px;
 }
 
 .col1_footer ul {
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .logo_footer {
-    margin: 0 0;
+    display: none;
 }
+
+.col2_footer button {
+	display: none;
+}
+
 }
 
 
