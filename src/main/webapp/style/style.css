@@ -111,7 +111,7 @@ header {
 	cursor: pointer;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
 	.btnOrange {
 		border: none;
 		background-color: #F96540;
@@ -348,11 +348,8 @@ h1 {
 	flex-direction: row;
 }
 
-@media screen and (max-width: 360px) {
-
-
-	.liste_container,
-	.container {
+@media screen and (max-width: 767px) {
+	.liste_container {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
@@ -528,10 +525,15 @@ h1 {
 	background-color: #FAFAFB;
 }
 
-@media screen and (max-width : 360px) {
+@media screen and (max-width : 767px) {
 	.infos-container {
 		width: 95%;
 	}
+	
+	.compte-container form {
+	padding-left: 0px;
+	padding-bottom: 20px;
+}
 }
 
 /*RESERVATION*/
@@ -605,7 +607,7 @@ h1 {
 	/* Couleur de fond au survol */
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
 	.container-global-reservation .compte-container {
 		width: 100%;
 		margin: 0px;
@@ -771,7 +773,7 @@ a:active {
 	gap: 20px;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
 
 	.container_footer {
 		padding: 0 3%;
@@ -977,6 +979,10 @@ a:active {
 	margin-bottom: 13px !important;
 }
 
+@media screen and (max-width : 767px){
+	
+}
+
 /*///////////////PAGE Carte////////////////////// */
 .backmenu {
 
@@ -1060,7 +1066,7 @@ a:active {
 	margin-bottom: 15px;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
 	.container-carte {
 		display: flex;
 		flex-direction: column;
@@ -1105,7 +1111,7 @@ a:active {
 
 /*///////// QUERY //////////*/
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
 	.banner_connexion {
 		height: 200px;
 		width: 100%;
