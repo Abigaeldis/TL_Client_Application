@@ -1,34 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<nav class="nav">
-	<div class="containerNav">
-		
-		<a href="index.jsp"><img alt="logo" class="logo" src="img/logo.png"></a>
-		
-		<ul>
-			<li><a href="index.jsp">Accueil</a></li>
-			<li><a href="restaurants">Nos
-					Restaurants</a></li>
-			<c:choose>
-				<c:when test="${empty sessionScope.utilisateur}">
-					<!-- Display Connexion/Inscription if utilisateur is not in the session -->
-					<li><a href="Connexion">Connexion/Inscription</a></li>
-				</c:when>
-				<c:otherwise>
-					<!-- Display My Account if utilisateur is in the session -->
-					<li><a href="MonCompte?id=${sessionScope.utilisateur.id}">Mon compte</a></li>
-					<li><a href="deconnexion">Se
-							déconnecter</a></li>
-				</c:otherwise>
-			</c:choose>
-			<li><a href="apropos">À
-					propos</a></li>
-		</ul>
-	</div>
+<nav class="nav navbar navbar-expand-lg navbar-dark bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.jsp"><img alt="logo" class="logo" src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.jsp">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="restaurants">Nos Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="apropos">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Connexion">Connexion/Inscription</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
