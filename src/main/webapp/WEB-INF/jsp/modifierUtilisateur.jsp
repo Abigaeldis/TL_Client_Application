@@ -17,11 +17,11 @@
 		<input class= "input_style" type="hidden" name="id" value="${utilisateur.id }" />
 		<div>
 			<label>Prénom</label>
-			<input class= "input_style" type="text" name="nom" value="${utilisateur.nom }" />
+			<input class= "input_style" type="text" name="prenom" value="${utilisateur.prenom }" />
 		</div>
 		<div>
 			<label>Nom</label>
-			<input class= "input_style" type="text" name="prenom" value="${utilisateur.prenom }" />
+			<input class= "input_style" type="text" name="nom" value="${utilisateur.nom }" />
 		</div>
 		<div>
 			<label>Mail</label>
@@ -39,6 +39,9 @@
 			<label>Adresse</label>
 			<input class= "input_style" type="text" name="adresse" value="${utilisateur.adresse }" />
 		</div>
+		<c:forEach var="current" items="${erreurs }">
+			<p class="erreur">${current}</p>
+		</c:forEach>
 		<div>
 			<input class= "button_style" type="submit" value="Enregistrer" />
 		</div>

@@ -63,25 +63,28 @@ public class ServletModifierUtilisateur extends HttpServlet {
 		// Etape 2 : passage dans le bon type
 		int id = Integer.parseInt(idStr);
 		Utilisateur utilisateurAModifier = null;
+		
 		// Etape 3 : exploitation des parametres par le bll
 		try {
 			// Je recupere mon contact en base de donnees
 			utilisateurAModifier = utilisateurBll.selectById(id);
-			
-			// Je mets a jour toutes ses informations (cote java)
+			// Je mets a jour toutes ses informations
 			utilisateurAModifier.setNom(nomStr);
 			utilisateurAModifier.setPrenom(prenomStr);
 			utilisateurAModifier.setMail(mailStr);
 			utilisateurAModifier.setMotdepasse(passStr);
 			utilisateurAModifier.setTelephone(telStr);
 			utilisateurAModifier.setAdresse(adresseStr);
-			
+		} catch (BLLException e) {e.printStackTrace();
+		}
+		try {
 			// J'enregistre ces modifications aupres de la base de donnees
 			utilisateurBll.update(utilisateurAModifier);
 			response.sendRedirect("MonCompte?id=" + id);
 		} catch (BLLException e) {
-			request.setAttribute("erreur", e);
-			request.getRequestDispatcher("modifier?id="+ id).forward(request, response);
+			request.setAttribute("erreurs", e.getErreurs());
+			request.setAttribute("utilisateur", utilisateurAModifier);
+			request.getRequestDispatcher("/WEB-INF/jsp/modifierUtilisateur.jsp").forward(request, response);
 		}
 
 	}
