@@ -36,11 +36,11 @@
 
 				<!-- Button to perform "S'inscrire" action -->
 				<div class="container_btn">
-					<button type="submit" class="btnWhite_connexion" name="action"
+					<button type="submit" class="btnOrange btnWhite_connexion" name="action"
 						value="Inscription">S'inscrire</button>
 
 					<!-- Button to perform "Se connecter" action -->
-					<button class="btnOrange_connexion" type="submit" name="action"
+					<button class="btnOrange btnOrange_connexion" type="submit" name="action"
 						value="Connexion">Se connecter</button>
 				</div>
 
