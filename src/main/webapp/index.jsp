@@ -75,12 +75,10 @@
 				<div class="testimonial">
 					<img alt="happy customer" src="img/client_satisfait3.jpeg">
 					<h2>Homer PeuDargent</h2>
-					<p>"En tant que voyageuse passionnée, je suis toujours à la
-						recherche de plats délicieux et sains lors de mes voyages. Le poke
-						de cet endroit m'a agréablement surpris par sa fraîcheur et sa
-						saveur authentique. Chaque bouchée était un voyage culinaire
-						exquis, mêlant des ingrédients savamment sélectionnés dans un bol
-						parfaitement équilibré."</p>
+					<p>"Les poke bowls sont devenus l'une de mes options de repas
+						préférées, et cet endroit est l'un des meilleurs que j'ai essayés
+						jusqu'à présent. Les portions sont généreuses, les saveurs sont
+						fraîches, et les prix sont raisonnables."</p>
 				</div>
 			</div>
 		</div>

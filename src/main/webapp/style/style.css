@@ -117,7 +117,7 @@ header {
 		background-color: #F96540;
 		color: white;
 		border-radius: 25px;
-		height: 20px;
+		height: 28px;
 		max-width: 244px;
 		padding: 0 15px;
 		cursor: pointer;
@@ -253,6 +253,54 @@ header {
 	bottom: 0%;
 	right: 5%;
 	/* transform: translate(-50%, -50%);*/
+
+}
+
+@media (max-width:360px){
+	.client .col2{
+		display: none;
+	}
+	
+	.overlay{	
+    left: 0%; 
+    transform: translate(0, 0);
+    height: 282px;
+	}
+	
+	.presentation {
+   
+    padding: 0; 
+ 
+}
+
+.client{
+	max-height: none;
+	align-items: center;
+	padding: 0px;
+}
+
+.client .col1{
+	width: 100%;
+	padding: 0;
+}
+
+.restaurants{
+	margin:0;
+	margin-bottom: 15px;
+}
+.restaurants .col1{
+	padding: 0;
+	padding-left: 10px;
+}
+
+.restaurants .btnOrange{
+	height: 47px;
+}
+
+.cutbowl{
+	height : 75px;
+}
+
 
 }
 
