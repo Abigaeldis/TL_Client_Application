@@ -1,76 +1,74 @@
-
-
-.img_banniere{
-	width: 100%;	
+.img_banniere {
+	width: 100%;
 	max-width: 100%;
 	height: 379px;
 	object-fit: cover;
 }
 
-.title{
+.title {
 	background-color: #FAFAFB;
-    height: 200PX;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 200PX;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
 h1 {
-    color: #F96540;
-    text-align: center;
-    
-    
+	color: #F96540;
+	text-align: center;
+
+
 }
 
 h2 {
-    color: #F96540;
+	color: #F96540;
 }
 
 
-.container_horaires{
-	display:flex;
-}
-
-.container {
+.container_horaires {
 	display: flex;
-    justify-content: center;
-    gap: 100px;
-    width: 100%;
-    background-color: #FFF;
-    border-radius: 5px;
-    margin-top: 25px;
-    
 }
 
-.col_1{
+.container_restaurant_horaires {
+	display: flex;
+	justify-content: center;
+	gap: 100px;
+	width: 100%;
+	background-color: #FFF;
+	border-radius: 5px;
+	margin-top: 25px;
+
+}
+
+.col_1 {
 	display: flex;
 	padding: 10px;
 	border-radius: 5px;
-    flex-direction: column;
-    align-content: flex-start;
-    align-items: flex-start;
-    max-width: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	flex-direction: column;
+	align-content: flex-start;
+	align-items: flex-start;
+	max-width: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.col_1 img{
-    object-fit: cover;
-    height: 300px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 30px;
+.col_1 img {
+	object-fit: cover;
+	height: 300px;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 30px;
 }
 
 
 
 .bouton_afficher_carte {
-	background-color: #F96540 ;
+	background-color: #F96540;
 }
 
-.col_2{
+.col_2 {
 	position: relative;
-	    width: 15%;
+	width: 15%;
 	color: white;
 	background-color: #171A1F;
 	padding: 10px;
@@ -80,7 +78,7 @@ h2 {
 
 
 .horaires-container {
-	 margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .margin_retour_liste {
@@ -89,13 +87,13 @@ h2 {
 	margin-bottom: 40px;
 }
 
-.margin_retour_liste a  {
+.margin_retour_liste a {
 	text-decoration: underline;
 }
 
 .button_reserver {
 	position: absolute;
-    bottom: 12px;
+	bottom: 12px;
 }
 
 
@@ -103,17 +101,95 @@ h2 {
 
 
 a {
-    color: #F96540;
-    text-decoration: none;
+	color: #F96540;
+	text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
-.btnOrange{
+.btnOrange {
 	height: 44px !important;
 }
-.btnDark{
+
+.btnDark {
 	height: 44px !important;
+}
+
+
+
+/*//////////// MEDIA QUERY DETAIL RESTAURANT ////////// */
+
+
+@media (max-width: 360px) {
+
+	.img_banniere {
+		width: 100%;
+		min-width: 330px;
+		max-width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.title {
+		background-color: #FAFAFB;
+		height: 130PX;
+		min-width: 330px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.container_restaurant_horaires {
+		flex-direction: column;
+		justify-content: center;
+		gap: 100px;
+		width: 100%;
+		background-color: #FFF;
+		border-radius: 5px;
+		margin-top: 0px;
+	}
+
+	.col_1 {
+		display: flex;
+		text-align: justify;
+		width: 95%;
+		min-width: 330px;
+		padding: 10px;
+		border-radius: 5px;
+		flex-direction: column;
+		align-items: flex-start;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.div_btn_detail_restaurant {
+		display: flex;
+		width: 95%;
+		gap: 7%;
+	}
+
+	.col_2 {
+		position: relative;
+		width: 95%;
+		min-width: 330px;
+		color: white;
+		background-color: #171A1F;
+		padding: 10px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.button_reserver {
+		position: unset;
+	}
+
+	.margin_retour_liste {
+		display: flex;
+		padding: unset;
+		justify-content: center;
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
+
 }
