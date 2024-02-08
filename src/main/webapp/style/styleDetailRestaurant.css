@@ -143,7 +143,7 @@ a:hover {
 	.container_restaurant_horaires {
 		flex-direction: column;
 		justify-content: center;
-		gap: 100px;
+		gap: 50px;
 		width: 100%;
 		background-color: #FFF;
 		border-radius: 5px;
