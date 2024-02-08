@@ -117,15 +117,11 @@ public class ServletContacter extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/jsp/confirmationMessage.jsp").forward(request, response);
 			
 		} catch (BLLException e) {
-			request.setAttribute("erreur", e);
+			request.setAttribute("erreurs", e.getErreurs());
+			request.setAttribute("restaurant", restaurant);
+			request.getRequestDispatcher("/WEB-INF/jsp/messagerie.jsp").forward(request, response);
 		}
 		
-		
-		
-		
-		// Etape 5 : Redirection
-		// Redirige vers la servlet d'affichage des details d'un contact
-		// Puisque le traitement pour afficher le detail d'un contact est deja rsealise dans cette Servlet
 	}
 
 }
