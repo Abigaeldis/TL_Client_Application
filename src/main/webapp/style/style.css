@@ -26,9 +26,11 @@ header {
 	transition: all 0.3s ease-in-out;
 	z-index: 15;
 }
-.navbar-toggler{
+
+.navbar-toggler {
 	background-color: #F96540 !important;
 }
+
 .containerNav {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -36,7 +38,7 @@ header {
 
 .nav .containerNav {
 	display: flex;
-/*	justify-content: space-between;*/
+	/*	justify-content: space-between;*/
 	align-items: center;
 	padding: 10px 0;
 	transition: all 0.3s ease-in-out;
@@ -48,7 +50,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	gap: 86px;
-    margin-left: 120px;
+	margin-left: 120px;
 }
 
 .nav a {
@@ -77,12 +79,12 @@ header {
 
 }
 
-@media ( max-width:992px){
+@media (max-width:992px) {
 	.nav ul {
 
-    gap: 10px;
+		gap: 10px;
 
-}
+	}
 }
 
 
@@ -98,7 +100,7 @@ header {
 	cursor: pointer;
 }
 
-.btnDark{
+.btnDark {
 	border: solid #F96540 1px;
 	background-color: #171A1F;
 	color: #F96540;
@@ -110,27 +112,27 @@ header {
 }
 
 @media screen and (max-width: 360px) {
- .btnOrange {
-	border: none;
-	background-color: #F96540;
-	color: white;
-	border-radius: 25px;
-	height: 20px;
-	max-width: 244px;
-	padding: 0 15px;
-	cursor: pointer;
-}
+	.btnOrange {
+		border: none;
+		background-color: #F96540;
+		color: white;
+		border-radius: 25px;
+		height: 20px;
+		max-width: 244px;
+		padding: 0 15px;
+		cursor: pointer;
+	}
 
-.btnDark{
-	border: solid #F96540 1px;
-	background-color: #171A1F;
-	color: #F96540;
-	border-radius: 25px;
-	height: 20px;
-	max-width: 244px;
-	padding: 0 15px;
-	cursor: pointer;
-}
+	.btnDark {
+		border: solid #F96540 1px;
+		background-color: #171A1F;
+		color: #F96540;
+		border-radius: 25px;
+		height: 20px;
+		max-width: 244px;
+		padding: 0 15px;
+		cursor: pointer;
+	}
 }
 
 .overlay {
@@ -151,7 +153,7 @@ header {
 
 }
 
-.userName{
+.userName {
 	color: #F96540;
 }
 
@@ -423,8 +425,8 @@ h1 {
 }
 
 .compte-container form {
-    padding-left: 141px;
-    padding-bottom: 20px;
+	padding-left: 141px;
+	padding-bottom: 20px;
 }
 
 .btn_supp_user {
@@ -596,30 +598,30 @@ h1 {
 }
 
 @media screen and (max-width: 360px) {
-	.container-global-reservation .compte-container{
-	width: 100%;
-	margin : 0px;
-	padding : 0px;
+	.container-global-reservation .compte-container {
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
 	}
-	
+
 	.container-global-reservation {
 		display: flex;
 		flex-direction: column;
 	}
-	
-	.container-global-reservation .compte-container form{
+
+	.container-global-reservation .compte-container form {
 		width: 90%;
-		padding : 0px;
+		padding: 0px;
 		margin-bottom: 15px;
 	}
 
 	.container-global-reservation .compte-container input {
 		padding: 0px;
 		margin-bottom: 10px;
-	}	
-	
-	.container-global-reservation .horaires{
-		width: 100% ;
+	}
+
+	.container-global-reservation .horaires {
+		width: 100%;
 		margin-bottom: 10px;
 	}
 }
@@ -747,8 +749,8 @@ a:active {
 	margin-top: 25px;
 	color: white;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .col2_footer button {
@@ -756,29 +758,31 @@ a:active {
 }
 
 @media screen and (max-width: 360px) {
- .container_footer{
-	 padding: 0 3%;
-	 height: auto;
- }
- .logo_footer h2 {
-	 font-size: 0.75em;
- }
-  .logo_footer img {
-	 height: 30px;
- }
- 
- .col1_footer {
-    width: 100%;
-}
+	.container_footer {
+		padding: 0 3%;
+		height: auto;
+	}
 
-.col1_footer ul {
-    flex-wrap: wrap;
-    gap: 30px;
-}
+	.logo_footer h2 {
+		font-size: 0.75em;
+	}
 
-.logo_footer {
-    margin: 0 0;
-}
+	.logo_footer img {
+		height: 30px;
+	}
+
+	.col1_footer {
+		width: 100%;
+	}
+
+	.col1_footer ul {
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.logo_footer {
+		margin: 0 0;
+	}
 }
 
 
@@ -1038,24 +1042,25 @@ a:active {
 		flex-direction: column;
 		width: 100%;
 		margin: auto;
-		box-shadow : none;
+		box-shadow: none;
 	}
+
 	.backmenu,
 	.container-carte div {
-		width : 100%;
+		width: 100%;
 		padding: 5px;
 	}
-	
+
 	.plat ul,
 	.carte-boissons ul {
 		padding-inline-start: 5px;
 	}
-	
+
 	.carte-plats li,
 	.carte-boissons li {
-	margin-bottom: 2px;
-}
-	
+		margin-bottom: 2px;
+	}
+
 }
 
 /* ///////// CAROUSSEL ////////// */
@@ -1072,4 +1077,61 @@ a:active {
 
 .testimonial.active {
 	display: block;
+}
+
+/*///////// QUERY //////////*/
+
+.banner_connexion {
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.container_connexion {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #FAFAFB;
+	padding-bottom: 50px;
+	padding-top: unset;
+}
+
+
+.col_1_connexion {
+	padding-top: unset;
+	background-color: #FAFAFB;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.col_2_connexion {
+	display: none;
+}
+
+.container_btn {
+	margin-top: 45px;
+}
+
+.btnWhite_connexion {
+
+	border: solid #F96540 1px;
+	background-color: unset;
+	color: #F96540;
+	border-radius: 25px;
+	height: 45px;
+	max-width: 244px;
+	padding: 0 15px;
+	cursor: pointer;
+}
+
+.btnOrange_connexion {
+	border: none;
+	background-color: #F96540;
+	color: white;
+	border-radius: 25px;
+	height: 45px;
+	max-width: 244px;
+	padding: 0 15px;
+	cursor: pointer;
 }
