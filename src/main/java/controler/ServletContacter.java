@@ -55,7 +55,6 @@ public class ServletContacter extends HttpServlet {
 		// 4. Ajout des attributs éventuels à ma request
 		request.setAttribute("restaurant", restaurant);
 		
-		System.out.println("passage dans le GET du ServletContacter puis direction messagerie.jsp");
 		
 		// 5. Redirection vers la JSP choisie
 		request.getRequestDispatcher("/WEB-INF/jsp/messagerie.jsp").forward(request, response);
