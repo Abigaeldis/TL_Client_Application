@@ -336,7 +336,8 @@ header {
 
 .header-restaurant {
 	position: relative;
-	height: 379px;
+	height: 240px;
+	;
 	background: url("../img/sauce.png") center/cover no-repeat;
 }
 
@@ -818,8 +819,8 @@ a:active {
 .img_banniere_messagerie {
 	width: 100%;
 	max-width: 100%;
-	height: 400px;
-	object-fit: cover;
+	height: 240px;
+	object-fit: none;
 }
 
 .titre_messagerie {
