@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connexion</title>
 <link rel="stylesheet" href="style/style.css" />
 <link rel="stylesheet"
@@ -35,11 +36,11 @@
 
 				<!-- Button to perform "S'inscrire" action -->
 				<div class="container_btn">
-					<button type="submit" class="btnOrange" name="action"
+					<button type="submit" class="btnWhite_connexion" name="action"
 						value="Inscription">S'inscrire</button>
 
 					<!-- Button to perform "Se connecter" action -->
-					<button class="btnOrange" type="submit" name="action"
+					<button class="btnOrange_connexion" type="submit" name="action"
 						value="Connexion">Se connecter</button>
 				</div>
 
