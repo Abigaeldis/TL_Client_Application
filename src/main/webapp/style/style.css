@@ -524,6 +524,11 @@ h1 {
 	background-color: #FAFAFB;
 }
 
+@media screen and (max-width : 360px){
+	.infos-container{
+		width : 95%;
+	}
+}
 /*RESERVATION*/
 
 .container-global-reservation {
