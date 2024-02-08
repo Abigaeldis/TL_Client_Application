@@ -258,7 +258,7 @@ header {
 
 }
 
-@media (max-width:360px){
+@media (max-width:767px){
 	.client .col2{
 		display: none;
 	}
