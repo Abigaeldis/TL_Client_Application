@@ -73,16 +73,13 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 					request.setAttribute("erreurs", "Échec d'authentification");
 					request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 				}
-			} catch (BLLException e) {
+			} 
+		} catch (BLLException e) {
 				// Handle BLLException, log or redirect as needed
 				e.printStackTrace();
 				request.setAttribute("erreurs", "Échec d'authentification");
 
 				request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 			}
-		} catch (BLLException e) {
-			e.printStackTrace();
-			response.sendRedirect("error.jsp"); // Redirect to an error page
-		}
 	}
 }
