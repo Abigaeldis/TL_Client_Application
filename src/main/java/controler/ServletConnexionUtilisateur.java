@@ -69,17 +69,16 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 				if (previousPage != null && !previousPage.isEmpty()) {
 					response.sendRedirect(previousPage);
 				} else {
-					// If the user is not valid, handle it accordingly
-					request.setAttribute("erreurs", "Échec d'authentification");
-					request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
+					response.sendRedirect("index.jsp");
 				}
-			} 
-		} catch (BLLException e) {
-				// Handle BLLException, log or redirect as needed
-				e.printStackTrace();
+			} else {
 				request.setAttribute("erreurs", "Échec d'authentification");
-
 				request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 			}
+		} catch (BLLException e) {
+			e.printStackTrace();
+			request.setAttribute("erreurs", "Échec d'authentification");
+			request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
+		}
 	}
 }
