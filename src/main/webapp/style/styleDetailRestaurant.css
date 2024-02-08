@@ -127,7 +127,7 @@ a:hover {
 	.img_banniere {
 		width: 100%;
 		min-width:360px;
-		height: 200px;
+		height: 240px;
 		object-fit: cover;
 	}
 
