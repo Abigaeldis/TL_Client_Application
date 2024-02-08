@@ -1,5 +1,6 @@
 package bll;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import bo.Utilisateur;
@@ -36,6 +37,27 @@ public class UtilisateurBLL {
 	}
 	
 	public Utilisateur insert(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse) throws BLLException {
+		BLLException blleException = new BLLException();
+		if (nom == "" || nom == null) {
+			blleException.ajouterErreur("Veuillez compléter le nom.");
+		}
+		
+		if (prenom == "" || prenom == null) {
+			blleException.ajouterErreur("Veuillez compléter le prénom.");
+		}
+		
+		if (mail == "" || mail == null) {
+			blleException.ajouterErreur("Veuillez compléter le mail.");
+		}
+		
+		if (motdepasse == "" || motdepasse == null) {
+			blleException.ajouterErreur("Veuillez compléter le mot de passe.");
+		}
+		
+		if (blleException.getErreurs().size() > 0) {
+			throw blleException;
+		}		
+		
 		Utilisateur utilisateur = new Utilisateur(nom, prenom, mail, motdepasse, telephone, adresse);
 		try {
 			dao.insert(utilisateur);
@@ -46,6 +68,27 @@ public class UtilisateurBLL {
 	}
 	
 	public void update(Utilisateur utilisateur) throws BLLException {
+		BLLException blleException = new BLLException();
+		if (utilisateur.getNom() == "" || utilisateur.getNom() == null) {
+			blleException.ajouterErreur("Veuillez compléter le nom.");
+		}
+		
+		if (utilisateur.getPrenom() == "" || utilisateur.getPrenom() == null) {
+			blleException.ajouterErreur("Veuillez compléter le prénom.");
+		}
+		
+		if (utilisateur.getMail() == "" || utilisateur.getMail() == null) {
+			blleException.ajouterErreur("Veuillez compléter le mail.");
+		}
+		
+		if (utilisateur.getMotdepasse() == "" || utilisateur.getMotdepasse() == null) {
+			blleException.ajouterErreur("Veuillez compléter le mot de passe.");
+		}
+		
+		if (blleException.getErreurs().size() > 0) {
+			throw blleException;
+		}		
+		
 		try {
 			dao.update(utilisateur);
 		} catch (DALException e) {
