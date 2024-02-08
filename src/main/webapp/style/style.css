@@ -257,7 +257,7 @@ header {
 }
 
 /**Liste restaurants**/
-.container {
+.liste-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -349,8 +349,7 @@ h1 {
 }
 
 @media screen and (max-width: 360px) {
-	.liste_container,
-	.container {
+	.liste_container {
 		display: flex;
 	    flex-wrap: wrap;
 	    justify-content: flex-start;
