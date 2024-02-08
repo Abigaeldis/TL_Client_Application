@@ -18,15 +18,17 @@ header {
 
 /**Navbar**/
 .nav {
-	position: fixed;
-	background-color: #fff;
+	position: fixed !important;
+	background-color: #FAFAFB;
 	top: 0;
 	left: 0;
 	right: 0;
 	transition: all 0.3s ease-in-out;
 	z-index: 15;
 }
-
+.navbar-toggler{
+	background-color: #F96540 !important;
+}
 .containerNav {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -34,7 +36,7 @@ header {
 
 .nav .containerNav {
 	display: flex;
-	justify-content: space-between;
+/*	justify-content: space-between;*/
 	align-items: center;
 	padding: 10px 0;
 	transition: all 0.3s ease-in-out;
@@ -45,10 +47,12 @@ header {
 	list-style-type: none;
 	align-items: center;
 	justify-content: center;
+	gap: 86px;
+    margin-left: 120px;
 }
 
 .nav a {
-	color: black;
+	color: black !important;
 	text-decoration: none;
 	padding: 7px 15px;
 	transition: all 0.3s ease-in-out;
@@ -72,6 +76,15 @@ header {
 	color: #c0392b;
 
 }
+
+@media ( max-width:992px){
+	.nav ul {
+
+    gap: 10px;
+
+}
+}
+
 
 /**Index**/
 .btnOrange {

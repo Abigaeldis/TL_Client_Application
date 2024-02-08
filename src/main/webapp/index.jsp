@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="style/style.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
@@ -25,10 +28,13 @@
 				</c:when>
 				<c:otherwise>
 					<c:if test="${not empty sessionScope.utilisateur}">
-						<h2>Bonjour <span class="userName">${sessionScope.utilisateur.nom}</span></h2>
+						<h2>
+							Bonjour <span class="userName">${sessionScope.utilisateur.nom}</span>
+						</h2>
 						<h3>Une petite envie de fraicheur ?</h3>
 						<p>N'attendez plus pour réserver</p>
-						<a href="restaurants"><button class="btnOrange">Retrouvez nos restaurants</button></a>
+						<a href="restaurants"><button class="btnOrange">Retrouvez
+								nos restaurants</button></a>
 					</c:if>
 				</c:otherwise>
 			</c:choose>
