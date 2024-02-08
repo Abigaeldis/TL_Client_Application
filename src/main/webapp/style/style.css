@@ -346,6 +346,27 @@ h1 {
 	flex-direction: row;
 }
 
+@media screen and (max-width: 360px) {
+	.liste_container,
+	.container {
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: flex-start;
+	    flex-direction: column;
+	    align-content: center;
+	}
+	
+	.restaurant-container {
+		padding-bottom: 10px;
+		width : 100%;
+	}
+	
+	.restaurant-container h2 {
+	padding-top: 15px;
+}
+}
+
+
 /*Mon Compte*/
 .compte-container,
 .messages-container {
