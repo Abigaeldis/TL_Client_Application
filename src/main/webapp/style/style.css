@@ -477,7 +477,7 @@ h1 {
 
 .container-global-reservation .compte-container,
 .horaires {
-	width: 30%;
+	width: 50%;
 }
 
 .horaires {
@@ -537,8 +537,36 @@ h1 {
 	/* Couleur de fond au survol */
 }
 
-/* CONNEXION */
+@media screen and (max-width: 360px) {
+	.container-global-reservation .compte-container{
+	width: 100%;
+	margin : 0px;
+	padding : 0px;
+	}
+	
+	.container-global-reservation {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.container-global-reservation .compte-container form{
+		width: 90%;
+		padding : 0px;
+		margin-bottom: 15px;
+	}
 
+	.container-global-reservation .compte-container input {
+		padding: 0px;
+		margin-bottom: 10px;
+	}	
+	
+	.container-global-reservation .horaires{
+		width: 100% ;
+		margin-bottom: 10px;
+	}
+}
+
+/* CONNEXION */
 .banner_connexion {
 	height: 379px;
 	width: 100%;
@@ -916,6 +944,32 @@ a:active {
 
 .carte-boissons li {
 	margin-bottom: 15px;
+}
+
+@media screen and (max-width: 360px) {
+	.container-carte {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: auto;
+		box-shadow : none;
+	}
+	.backmenu,
+	.container-carte div {
+		width : 100%;
+		padding: 5px;
+	}
+	
+	.plat ul,
+	.carte-boissons ul {
+		padding-inline-start: 5px;
+	}
+	
+	.carte-plats li,
+	.carte-boissons li {
+	margin-bottom: 2px;
+}
+	
 }
 
 /* ///////// CAROUSSEL ////////// */
