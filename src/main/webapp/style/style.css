@@ -207,13 +207,13 @@ header {
 	width: 50%;
 	display: flex;
 	flex-direction: column;
-	padding: 0 245px 0 0;
 }
 
 .client .col1 img {
 	border-radius: 50%;
 	max-height: 124px;
 	width: 124px;
+    object-fit: cover;
 }
 
 .col2 {

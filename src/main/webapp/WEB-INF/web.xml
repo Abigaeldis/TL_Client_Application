@@ -152,4 +152,13 @@
     <servlet-name>ServletAPropos</servlet-name>
     <url-pattern>/apropos</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>ConnexionFilter</display-name>
+    <filter-name>ConnexionFilter</filter-name>
+    <filter-class>filters.ConnexionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ConnexionFilter</filter-name>
+    <url-pattern>/Connexion/*</url-pattern>
+  </filter-mapping>
 </web-app>
