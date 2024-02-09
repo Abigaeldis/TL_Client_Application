@@ -141,7 +141,14 @@
   <servlet-mapping>
     <servlet-name>ServletSupprimerUtilisateur</servlet-name>
     <url-pattern>/supprimer</url-pattern>
-
   </servlet-mapping>
-
+  <filter>
+    <display-name>ConnexionFilter</display-name>
+    <filter-name>ConnexionFilter</filter-name>
+    <filter-class>filters.ConnexionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ConnexionFilter</filter-name>
+    <url-pattern>/Connexion/*</url-pattern>
+  </filter-mapping>
 </web-app>
