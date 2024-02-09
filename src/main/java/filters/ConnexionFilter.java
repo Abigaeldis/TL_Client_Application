@@ -29,26 +29,21 @@ public class ConnexionFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
     	
-        // Convert ServletRequest and ServletResponse to HttpServletRequest and HttpServletResponse
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        // Check if a session exists
         HttpSession session = httpRequest.getSession();
         
-        // Retrieve Utilisateur object from the session
         Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur");
         
         if (utilisateur != null) {
-            // User is logged in, redirect to the "MonCompte" page
             httpResponse.sendRedirect("MonCompte?id=" + utilisateur.getId());
         } else {
-            // User is not logged in, proceed with the request
             chain.doFilter(request, response);
         }
     }
 
     public void destroy() {
-        // Cleanup code if needed
+
     }
 }
