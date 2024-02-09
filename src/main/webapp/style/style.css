@@ -102,6 +102,10 @@ header {
 	cursor: pointer;
 }
 
+.btnOrange:hover {
+	background-color: rgb(250, 129, 99);
+}
+
 .btnDark {
 	border: solid #F96540 1px;
 	background-color: #171A1F;
@@ -111,6 +115,10 @@ header {
 	max-width: 244px;
 	padding: 0 35px;
 	cursor: pointer;
+}
+
+.btnDark:hover {
+	background-color: rgb(46, 46, 46);
 }
 
 @media screen and (max-width: 767px) {
