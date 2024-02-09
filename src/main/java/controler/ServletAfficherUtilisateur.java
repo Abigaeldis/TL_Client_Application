@@ -36,7 +36,7 @@ public class ServletAfficherUtilisateur extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. Récupération des paramètres
 		String idStr = request.getParameter("id");
-		System.out.println(idStr);
+//		System.out.println(idStr);
 
 		// 2. Passage des paramètres dans le type voulu
 		int id = Integer.parseInt(idStr);

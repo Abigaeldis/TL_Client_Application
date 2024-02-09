@@ -82,17 +82,15 @@ public class ReservationBLL {
 		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
 		int jourInt = date.getDayOfWeek().getValue();
 		String jourReservation = jours[jourInt-1];
-		System.out.println(jourReservation);
+
 		LocalTime horaireReservation = date.toLocalTime();
-		System.out.println(horaireReservation);
+
 		for (Horaire current : horairesRestaurant) {
 			String jour = current.getJour();
 			if (jourReservation.equals(jour)) {
-				System.out.println("Jour ok : " + jour);
 				LocalTime heureDebut = current.getHeureDeDebut();
 				LocalTime heureFin = current.getHeureDeFin();
 				if (horaireReservation.isAfter(heureDebut) && horaireReservation.isBefore(heureFin)) {
-					System.out.println("Horaire ok  : " + heureDebut + " - " + heureFin);
 					return true;
 				}
 			}

@@ -1119,6 +1119,9 @@ a:active {
 	flex-direction: column;
 }
 
+.carte-boissons h2{
+		color: #F96540;
+}
 .carte-boissons ul {
 	list-style-type: none;
 	display: flex;

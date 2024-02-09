@@ -40,7 +40,6 @@ public class SessionFilter implements Filter {
             chain.doFilter(request, response);
         } else {
         	session.setAttribute("previousPage", httpRequest.getRequestURI() + "?id=" + httpRequest.getParameter("id"));
-    		System.out.println();
             httpResponse.sendRedirect("Connexion ");
         }
     }

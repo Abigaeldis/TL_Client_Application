@@ -39,7 +39,7 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
             
         	Utilisateur newUtilisateur = utilisateurBLL.insert(nom, prenom, mail, motdepasse, telephone,
                     adresse);
-            System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
+//            System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
 
             // request.getSession().setAttribute("name", newUtilisateur);
             HttpSession session = request.getSession();
