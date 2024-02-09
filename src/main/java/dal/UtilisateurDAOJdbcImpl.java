@@ -131,6 +131,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			ps.setInt(1, id);
 			 ps.executeUpdate();
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new DALException("Impossible de supprimer le composant d'id "+ id, e);
 		}
 	}

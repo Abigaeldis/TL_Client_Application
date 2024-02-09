@@ -17,7 +17,7 @@
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
 <div class = "header-restaurant">
 </div>
-<h1>Nos restaurants</h1>
+<h1 class= "titre_liste_restaurants">Nos restaurants</h1>
 <div class="container liste-container">
 <c:forEach var="current" items="${restaurants }">
 	<div class="restaurant-container">

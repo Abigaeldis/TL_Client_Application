@@ -317,6 +317,9 @@ header {
 }
 
 /**Liste restaurants**/
+
+
+
 .liste-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -409,6 +412,12 @@ h1 {
 	flex-direction: row;
 }
 
+.titre_liste_restaurants {
+	color: #F96540;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
 
 @media screen and (max-width: 767px) {
 	.liste_container {
@@ -1179,44 +1188,41 @@ a:active {
 	display: block;
 }
 
-	.apropos_container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: justify;
-		width: 90%;
-		margin-top: 50px;
-		padding: 10px;
-		margin-bottom: 50px;
-	}
-	
-	.apropos_container h2 {
-		margin-bottom: 40px;
-	}
-	.apropos_intro {
-		
-	}
-	
-	.apropos_mission {
-		
-	}
-	
-	.apropos_objectif {
-		
-	}
-	
-	.apropos_tech {
-		
-	}
-	
-	.apropos_equipe {
-		
-	}
-	
-	.apropos_resultat {
-		
-	
-	}
+.apropos_container {
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	width: 90%;
+	margin-top: 50px;
+	padding: 10px;
+	margin-bottom: 50px;
+}
+
+.apropos_container h1 {
+	margin-bottom: 40px;
+	font-size: 40px;
+}
+
+.apropos_container h3 {
+	color: #F96540;
+}
+
+.apropos_intro {}
+
+.apropos_mission {}
+
+.apropos_objectif {}
+
+.apropos_tech {}
+
+.apropos_equipe {}
+
+.apropos_resultat {}
+
+.apropos_margin {
+	margin-top: 20px;
+}
+
 /*///////// QUERY //////////*/
 
 @media screen and (max-width: 767px) {
