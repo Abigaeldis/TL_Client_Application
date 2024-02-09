@@ -3,7 +3,7 @@
 body {
 	margin: 0;
 	max-width: 1920px;
-	margin:auto !important ;
+	margin: auto !important;
 	padding: 0;
 	font-family: Arial, sans-serif;
 }
@@ -67,8 +67,8 @@ header {
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.nav-link.active{
-	color:#F96540 !important;
+.nav-link.active {
+	color: #F96540 !important;
 	font-weight: bold;
 }
 
@@ -78,7 +78,7 @@ header {
 	padding: 10px 0;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover{
+.navbar-dark .navbar-nav .nav-link:hover {
 	color: #F96540 !important;
 }
 
@@ -267,50 +267,51 @@ header {
 
 }
 
-@media (max-width:767px){
-	.client .col2{
+@media (max-width:767px) {
+	.client .col2 {
 		display: none;
 	}
-	
-	.overlay{	
-    left: 0%; 
-    transform: translate(0, 0);
-    height: 282px;
+
+	.overlay {
+		left: 0%;
+		transform: translate(0, 0);
+		height: 282px;
 	}
-	
+
 	.presentation {
-   
-    padding: 0; 
- 
-}
 
-.client{
-	max-height: none;
-	align-items: center;
-	padding: 0px;
-}
+		padding: 0;
 
-.client .col1{
-	width: 100%;
-	padding: 0;
-}
+	}
 
-.restaurants{
-	margin:0;
-	margin-bottom: 15px;
-}
-.restaurants .col1{
-	padding: 0;
-	padding-left: 10px;
-}
+	.client {
+		max-height: none;
+		align-items: center;
+		padding: 0px;
+	}
 
-.restaurants .btnOrange{
-	height: 47px;
-}
+	.client .col1 {
+		width: 100%;
+		padding: 0;
+	}
 
-.cutbowl{
-	height : 75px;
-}
+	.restaurants {
+		margin: 0;
+		margin-bottom: 15px;
+	}
+
+	.restaurants .col1 {
+		padding: 0;
+		padding-left: 10px;
+	}
+
+	.restaurants .btnOrange {
+		height: 47px;
+	}
+
+	.cutbowl {
+		height: 75px;
+	}
 
 
 }
@@ -583,8 +584,8 @@ h1 {
 }
 
 .margin_titre_reservation {
-    margin-top: 50px;
-    margin-bottom: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 
@@ -592,11 +593,11 @@ h1 {
 	.infos-container {
 		width: 95%;
 	}
-	
+
 	.compte-container form {
-	padding-left: 0px;
-	padding-bottom: 20px;
-}
+		padding-left: 0px;
+		padding-bottom: 20px;
+	}
 }
 
 /*RESERVATION*/
@@ -976,13 +977,13 @@ a:active {
 
 .container_inscription {
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	background-color: #FAFAFB;
 	padding-bottom: 30px;
 	padding-top: 30px;
-	gap : 20px;
+	gap: 20px;
 }
 
 .col_1_inscription {
@@ -1020,20 +1021,21 @@ a:active {
 }
 
 
-@media screen and (max-width : 767px){
-	.col_1_inscription{
-		width : 100%;
+@media screen and (max-width : 767px) {
+	.col_1_inscription {
+		width: 100%;
 		justify-content: center;
 	}
-	
-	 .col_2_inscription {
+
+	.col_2_inscription {
 		display: none;
 	}
-	
+
 	.compte-container form {
 		padding-left: 0px;
 		padding-bottom: 20px;
 	}
+
 	.inscription_btn {
 		transform: translate(30px, 20px);
 	}
@@ -1042,7 +1044,7 @@ a:active {
 /*///////////////PAGE Carte////////////////////// */
 .backmenu {
 
-	width: 75%;
+	width: 72%;
 	margin: auto;
 	margin-top: 15px;
 }
@@ -1081,8 +1083,13 @@ a:active {
 	padding: 60px 20px;
 }
 
+
 .carte-plats div {
 	width: 65%;
+}
+
+.carte-plats h2 {
+	color: #F96540;
 }
 
 .carte-plats ul {
@@ -1131,9 +1138,13 @@ a:active {
 		box-shadow: none;
 	}
 
+	.carte-plats h2 {
+		color: #F96540;
+	}
+
 	.backmenu,
 	.container-carte div {
-		width: 100%;
+		width: 92%;
 		padding: 5px;
 	}
 
