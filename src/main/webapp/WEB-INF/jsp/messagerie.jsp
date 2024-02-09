@@ -18,7 +18,9 @@
 		src="img/banniere_messagerie.jpg">
 
 	<h1 class="titre_messagerie">Contacter ${restaurant.nom }</h1>
-
+	<form class="backmenu" id="backmenuForm">
+		<button class="backmenu-button" type="button">Retour</button>
+	</form>
 	<div class="container_messagerie">
 		<form class="form_messagerie" action="contacter" method="POST">
 			<div class="div_titre_message">
@@ -44,6 +46,6 @@
 
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 	<script src="script/navbarScript.js"></script>
-
+	<script src="script/retourPage.js"></script>
 </body>
 </html>
