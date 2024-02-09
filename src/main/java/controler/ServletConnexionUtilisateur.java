@@ -31,15 +31,15 @@ public class ServletConnexionUtilisateur extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String motdepasse = request.getParameter("motdepasse");
 		if ("Inscription".equals(action)) {
-			System.out.println("Inscription en cours");
+//			System.out.println("Inscription en cours");
 			UtilisateurBLL utilisateurBLL;
 			try {
 				utilisateurBLL = new UtilisateurBLL();
 				List<Utilisateur> utilisateursExistants = utilisateurBLL.selectAll();
 				for (Utilisateur current : utilisateursExistants) {
-					System.out.println(current.getMail());
+//					System.out.println(current.getMail());
 					if (current.getMail().equals(mail)) {
-						System.out.println("Mail déjà existant");
+//						System.out.println("Mail déjà existant");
 						request.setAttribute("erreurs", "Un compte existe déjà avec cette adresse mail.");
 						request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp").forward(request, response);
 					}

@@ -74,10 +74,10 @@ public class ServletContacter extends HttpServlet {
 	
 		// Etape 1 bis : vous pouvez vous assurer que vous recuperez bien les infos
 		
-		System.out.println(idRestaurantStr);
-		System.out.println(titre);
-		System.out.println(corpsDuMessage);
-		System.out.println(idUtilisateurStr);
+//		System.out.println(idRestaurantStr);
+//		System.out.println(titre);
+//		System.out.println(corpsDuMessage);
+//		System.out.println(idUtilisateurStr);
 		
 		// Etape 2 : Passer les infos dans les types appropries
 		
@@ -110,8 +110,8 @@ public class ServletContacter extends HttpServlet {
 			// Etape 4 : Ajout des attributs eventuels a la requete
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("message", messageCree);
-			System.out.println(restaurant);
-			System.out.println(messageCree);
+//			System.out.println(restaurant);
+//			System.out.println(messageCree);
 
 			request.getRequestDispatcher("/WEB-INF/jsp/confirmationMessage.jsp").forward(request, response);
 			

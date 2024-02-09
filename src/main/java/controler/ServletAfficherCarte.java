@@ -76,7 +76,7 @@ public class ServletAfficherCarte extends HttpServlet {
 					
 						break;
 					default :
-						System.out.println(current);
+//						System.out.println(current);
 						break;
 					}
 				}

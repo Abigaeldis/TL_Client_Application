@@ -31,7 +31,7 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 		String idStr = request.getParameter("id");
 
 		int id = Integer.parseInt(idStr);
-		System.out.println(id);
+//		System.out.println(id);
 
 		try {
 			
