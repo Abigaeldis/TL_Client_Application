@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="col_2">
-			<h2>Horaires</h2>
+			<h2 class="revert">Horaires</h2>
 			<c:forEach var="current" items="${jours}">
 		        <div class="horaires-container">
 		            <p>${current} :
