@@ -21,7 +21,6 @@
 			<p>Nom : ${utilisateur.nom }</p>
 			<p>Prenom : ${utilisateur.prenom }</p>
 			<p>Mail : ${utilisateur.mail }</p>
-			<p>Mot de passe : ${utilisateur.motdepasse }</p>
 			<p>Telephone : ${utilisateur.telephone }</p>
 			<p>Adresse : ${utilisateur.adresse }</p>
 		</div>
