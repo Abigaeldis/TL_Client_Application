@@ -20,45 +20,54 @@
 		src="img/banniere_messagerie.jpg">
 
 	<div class="apropos_container">
-		<h2 class="apropos_titre">À propos</h2>
-		<div class="apropos_intro">Bienvenue sur notre page "À
-			Propos", où nous sommes ravis de partager avec vous les détails
-			passionnants de notre projet de développement réalisé dans le cadre
-			de notre formation. Notre équipe dévouée a travaillé conjointement
-			sur le back-end et le front-end pour créer une solution innovante et
-			fonctionnelle qui reflète notre engagement envers l'apprentissage et
-			l'excellence technologique.</div>
+		<h1 class="apropos_titre">À propos</h1>
 
-		<div class="apropos_mission"><h3>Notre Mission</h3> Notre mission était
-			de concevoir et de mettre en œuvre une application robuste qui répond
-			aux besoins modernes du monde numérique. À travers ce projet, nous
-			avons cherché à acquérir une compréhension approfondie du
-			développement back-end et front-end, en mettant l'accent sur la
-			création d'une expérience utilisateur fluide et agréable.</div>
-		<div class="apropos_objectif"><h3>Le Défi</h3> Le projet a constitué un
-			défi stimulant qui nous a permis d'appliquer nos connaissances
-			acquises au cours de notre formation. Du côté back-end, nous avons
-			abordé des questions complexes liées à la gestion des données, à la
-			sécurité et à la performance, tandis que le front-end nous a amenés à
-			explorer la convivialité, le design réactif et l'accessibilité.</div>
-		<div class="apropos_tech"><h3>Technologies Utilisées</h3> Nous avons opté
-			pour un ensemble de technologies modernes afin de garantir la qualité
-			et la pérennité de notre solution. Du côté du back-end, nous avons
-			utilisé [Nom de la technologie] pour gérer efficacement les données
-			et assurer une communication sécurisée. Sur le front-end, nous avons
-			mis en œuvre [Nom de la bibliothèque/framework] pour créer une
-			interface utilisateur intuitive et attrayante.</div>
-		<div class="apropos_equipe"><h3>Notre Équipe</h3> Notre équipe est composée
-			de passionnés de développement, chacun apportant une expertise unique
-			au projet. Nous croyons fermement en la collaboration et en la
-			diversité des compétences pour aboutir à des résultats exceptionnels.
+		<div class="apropos_intro apropos_margin">Bienvenue sur notre
+			page "À Propos", où nous sommes ravis de partager avec vous les
+			détails de notre projet de développement, réalisé dans le cadre de
+			notre POEI Java. Notre équipe a travaillé conjointement sur le
+			back-end et le front-end pour créer une application fonctionnelle,
+			résultat de notre formation et de notre engagement.</div>
+
+
+		<div class="apropos_equipe apropos_margin">
+			<h3>Notre Équipe</h3>
+			Notre équipe est composée de passionnés de développement, chacun
+			apportant sa vision au projet. Nous croyons fermement en la
+			collaboration et en la diversité des compétences pour aboutir à des
+			résultats exceptionnels.
 		</div>
-		<div class="apropos_resultat">Ce Que Nous Avons Appris Ce projet
-			a été bien plus qu'une simple expérience de développement. Il a été
-			une opportunité d'apprendre, de surmonter des obstacles et de grandir
-			en tant que professionnels du secteur. Les leçons tirées de ce
-			parcours renforcent notre détermination à exceller dans le domaine du
-			développement logiciel.</div>
+
+
+		<div class="apropos_mission apropos_margin">
+			<h3>Notre Mission</h3>
+			Notre mission était de concevoir et de mettre en œuvre une
+			application robuste qui répond aux besoins modernes du monde
+			numérique. À travers ce projet, nous avons cherché à acquérir une
+			compréhension approfondie du développement back-end et front-end, en
+			mettant l'accent sur la création d'une expérience utilisateur fluide
+			et agréable.
+		</div>
+
+		<div class="apropos_tech apropos_margin">
+			<h3>Technologies Utilisées</h3>
+			Nous avons opté pour un ensemble de technologies modernes afin de
+			garantir la qualité et la pérennité de notre solution. Du côté du
+			back-end, nous avons utilisé [Nom de la technologie] pour gérer
+			efficacement les données et assurer une communication sécurisée. Sur
+			le front-end, nous avons mis en œuvre [Nom de la
+			bibliothèque/framework] pour créer une interface utilisateur
+			intuitive et attrayante.
+		</div>
+
+		<div class="apropos_resultat apropos_margin">
+			<h3>Ce Que Nous Avons Appris</h3>
+			Ce projet a été bien plus qu'une simple expérience de développement.
+			Il a été une opportunité d'apprendre, de surmonter des obstacles et
+			de grandir en tant que professionnels du secteur. Les leçons tirées
+			de ce parcours renforcent notre détermination à exceller dans le
+			domaine du développement logiciel.
+		</div>
 
 		Contact Si vous avez des questions, des commentaires ou si vous
 		souhaitez en savoir plus sur notre projet, n'hésitez pas à nous
@@ -66,8 +75,7 @@
 
 		Nous vous remercions de prendre le temps de découvrir notre travail et
 		sommes impatients de partager davantage sur notre aventure de
-		développement. Cordialement, 
-		Abigaël, Lauriane, Rodrigue.
+		développement. Cordialement, Abigaël, Lauriane, Rodrigue.
 
 
 	</div>
