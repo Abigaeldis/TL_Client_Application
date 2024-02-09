@@ -17,7 +17,8 @@
 	<div class="header-restaurant"></div>
 
 
-	<h1>Réservation</h1>
+<h1 class="margin_titre_reservation">Réservation</h1>
+
 	<form class="backmenu" id="backmenuForm">
 		<button class="backmenu-button" type="button">Retour</button>
 	</form>
