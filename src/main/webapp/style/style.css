@@ -333,7 +333,6 @@ header {
 	max-height: 150px;
 	/* Hauteur fixe de l'image */
 	width: auto;
-	object-fit: cover;
 }
 
 .restaurant-container:hover {
@@ -364,6 +363,7 @@ header {
 .restaurant-container h2 {
 	padding-left: 16px;
 	/* Espacement interne */
+	padding-top: 15px;
 	line-height: 26px;
 	text-align: left;
 }
@@ -877,7 +877,7 @@ a:active {
 	width: 100%;
 	max-width: 100%;
 	height: 240px;
-	object-fit: none;
+	object-fit: cover;
 }
 
 .titre_messagerie {

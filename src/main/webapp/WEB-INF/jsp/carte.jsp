@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link
+<link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
@@ -19,8 +19,8 @@
 	<img alt="" class="banner_connexion" src="img/banniere_carte.jpg">
 	<!-- 	<h1>Voici la carte du restaurant</h1> -->
 	<form class="backmenu" id="backmenuForm">
-    <button class="backmenu-button" type="button">Retour</button>
-</form>
+		<button class="backmenu-button" type="button">Retour</button>
+	</form>
 	<div>
 		<h1>${carte.nom}</h1>
 	</div>
@@ -62,14 +62,15 @@
 
 			</div>
 
-			<div >
+			<div>
 				<h2>Desserts</h2>
 
 				<c:forEach var="plat" items="${desserts}">
 					<div class="div-plats">
 						<div class="plat">
 							<ul>
-								<li><h3>${plat.nom}</h3></li>								<li>
+								<li><h3>${plat.nom}</h3></li>
+								<li>
 								<li>${plat.description}</li>
 							</ul>
 						</div>
@@ -98,7 +99,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 	<script src="script/navbarScript.js"></script>
