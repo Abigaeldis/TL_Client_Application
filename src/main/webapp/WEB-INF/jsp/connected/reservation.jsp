@@ -18,7 +18,7 @@
 	</div>
 
 
-<h1>Réservation</h1>
+<h1 class="margin_titre_reservation">Réservation</h1>
 
 <div class = "container-global-reservation">
 <div class= "compte-container">

@@ -557,9 +557,7 @@ h1 {
 	border-bottom-color: #F96540;
 }
 
-.compte-container form {
-	width: 300px;
-}
+
 
 .compte-container label {
 	color: #F96540;
@@ -586,6 +584,12 @@ h1 {
 	background-color: #FAFAFB;
 }
 
+.margin_titre_reservation {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
 @media screen and (max-width : 767px) {
 	.infos-container {
 		width: 95%;
@@ -601,6 +605,7 @@ h1 {
 
 .container-global-reservation {
 	display: flex;
+	gap: 12%;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
@@ -608,7 +613,7 @@ h1 {
 
 .container-global-reservation .compte-container,
 .horaires {
-	width: 50%;
+	width: 30%;
 }
 
 .horaires {
