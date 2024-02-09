@@ -25,13 +25,13 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.utilisateur}">
 						<!-- Display Connexion/Inscription if utilisateur is not in the session -->
-						<li class="nav-item"><a href="Connexion">Connexion/Inscription</a></li>
+						<li class="nav-item"><a class="nav-link" href="Connexion">Connexion/Inscription</a></li>
 					</c:when>
 					<c:otherwise>
 						<!-- Display My Account if utilisateur is in the session -->
-						<li class="nav-item"><a href="MonCompte?id=${sessionScope.utilisateur.id}">Mon
+						<li class="nav-item"><a class="nav-link" href="MonCompte?id=${sessionScope.utilisateur.id}">Mon
 								compte</a></li>
-						<li class="nav-item"><a href="deconnexion">Se déconnecter</a></li>
+						<li class="nav-item"><a class="nav-link" href="deconnexion">Se déconnecter</a></li>
 					</c:otherwise>
 				</c:choose>
 			</ul>
