@@ -485,7 +485,6 @@ h1 {
 }
 
 .compte-container form {
-	padding-left: 141px;
 	padding-bottom: 20px;
 }
 
@@ -557,9 +556,9 @@ h1 {
 	border-bottom-color: #F96540;
 }
 
-.compte-container form {
-	width: 300px;
-}
+/*.compte-container form {*/
+/*	width: 300px;*/
+/*}*/
 
 .compte-container label {
 	color: #F96540;
@@ -971,38 +970,15 @@ a:active {
 
 /* INSCRIPTION */
 
-.inscription_form {
-	display: flex;
-	margin-bottom: 30px;
-}
-
-.inscription_form form {
-	display: flex;
-	flex-direction: column;
-}
-
-.form-control {
-	display: flex;
-	flex-direction: column;
-}
-
-.form-control input {
-	margin: 0;
-	margin-bottom: 10px;
-}
-
-.form-control label {
-	color: #F96540;
-}
-
 .container_inscription {
-
 	display: flex;
-	justify-content: center;
+    justify-content: center;
+    align-items: center;
 	width: 100%;
 	background-color: #FAFAFB;
 	padding-bottom: 30px;
 	padding-top: 30px;
+	gap : 20px;
 }
 
 .col_1_inscription {
@@ -1010,7 +986,6 @@ a:active {
 	background-color: #FAFAFB;
 	display: flex;
 	align-items: center;
-	width: 11%;
 }
 
 .col_1_inscription form {
@@ -1028,20 +1003,36 @@ a:active {
 }
 
 .col_2_inscription img {
-	height: 300px;
+	height: 500px;
 	object-fit: cover;
 }
 
 .inscription_btn {
-	transform: translate(100px, 20px);
+	transform: translate(170px, 20px);
 }
 
 .extra_margin {
 	margin-bottom: 13px !important;
 }
 
+
 @media screen and (max-width : 767px){
+	.col_1_inscription{
+		width : 100%;
+		justify-content: center;
+	}
 	
+	 .col_2_inscription {
+		display: none;
+	}
+	
+	.compte-container form {
+		padding-left: 0px;
+		padding-bottom: 20px;
+	}
+	.inscription_btn {
+		transform: translate(30px, 20px);
+	}
 }
 
 /*///////////////PAGE Carte////////////////////// */

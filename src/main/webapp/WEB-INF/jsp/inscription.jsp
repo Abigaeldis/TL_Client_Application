@@ -21,35 +21,37 @@
 	<h1>Création de votre compte</h1>
 	<div class="container_inscription">
 		<div class="col_1_inscription">
-			<div class="inscription_form">
+<!-- 			<div class="inscription_form"> -->
+			<div class= "compte-container">
 				<form action="ServletInscriptionUtilisateur" method="post">
-					<div class="form-control">
-						<label for="prenom">Prenom : </label> <input class="input_style extra_margin"
+					<div>
+						<label for="prenom">Prenom : </label> 
+						<input class="input_style extra_margin"
 							type="text" name=prenom required />
 					</div>
 
-					<div class="form-control">
+					<div>
 						<label for="nom">Nom : </label> <input class="input_style extra_margin"
 							type="text" name="nom" required />
 					</div>
 
-					<div class="form-control">
+					<div>
 						<label for="motdepasse">Mot de passe : </label> <input
 							class="input_style" type="password" name="motdepasse"
 							value="${motdepasse }" required />
 					</div>
 
-					<div class="form-control">
+					<div>
 						<label for="mail">Mail : </label> <input class="input_style extra_margin"
 							type="text" name="mail" value="${mail }" required />
 					</div>
 
-					<div class="form-control">
+					<div>
 						<label for="telephone">telephone : </label> <input
 							class="input_style extra_margin" type="text" name="telephone" required />
 					</div>
 
-					<div class="form-control">
+					<div>
 						<label for="adresse">Adresse : </label> <input class="input_style extra_margin"
 							type="text" name="adresse" required />
 					</div>
