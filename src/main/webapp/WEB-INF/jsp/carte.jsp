@@ -17,7 +17,7 @@
 <body>
 	<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
 	<img alt="" class="banner_connexion" src="img/banniere_carte.jpg">
-	<!-- 	<h1>Voici la carte du restaurant</h1> -->
+
 	<form class="backmenu" id="backmenuForm">
 		<button class="backmenu-button" type="button">Retour</button>
 	</form>

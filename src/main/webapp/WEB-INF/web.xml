@@ -142,6 +142,16 @@
     <servlet-name>ServletSupprimerUtilisateur</servlet-name>
     <url-pattern>/supprimer</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAPropos</display-name>
+    <servlet-name>ServletAPropos</servlet-name>
+    <servlet-class>controler.ServletAPropos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAPropos</servlet-name>
+    <url-pattern>/apropos</url-pattern>
+  </servlet-mapping>
   <filter>
     <display-name>ConnexionFilter</display-name>
     <filter-name>ConnexionFilter</filter-name>
