@@ -11,10 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletAPropos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Redirection vers la page A Propos
 		request.getRequestDispatcher("/WEB-INF/jsp/aPropos.jsp").forward(request, response);
 	}
-
-
 }

@@ -69,11 +69,11 @@ public class HoraireBLL {
 	}
 
 	private void validateHoraire(String jour, LocalTime heureDeDebut, LocalTime heureDeFin, String creneau, Restaurant restaurant) throws BLLException {
-		// Validate jour using regex (case-insensitive)
+		// Validation du jour en s'affranchissant du case sensitive
 		if (jour == null || !Pattern.matches("^(?i)(LUNDI|MARDI|MERCREDI|JEUDI|VENDREDI|SAMEDI|DIMANCHE)$", jour)) {
 			throw new BLLException("Le jour doit être un jour de la semaine (LUNDI, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE)");
 		}
-
+		
 		if (creneau==null||!Pattern.matches("^(?i)(MIDI|SOIR)$", creneau)) {
 			throw new BLLException("Le creneau doit être MIDI ou SOIR");
 		}

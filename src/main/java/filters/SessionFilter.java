@@ -36,9 +36,11 @@ public class SessionFilter implements Filter {
         HttpSession session = httpRequest.getSession();
 
         if (session != null && session.getAttribute("utilisateur") != null) {
-
+        	//Si utilisateur connecté, on laisse passer.
             chain.doFilter(request, response);
         } else {
+        	//si l'utilisateur n'est pas connecté, renvoyer sur la page de connexion
+        	//Enregistrer dans la session la page sur laquelle on était
         	session.setAttribute("previousPage", httpRequest.getRequestURI() + "?id=" + httpRequest.getParameter("id"));
             httpResponse.sendRedirect("Connexion ");
         }

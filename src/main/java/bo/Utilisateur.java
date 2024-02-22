@@ -12,7 +12,6 @@ public class Utilisateur {
 	private Restaurant restaurant;
 	
 	public Utilisateur() {
-		super();
 	}
 	
 	public Utilisateur(String nom, String prenom, String mail, String motdepasse, String telephone, String adresse) {
@@ -106,15 +105,12 @@ public class Utilisateur {
 		this.restaurant = restaurant;
 	}	
 	
-	
-
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mail=" + mail + ", motdepasse="
 				+ motdepasse + ", telephone=" + telephone + ", adresse=" + adresse + ", role=" + role + ", restaurant="
 				+ restaurant + "]";
 	}
-
 }
 
 

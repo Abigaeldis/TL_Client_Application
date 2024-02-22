@@ -45,9 +45,7 @@ public class PlatDAOJdbcImpl implements GenericDAO<Plat> {
 	}
 	
 	public List<Plat> selectAll() throws DALException {
-		List<Plat> plats = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
-		
+		List<Plat> plats = new ArrayList<>(); 		
 		try {
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
@@ -75,7 +73,7 @@ public class PlatDAOJdbcImpl implements GenericDAO<Plat> {
 		Plat plat = null;
 		try {
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				plat = new Plat();
@@ -127,7 +125,6 @@ public class PlatDAOJdbcImpl implements GenericDAO<Plat> {
 			ps.setString(4, plat.getType());
 			ps.setInt(5, plat.getCarte().getId());
 			ps.setInt(6, plat.getId());
-//			System.out.println(plat.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DALException("Impossible de mettre a jour les informations pour l'id "+ plat.getId(), e);

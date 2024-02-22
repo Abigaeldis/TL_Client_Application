@@ -71,7 +71,4 @@ public class Message {
 		return "Message [id=" + id + ", titre=" + titre + ", corpsMessage=" + corpsMessage + ", restaurant="
 				+ restaurant + ", utilisateur=" + utilisateur + "]";
 	}
-	
-	
-	
 }

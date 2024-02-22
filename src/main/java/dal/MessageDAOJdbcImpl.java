@@ -28,9 +28,7 @@ public class MessageDAOJdbcImpl implements GenericDAO<Message> {
 	public MessageDAOJdbcImpl() throws DALException {
 	}
 	
-	
 	////////////////////////////////////////////////////////////////////////
-	
 	
 	public List<Message> selectAll() throws DALException {
 		List<Message> messages = new ArrayList<>(); 
@@ -45,10 +43,12 @@ public class MessageDAOJdbcImpl implements GenericDAO<Message> {
 				message.setTitre(rs.getString("titre"));
 				message.setCorpsMessage(rs.getString("corps_message"));
 				int idRestaurant = rs.getInt("id_restaurant");
+				//Récupération d'une instance de restaurant
 				RestaurantBLL restaurantBll = new RestaurantBLL();
 				Restaurant restaurant = restaurantBll.selectById(idRestaurant);
 				message.setRestaurant(restaurant);
 				int idUtilisateur = rs.getInt("id_utilisateur");
+				//Récupération d'une instance d'utilisateur
 				UtilisateurBLL utilisateurBll = new UtilisateurBLL();
 				Utilisateur utilisateur = utilisateurBll.selectById(idUtilisateur);
 				message.setUtilisateur(utilisateur);
@@ -72,10 +72,12 @@ public class MessageDAOJdbcImpl implements GenericDAO<Message> {
 				message.setTitre(rs.getString("titre"));
 				message.setCorpsMessage(rs.getString("corps_message"));
 				int idRestaurant = rs.getInt("id_restaurant");
+				//Récupération d'une instance de restaurant
 				RestaurantBLL restaurantBll = new RestaurantBLL();
 				Restaurant restaurant = restaurantBll.selectById(idRestaurant);
 				message.setRestaurant(restaurant);
 				int idUtilisateur = rs.getInt("id_utilisateur");
+				//Récupération d'une instance d'utilisateur
 				UtilisateurBLL utilisateurBll = new UtilisateurBLL();
 				Utilisateur utilisateur = utilisateurBll.selectById(idUtilisateur);
 				message.setUtilisateur(utilisateur);

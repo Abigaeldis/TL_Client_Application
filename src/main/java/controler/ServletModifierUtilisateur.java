@@ -28,7 +28,6 @@ public class ServletModifierUtilisateur extends HttpServlet {
 		// 1. Récupération des paramètres
 		String idStr = request.getParameter("id");
 
-
 		// 2. Passage des paramètres dans le type voulu
 		int id = Integer.parseInt(idStr);
 
@@ -48,7 +47,6 @@ public class ServletModifierUtilisateur extends HttpServlet {
 
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Etape 1 : recuperer les parametres
 		String idStr = request.getParameter("id");
@@ -66,9 +64,9 @@ public class ServletModifierUtilisateur extends HttpServlet {
 		
 		// Etape 3 : exploitation des parametres par le bll
 		try {
-			// Je recupere mon contact en base de donnees
+			// Récupération de l'utilisateur en base de donnees
 			utilisateurAModifier = utilisateurBll.selectById(id);
-			// Je mets a jour toutes ses informations
+			// Mise à jour de toutes ses informations
 			utilisateurAModifier.setNom(nomStr);
 			utilisateurAModifier.setPrenom(prenomStr);
 			utilisateurAModifier.setMail(mailStr);
@@ -78,7 +76,7 @@ public class ServletModifierUtilisateur extends HttpServlet {
 		} catch (BLLException e) {e.printStackTrace();
 		}
 		try {
-			// J'enregistre ces modifications aupres de la base de donnees
+			// Enregistrement des modifications auprès de la base de donnees
 			utilisateurBll.update(utilisateurAModifier);
 			response.sendRedirect("MonCompte?id=" + id);
 		} catch (BLLException e) {

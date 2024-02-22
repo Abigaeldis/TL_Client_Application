@@ -3,7 +3,6 @@ package bo;
 public class Carte {
 	private int id;
 	private String nom;
-	
 	/*
 	 * Constructeurs
 	 */
@@ -40,8 +39,6 @@ public class Carte {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-
 
 	@Override
 	public String toString() {

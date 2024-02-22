@@ -54,6 +54,7 @@ public class ServletReservation extends HttpServlet {
 		
 		List<Horaire> horaires = new ArrayList<>();
 		List<Horaire> horairesRestaurant = new ArrayList<>();
+		//Récupération des horaires du restaurant
 		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
 		try {
 			horaires = horaireBll.selectAll();
@@ -67,8 +68,8 @@ public class ServletReservation extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//Gestion de l'affichage pour avoir une ligne par jour de la semaine
 		Map<String, List<String>> horairesGroupes = new HashMap<>();
-
         // Parcourir la liste des horaires
         for (Horaire current : horairesRestaurant) {
             String jour = current.getJour(); // Jour de la semaine

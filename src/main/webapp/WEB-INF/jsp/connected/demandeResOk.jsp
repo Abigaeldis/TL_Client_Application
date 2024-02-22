@@ -14,8 +14,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jspf" %>
-<div class = "header-restaurant">
-	</div>
+<div class = "header-restaurant"></div>
 <div class="reservation_envoyee">
 <h1>Réservation</h1>
 <div class="reservation_envoye">

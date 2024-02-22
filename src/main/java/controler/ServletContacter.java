@@ -32,12 +32,6 @@ public class ServletContacter extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	// A placer sur la carte du restaurant (accueil), lorsque l'utilisateur souhaite contacter le restaurant selectionné
-		
-		// 1 ---- Je dois pouvoir récupérer l'id de l'utilisateur ou session ->
-		
-		// 2 ---- Je dois pouvoir récupérer l'id du restaurant depuis lequel je souhaite accéder au formulaire de contact
-		
 		// 1. Récupération des paramètres
 		String idStr = request.getParameter("id");
 		
@@ -54,38 +48,26 @@ public class ServletContacter extends HttpServlet {
 		
 		// 4. Ajout des attributs éventuels à ma request
 		request.setAttribute("restaurant", restaurant);
-		
-		
+				
 		// 5. Redirection vers la JSP choisie
 		request.getRequestDispatcher("/WEB-INF/jsp/messagerie.jsp").forward(request, response);
 			}
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("passage dans le POST du ServletContacter");
-		
+		//System.out.println("passage dans le POST du ServletContacter");
 		
 		// Etape 1 : Recuperer toutes les infos necessaires
 		String idRestaurantStr = request.getParameter("idRestaurant");
 		String titre = request.getParameter("titre");
 		String corpsDuMessage = request.getParameter("corpsDuMessage");
 		String idUtilisateurStr = request.getParameter("idUtilisateur");
-		
-	
-		// Etape 1 bis : vous pouvez vous assurer que vous recuperez bien les infos
-		
-//		System.out.println(idRestaurantStr);
-//		System.out.println(titre);
-//		System.out.println(corpsDuMessage);
-//		System.out.println(idUtilisateurStr);
-		
-		// Etape 2 : Passer les infos dans les types appropries
-		
+				
+		// Etape 2 : Passer les infos dans les types apropriés
 		int idRestaurant  = Integer.parseInt(idRestaurantStr);
 		int idUtilisateur  = Integer.parseInt(idUtilisateurStr);
 		
 		//Recuperer le restaurant puis l'utilisateur pour le constructeur message
-		
 		Restaurant restaurant = null;
 		try {
 			restaurant = restaurantBll.selectById(idRestaurant);
@@ -100,8 +82,7 @@ public class ServletContacter extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
-		// Etape 3 : Realiser le traitement associes a ces infos
+		// Etape 3 : Realiser le traitement associé a ces infos
 		Message messageCree = new Message(titre, corpsDuMessage, restaurant, utilisateur);
 		
 		try {
@@ -110,12 +91,12 @@ public class ServletContacter extends HttpServlet {
 			// Etape 4 : Ajout des attributs eventuels a la requete
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("message", messageCree);
-//			System.out.println(restaurant);
-//			System.out.println(messageCree);
-
+			
+			// 5. Redirection vers la JSP choisie
 			request.getRequestDispatcher("/WEB-INF/jsp/confirmationMessage.jsp").forward(request, response);
 			
 		} catch (BLLException e) {
+			//Récupération de la liste d'erreur s'il y en a pour affichage
 			request.setAttribute("erreurs", e.getErreurs());
 			request.setAttribute("restaurant", restaurant);
 			request.getRequestDispatcher("/WEB-INF/jsp/messagerie.jsp").forward(request, response);

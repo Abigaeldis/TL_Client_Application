@@ -12,15 +12,15 @@ public class ServletPagePrecedente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get the referrer URL from the request header
+        // Récupérer l'url du header
         String referer = request.getHeader("referer");
 
-        // Check if the referer is not null and not empty
+        // Si le referer n'est pas nul
         if (referer != null && !referer.isEmpty()) {
-            // Redirect the user back to the previous page
+            // Redirection de l'utilisateur vers la page précédente
             response.sendRedirect(referer);
         } else {
-            // If the referer is not available, redirect to a default page
+            // Sinon, redirection vers l'accueil
             response.sendRedirect("index.jsp");
         }
     }

@@ -33,16 +33,13 @@ public class ServletAfficherCarte extends HttpServlet {
 	}  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. Récupération des paramètres
-//		String idStr = request.getParameter("id");
-		String idStr = "1";
+		String idStr = request.getParameter("id");
 		
 		// 2. Passage des paramètres dans le type voulu
 		int id = Integer.parseInt(idStr);
 		
 		// 3. Exploitation des paramètres par le bll
 		Carte carte = null;
-		
-		
 		try {
 			carte = carteBll.selectById(id);
 		} catch (BLLException e) {
@@ -55,6 +52,8 @@ public class ServletAfficherCarte extends HttpServlet {
 		List<Plat> desserts = new ArrayList<>();
 		List<Plat> boissons = new ArrayList<>();
 		try {
+			// Récupération de tous les items du menu. 
+			// Classement de ces items selon leur type (entrée, plat, dessert, boisson)
 			items = platBll.selectAll();
 			for (Plat current : items) {
 				if (current.getCarte().getId()==carte.getId()) {
@@ -76,12 +75,10 @@ public class ServletAfficherCarte extends HttpServlet {
 					
 						break;
 					default :
-//						System.out.println(current);
 						break;
 					}
 				}
 			}
-			
 		} catch (BLLException e) {
 			System.out.println("Une erreur est survenue :");
 			e.printStackTrace();

@@ -30,7 +30,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	
 	public List<Utilisateur> selectAll() throws DALException {
 		List<Utilisateur> utilisateurs = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
 		
 		try {
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
@@ -62,7 +61,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		Utilisateur utilisateur = null;
 		try {
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				utilisateur = new Utilisateur();

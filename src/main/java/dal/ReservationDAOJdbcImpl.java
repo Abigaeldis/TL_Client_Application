@@ -32,8 +32,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 	}
 	
 	public List<Reservation> selectAll() throws DALException {
-		List<Reservation> reservations = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
+		List<Reservation> reservations = new ArrayList<>();
 		
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
@@ -50,10 +49,10 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 				Utilisateur utilisateur = utilisateurBll.selectById(idUtilisateur);
 				reservation.setUtilisateur(utilisateur);
 				
-				int idTable = rs.getInt("id_utilisateur");
+				int idTable = rs.getInt("id_table");
 				TableBLL tableBll = new TableBLL();
 				Table table = tableBll.selectById(idTable);
-				reservation.setUtilisateur(utilisateur);
+				reservation.setTable(table);
 				
 				int idRestaurant = rs.getInt("id_restaurant");
 				RestaurantBLL restaurantBll = new RestaurantBLL();
@@ -72,7 +71,7 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 		Reservation reservation = null;
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				reservation = new Reservation();
@@ -86,10 +85,10 @@ public class ReservationDAOJdbcImpl implements GenericDAO<Reservation> {
 				Utilisateur utilisateur = utilisateurBll.selectById(idUtilisateur);
 				reservation.setUtilisateur(utilisateur);
 				
-				int idTable = rs.getInt("id_utilisateur");
+				int idTable = rs.getInt("id_table");
 				TableBLL tableBll = new TableBLL();
 				Table table = tableBll.selectById(idTable);
-				reservation.setUtilisateur(utilisateur);
+				reservation.setTable(table);
 				
 				int idRestaurant = rs.getInt("id_restaurant");
 				RestaurantBLL restaurantBll = new RestaurantBLL();
