@@ -80,8 +80,4 @@ public class Plat {
 	public String toString() {
 		return nom + ", " + description + ", " + prix + "€ ("+type+")";
 	}
-
-	
-
-	
 }

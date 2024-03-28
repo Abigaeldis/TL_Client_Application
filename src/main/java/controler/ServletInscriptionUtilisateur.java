@@ -24,8 +24,6 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
         }
     }
     
-    
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	String prenom = request.getParameter("prenom");
@@ -34,23 +32,19 @@ public class ServletInscriptionUtilisateur extends HttpServlet {
         String mail = request.getParameter("mail");
         String telephone = request.getParameter("telephone");
         String adresse = request.getParameter("adresse");
-
         try {
-            
         	Utilisateur newUtilisateur = utilisateurBLL.insert(nom, prenom, mail, motdepasse, telephone,
                     adresse);
-//            System.out.println("Inserted Utilisateur: " + prenom + " " + mail);
-
-            // request.getSession().setAttribute("name", newUtilisateur);
             HttpSession session = request.getSession();
+            //Connexion automatique à l'issue de l'inscription
             session.setAttribute("utilisateur", newUtilisateur);
+            //Si l'utilisateur reste inactif 30min, on le déconnecte.
             int sessionTimeoutInSeconds = 30 * 60;
             session.setMaxInactiveInterval(sessionTimeoutInSeconds);
-
-
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (BLLException e) {
             e.printStackTrace();
+            //Récupération de la liste d'erreurs pour leur affichage
             request.setAttribute("erreurs", e.getErreurs());
             request.getRequestDispatcher("/WEB-INF/jsp/inscription.jsp").forward(request, response);
         }

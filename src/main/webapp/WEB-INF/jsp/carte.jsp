@@ -25,8 +25,8 @@
 		<h1>${carte.nom}</h1>
 	</div>
 	<div class="container-carte">
-
 		<div class="carte-plats">
+			<!-- Affichage des entrées -->
 			<div>
 				<h2>Entrées</h2>
 
@@ -43,7 +43,7 @@
 				</c:forEach>
 
 			</div>
-
+			<!-- Affichage des plats -->
 			<div>
 				<h2>Plats</h2>
 
@@ -61,7 +61,7 @@
 				</c:forEach>
 
 			</div>
-
+			<!-- Affichage des desserts -->
 			<div>
 				<h2>Desserts</h2>
 
@@ -80,8 +80,7 @@
 
 			</div>
 		</div>
-
-
+		<!-- Affichage des boissons -->
 		<div class="carte-boissons">
 			<h2>Boissons</h2>
 			<ul>

@@ -26,20 +26,16 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
 		String idStr = request.getParameter("id");
 
 		int id = Integer.parseInt(idStr);
-//		System.out.println(id);
-
+		
 		try {
-			
 			utilisateurBll.delete(id);
 			System.out.println("utilisateur d'id " + id + " supprimé");
 			response.sendRedirect("deconnexion");
-
 		} catch (BLLException e) {
+			//Récupération de la liste d'erreurs pour l'affichage
 			System.out.println(e.getMessage());
 			request.setAttribute("erreur", e);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);

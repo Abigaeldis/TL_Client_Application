@@ -18,13 +18,9 @@ import jakarta.servlet.http.HttpSession;
  */
 public class ConnexionFilter implements Filter {
 
-    public ConnexionFilter() {
+    public ConnexionFilter() {}
 
-    }
-
-    public void init(FilterConfig fConfig) throws ServletException {
-
-    }
+    public void init(FilterConfig fConfig) throws ServletException {}
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
@@ -33,17 +29,15 @@ public class ConnexionFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
         HttpSession session = httpRequest.getSession();
-        
+        //Récupération de l'utilisateur stocké dans la session
         Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur");
         
         if (utilisateur != null) {
             httpResponse.sendRedirect("MonCompte?id=" + utilisateur.getId());
         } else {
-            chain.doFilter(request, response);
+        	chain.doFilter(request, response);
         }
     }
 
-    public void destroy() {
-
-    }
+    public void destroy() {}
 }

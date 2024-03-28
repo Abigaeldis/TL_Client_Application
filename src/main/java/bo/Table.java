@@ -8,7 +8,6 @@ public class Table {
 	private Restaurant restaurant;
 		
 	public Table() {
-		super();
 	}
 
 	public Table(int numTable, int capaciteTable, String etat, Restaurant restaurant) {
@@ -71,6 +70,4 @@ public class Table {
 		return "Table [id=" + id + ", numTable=" + numTable + ", capaciteTable=" + capaciteTable + ", etat=" + etat
 				+ ", restaurant n°" + restaurant.getId() + "]";
 	}
-	
-	
 }

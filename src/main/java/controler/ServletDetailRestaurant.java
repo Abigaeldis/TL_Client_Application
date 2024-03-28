@@ -16,9 +16,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletDetailRestaurant
- */
 public class ServletDetailRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
@@ -52,11 +49,10 @@ public class ServletDetailRestaurant extends HttpServlet {
 		
 		List<Horaire> horaires = new ArrayList<>();
 		List<Horaire> horairesRestaurant = new ArrayList<>();
-		
+		//Récupération des horaires du restaurant
 		try {
 			horaires = horaireBll.selectAll();
 			for (Horaire current : horaires) {
-				
 				if (current.getRestaurant().getNom().equals(restaurant.getNom())) {
 					horairesRestaurant.add(current);
 				}
@@ -65,6 +61,7 @@ public class ServletDetailRestaurant extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//Gestion de l'affichage pour avoir une ligne par jour de la semaine
 		Map<String, List<String>> horairesGroupes = new HashMap<>();
 		String[] jours = {"Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"};
         // Parcourir la liste des horaires

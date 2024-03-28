@@ -83,11 +83,4 @@ public class Horaire {
 		return "Horaire [id=" + id + ", jour=" + jour + ", heureDeDebut=" + heureDeDebut + ", heureDeFin=" + heureDeFin
 				+ ", creneau=" + creneau + ", restaurant=" + restaurant + "]";
 	}
-
-	
-
-	
-	
-
-	
 }

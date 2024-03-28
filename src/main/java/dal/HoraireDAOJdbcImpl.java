@@ -29,7 +29,6 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 	
 	public List<Horaire> selectAll() throws DALException {
 		List<Horaire> horaires = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
 		
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
@@ -42,6 +41,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 				horaire.setHeureDeFin(rs.getTime("heuredefin").toLocalTime());
 				horaire.setCreneau(rs.getString("creneau"));
 				int idRestaurant = rs.getInt("id_restaurant");
+				//Création de l'instance de Restaurant avec l'id "id_restaurant"
 				RestaurantBLL restaurantBll = new RestaurantBLL();
 				Restaurant restaurant = restaurantBll.selectById(idRestaurant);
 				horaire.setRestaurant(restaurant);
@@ -57,7 +57,7 @@ public class HoraireDAOJdbcImpl implements GenericDAO<Horaire> {
 		Horaire horaire = null;
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				horaire = new Horaire();

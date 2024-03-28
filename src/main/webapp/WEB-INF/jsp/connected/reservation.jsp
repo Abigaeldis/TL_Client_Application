@@ -22,6 +22,8 @@
 	<form class="backmenu" id="backmenuForm">
 		<button class="backmenu-button" type="button">Retour</button>
 	</form>
+	
+	<!-- Formulaire de réservation -->
 	<div class="container-global-reservation">
 		<div class="compte-container">
 			<form action="reserver" method="POST">
@@ -44,7 +46,8 @@
 					name="idUtilisateur" value="${utilisateur.id }">
 			</form>
 		</div>
-
+		
+		<!-- Affichage des horaires du restaurant -->
 		<div class="horaires">
 			<h2>Horaires</h2>
 			<c:forEach var="current" items="${jours}">

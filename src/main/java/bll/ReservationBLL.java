@@ -62,6 +62,7 @@ public class ReservationBLL {
 		
 		Reservation reservation = new Reservation(date, nbPersonne, utilisateur, restaurant);
 		try {
+			//Validation que la date et heure choisi correspond aux horaires d'ouvertures
 			validateDate(date);
 			dao.insert(reservation);
 		} catch (DALException e) {
@@ -84,7 +85,7 @@ public class ReservationBLL {
 		String jourReservation = jours[jourInt-1];
 
 		LocalTime horaireReservation = date.toLocalTime();
-
+		//On vérifie que l'horaire de réservation est bien dans les horaires d'ouverture du restaurant
 		for (Horaire current : horairesRestaurant) {
 			String jour = current.getJour();
 			if (jourReservation.equals(jour)) {
@@ -99,7 +100,6 @@ public class ReservationBLL {
 	}
 
 	public void update(Reservation reservation) throws BLLException {
-
 		try {
 			dao.update(reservation);
 		} catch (DALException e) {

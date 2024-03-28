@@ -26,7 +26,6 @@ public class TableDAOJdbcImpl implements GenericDAO<Table> {
 	
 	public List<Table> selectAll() throws DALException {
 		List<Table> tables = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
 		
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
@@ -53,7 +52,7 @@ public class TableDAOJdbcImpl implements GenericDAO<Table> {
 		Table table = null;
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				table = new Table();

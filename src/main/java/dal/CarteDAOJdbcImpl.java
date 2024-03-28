@@ -22,13 +22,11 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 	public CarteDAOJdbcImpl() throws DALException {
 	}
 	
-	
 	////////////////////////////////////////////////////////////////////////
 	
 	
 	public List<Carte> selectAll() throws DALException {
 		List<Carte> cartes = new ArrayList<>(); 
-		// alt + shift + r pour renommer partout
 		
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
@@ -49,13 +47,12 @@ public class CarteDAOJdbcImpl implements GenericDAO<Carte> {
 		Carte carte = null;
 		try (Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				carte = new Carte();
 				carte.setId(rs.getInt("id"));
 				carte.setNom(rs.getString("nom"));
-				
 			}
 		} catch (SQLException e) {
 			throw new DALException("Impossible de recuperer les informations pour l'id "+ id, e);

@@ -28,6 +28,7 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	
 	////////////////////////////////////////////////////////////////////////
+	
 	public RestaurantDAOJdbcImpl() throws DALException {
 	}
 	
@@ -61,7 +62,7 @@ public class RestaurantDAOJdbcImpl implements GenericDAO<Restaurant> {
 		Restaurant restaurant = null;
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID);
-			ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				restaurant = new Restaurant();
